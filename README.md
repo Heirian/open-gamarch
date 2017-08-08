@@ -27,77 +27,78 @@ se sintam a vontade em conversar uns com os outros. Compartilhar experiencias, e
 
 - Características
 
-- Usuário
-  - Perfil
-    - Seguindo & Seguidores
-    - Página de textos & upload de videos
-      - Compartilhar
-      - Avaliação
-        - Rock
-      - Data
-      - Autor
-      - Tempo de leitura
-      - Justificado
-      - Ler mais tarde
-      - Cometários
-      - Artigos relacionados
-      - Proximo artigo
-    - Seleção de nível de habilidade
-      - Usuário escolherá seu nível ao criar sua conta
-      - Seleção de posts por nivel do post
-      - Seleção de posts por nivel escolhido pelo usuário
-    - Level
-      - Experiência
-        - Engajamento na comunidade
-        - Entrar diariamente
-        - Conquistas
-    - Medalhas
-    - Sistema de Conquistas
-      - Medalhas por votos em post
-      - Posts terão tipos diferentes de avaliação
-      - Numeros especiais gerarão conquistas
-    - Relação com jogos
-      - Jogos que tem que comprometimento
-      - Jogos que gosta
-      - Jogos que jogos
-    - Estrátegias
-    - Interesses
-    - Links para os perfis exerternos dos jogadores (de jogos, plataformas)
-  - Pros vitrini
-  - Notificações
-  - Mensagens
+  - Usuário
+    - Perfil
+      - Seguindo & Seguidores
+      - Página de textos & upload de videos
+        - Compartilhar
+        - Avaliação
+          - Rock
+        - Data
+        - Autor
+        - Tempo de leitura
+        - Justificado
+        - Ler mais tarde
+        - Cometários
+        - Artigos relacionados
+        - Proximo artigo
+      - Seleção de nível de habilidade
+        - Usuário escolherá seu nível ao criar sua conta
+        - Seleção de posts por nivel do post
+        - Seleção de posts por nivel escolhido pelo usuário
+      - Level
+        - Experiência
+          - Engajamento na comunidade
+          - Entrar diariamente
+          - Conquistas
+      - Medalhas
+      - Sistema de Conquistas
+        - Medalhas por votos em post
+        - Posts terão tipos diferentes de avaliação
+        - Numeros especiais gerarão conquistas
+      - Relação com jogos
+        - Jogos que tem que comprometimento
+        - Jogos que gosta
+        - Jogos que jogos
+      - Estrátegias
+      - Interesses
+      - Links para os perfis exerternos dos jogadores (de jogos, plataformas)
+    - Pros vitrini
+    - Notificações
+    - Mensagens
+    - Desafios - Necessário desenvolver a ideia
 
-- Comunidades
-  - Fórum
-  - Perguntas & Respostas
-  - Desáfios
-  - Tutoriais
-  - Ideias para o jogo
-  - Ideias para modos de jogar
-  - Fanfiction area
-  - Encontros - Promovidos pela empresa? Pelos usuarios? Pelas desenvolvedoras? Por Parceiros?
+  - Comunidades
+    - Fórum
+    - Perguntas & Respostas
+    - Desáfios
+    - Tutoriais
+    - Ideias para o jogo
+    - Ideias para modos de jogar
+    - Fanfiction area
+    - Encontros - Promovidos pela empresa? Pelos usuarios? Pelas desenvolvedoras? Por Parceiros?
 
-- Times
-  - Area para Times
-  - Notícias e-sports
-  - Cenário profissional
+  - Times
+    - Area para Times
+    - Notícias e-sports
+    - Cenário profissional
 
-- Desenvolvedoras
-  - Area para mostrar produtos
-  - Lançamentos
-  - Jogos adicionados a plataforma
+  - Desenvolvedoras
+    - Area para mostrar produtos
+    - Lançamentos
+    - Jogos adicionados a plataforma
 
-- Geral
-  - Principal - Perfil? Comunidade? Feed?
-  - Privacidade
-  - Termos
-  - Sobre
-  - Ajuda
-  - Começando
-  - Blog
-  - Status
-  - Contato
-  - Lingua
+  - Geral
+    - Principal - Perfil? Comunidade? Feed?
+    - Privacidade
+    - Termos
+    - Sobre
+    - Ajuda
+    - Começando
+    - Blog
+    - Status
+    - Contato
+    - Lingua
 
 ==================================================
 
