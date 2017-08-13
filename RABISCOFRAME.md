@@ -64,6 +64,7 @@ se sintam a vontade em conversar uns com os outros. Compartilhar experiencias, e
       - Interesses
       - Links para os perfis exerternos dos jogadores (de jogos, plataformas)
     - Pros vitrini
+    - Carreiras profissionais - Tutoriais, ajuda, treinamento etc
     - Notificações
     - Mensagens
     - Desafios - Necessário desenvolver a ideia
