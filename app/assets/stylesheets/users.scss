@@ -1,3 +1,17 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.gravatar {
+  border-radius: 50%;
+  &:hover {
+    outline: 1px solid #390046;
+  }
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.user-title {
+  color: #390046;
+  font-weight: bold;
+  font-size: 1,25em;
+}
