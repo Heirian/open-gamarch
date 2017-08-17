@@ -1,0 +1,28 @@
+<%= render 'shared/page_title', title: 'Listing all articles' %>
+
+<div align="center">
+  <%= will_paginate %>
+</div>
+
+<% @articles.each do |article| %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-0">
+      <section class="center">
+        <%= gravatar_for(article.user, size: 137) %>
+      </section>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0 well">
+      <h4><%= link_to article.name, article_path(article) %></h4>
+      <p><%= truncate(article.description, length: 150) %></p>
+      <p>
+        <span class="quiet">
+          <small>Created <%= time_ago_in_words(article.created_at) %> ago</small>
+        </span>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<div align="center">
+  <%= will_paginate %>
+</div>

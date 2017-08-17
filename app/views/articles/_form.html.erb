@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(object, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :name %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_field :name, class: "form-control", placeholder: "Name of article", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :description %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter the text" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <%= f.submit class: "btn btn-purple" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
