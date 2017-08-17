@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/starting', to: 'pages#starting'
 
-  resources :recipes
+  resources :articles
   get '/signup', to: 'users#new'
   resources :users, except: [:new]
 
