@@ -32,8 +32,10 @@
 .btn-purple {
   color: #fff;
   background-color: #390046;
+  outline: 1px solid white;
   &:hover {
-    color: #fff;
+    color: #390046;
+    background-color: #fff;
     text-decoration: none;
   }
 }

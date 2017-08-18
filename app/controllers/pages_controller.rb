@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    redirect_to signup_path unless logged_in?
   end
 
   def about

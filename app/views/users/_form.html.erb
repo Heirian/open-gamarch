@@ -2,41 +2,47 @@
   <div class="col-md-12">
     <%= form_for(object, :html => { class: "form-horizontal", role: "form" }) do |f| %>
       <div class="form-group">
-        <div class="control-label col-md-2">
+        <div class="control-label col-md-8">
           <%= f.label :name, "Choose a name" %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
           <%= f.text_field :name, class: "form-control", placeholder: "Enter your name", autofocus: true %>
         </div>
       </div>
       <div class="form-group">
-        <div class="control-label col-md-2">
+        <div class="control-label col-md-8">
           <%= f.label :email %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
           <%= f.text_field :email, class: "form-control", placeholder: "Enter your email" %>
         </div>
       </div>
       <div class="form-group">
-        <div class="control-label col-md-2">
+        <div class="control-label col-md-8">
           <%= f.label :password %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
           <%= f.password_field :password, class: "form-control", placeholder: "Choose a password" %>
         </div>
       </div>
       <div class="form-group">
-        <div class="control-label col-md-2">
+        <div class="control-label col-md-8">
           <%= f.label :password_confirmation, "Confirm password" %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
           <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password" %>
         </div>
       </div>
       <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
+        <div class="col-md-offset-8 col-md-4">
+          <%= render 'warning_terms' if @user.new_record? %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-offset-8 col-md-4">
           <%= f.submit(@user.new_record? ? "Create my account" : "Update my account",
-                            class: "btn btn-primary btn-lg btn-xlarge") %>
+                            class: "btn btn-purple") %>
+          <%= link_to "Return to home", pages_home_path, class: "btn btn-purple" unless @user.new_record? %>
         </div>
       </div>
     <% end %>

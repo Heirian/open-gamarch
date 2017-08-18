@@ -84,6 +84,9 @@ se sintam a vontade em conversar uns com os outros. Compartilhar experiencias, e
     - Notícias e-sports
     - Cenário profissional
 
+  - Clãs
+    - Area de uma mini-comunidade criada por usuarios
+
   - Desenvolvedoras
     - Area para mostrar produtos
     - Lançamentos
@@ -100,7 +103,7 @@ se sintam a vontade em conversar uns com os outros. Compartilhar experiencias, e
     - Status
     - Contato
     - Lingua
-
+    - Invite friends
 ==================================================
 
 - Como?
