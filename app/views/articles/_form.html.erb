@@ -18,8 +18,11 @@
         </div>
       </div>
       <div class="form-group">
-        <div class="col-md-10">
+        <div class="col-md-10 col-md-offset-2">
           <%= f.submit class: "btn btn-purple" %>
+          <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" unless @article.new_record?%>
+          <%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
+          <%= link_to "Delete this article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple" unless @article.new_record? %>
         </div>
       </div>
     <% end %>

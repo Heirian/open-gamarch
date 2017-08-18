@@ -3,7 +3,3 @@
 <%= render 'shared/errors', object: @article %>
 
 <%= render 'form', object: @article %>
-
-<%= link_to "Create a new article", new_article_path, class: "btn btn-purple" %>
-<%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
-<%= link_to "Delete this article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple" %>

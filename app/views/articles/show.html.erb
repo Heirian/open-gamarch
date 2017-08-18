@@ -12,7 +12,7 @@
     <hr />
     <div class="pull-right">
       <small>
-        <%= link_to gravatar_for(@article.user), articles_path %>
+        <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
         <div class="separator">
           Created by: <%= @article.user.name.capitalize %>
         </div>
@@ -23,15 +23,16 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-9 col-md-offset-2">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
     <%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
     <% if logged_in? %>
       <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" %>
-    <% end %>
+
 
       <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-purple" %>
       <%= link_to "Delete this article", article_path(@article), method: :delete,
                                                               data: { confirm: "Are you sure?" },
                                                               class: "btn btn-purple" %>
+    <% end %>
   </div>
 </div>
