@@ -21,4 +21,6 @@ class PagesController < ApplicationController
   def starting
   end
 
+  def policy_cookie
+  end
 end

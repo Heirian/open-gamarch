@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/privacy', to: 'pages#privacy'
   get '/about', to: 'pages#about'
   get '/starting', to: 'pages#starting'
+  get '/cookie', to: 'pages#cookie'
 
   resources :articles
   get '/signup', to: 'users#new'
