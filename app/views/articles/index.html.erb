@@ -1,9 +1,5 @@
 <%= render 'shared/page_title', title: 'Listing all articles' %>
 
-<div align="center">
-  <%= will_paginate %>
-</div>
-
 <% @articles.each do |article| %>
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-0">

@@ -18,8 +18,10 @@
             </small>
           </li>
           <li>
-            <%= link_to "Delete this user", user_path(user), method: :delete,
-            data: {confirm: "Are you sure you want to delete the user and all associated articles?"} %>
+            <% if logged_in? && current_user == user %>
+              <%= link_to "Delete this user", user_path(user), method: :delete,
+              data: {confirm: "Are you sure you want to delete the user and all associated articles?"} %>
+            <% end %>
           </li>
         </div>
       </ul>
