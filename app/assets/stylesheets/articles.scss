@@ -3,17 +3,30 @@
 }
 
 .well {
+  
   a {
     color: #390046;
     &:hover {
       color: #390046;
       text-decoration: none;
-      text-shadow: 0.2px 0.2px 0.2px #390046;
+      text-shadow: 0.1px 0.1px 0.1px #390046;
     }
+  }
+  .btn {
+    color: #fff;
   }
 }
 
+.well-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 15px;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+}
+
 .separator {
-  margin-top: 0.1cm;
+  margin-top: 0.2cm;
   margin-bottom: 0.1cm;
 }
