@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @article.user
+      if current_user != @article.user && !current_user.admin?
         flash[:danger] = "You can only change your own things"
         redirect_to articles_path
       end
