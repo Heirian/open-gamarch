@@ -8,8 +8,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.build(comments_params)
     @comment.user = current_user
     if @comment.save
-      flash[:success] = "Comment was created successfully!"
-      redirect_to article_path(@article)
+      ActionCable.server.broadcast "comments", render(partial: 'comments/comment', object: @comment)
     else
       flash[:danger] = "Comment wasn't created"
       redirect_back(fallback_location: article_path(@article))
@@ -18,7 +17,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    flash[:success] = "Comment was removed successfully!"
+    flash[:warning] = "Comment was removed successfully!"
     redirect_back(fallback_location: article_path(@article))
   end
 
@@ -36,7 +35,7 @@ class CommentsController < ApplicationController
   end
 
   def set_comment
-    @article = Article.find(params[:id])
-    @comment = Comment.find(params[:article_id])
+    @article = Article.find(params[:article_id])
+    @comment = Comment.find(params[:id])
   end
 end

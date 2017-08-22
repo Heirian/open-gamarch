@@ -33,7 +33,7 @@
 <% if logged_in? %>
   <div class="row">
     <div class="col-md-12">
-      <%= form_for([@article, @comment], :html => { class: "form-horizontal", role: "form" }) do |f| %>
+      <%= form_for([@article, @comment], remote: true, :html => { class: "form-horizontal", role: "form" }) do |f| %>
         <div class="form-group">
           <div class="col-md-1 col-md-offset-1">
             <%= link_to gravatar_for(current_user, size: 30), user_path(current_user) %>
@@ -53,11 +53,10 @@
 <hr />
 
 <% if @article.comments.any? %>
-  <div id="messages">
+  <div id="real-time-messages">
     <%= render partial: 'comments/comments', object: @comments %>
   </div>
 <% else %>
-  <br>
-  <h3 class="center">No comments yet</h3>
-  <br>
+  <div class="real-time-messages">
+  </div>
 <% end %>
