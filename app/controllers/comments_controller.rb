@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-
     @comment.destroy
     flash[:success] = "Comment was removed successfully!"
     redirect_back(fallback_location: article_path(@article))

@@ -35,11 +35,11 @@
     <div class="col-md-12">
       <%= form_for([@article, @comment], :html => { class: "form-horizontal", role: "form" }) do |f| %>
         <div class="form-group">
-          <div class="col-md-8 col-md-offset-1">
-            <%= f.text_field :description, class: "form-control", placeholder: "Write a comment...", autofocus: true %>
+          <div class="col-md-1 col-md-offset-1">
+            <%= link_to gravatar_for(current_user, size: 30), user_path(current_user) %>
           </div>
-          <div class="col-md-2">
-            <%= f.submit "Post", class: "btn btn-purple" %>
+          <div class="col-md-9">
+            <%= f.text_field :description, class: "form-control", placeholder: "Write a comment...", autofocus: true %>
           </div>
         </div>
       <% end %>
@@ -53,16 +53,11 @@
 <hr />
 
 <% if @article.comments.any? %>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h3>
-        Prior comments:
-      </h3>
-      <div id="messages">
-        <%= render partial: 'comments/comments', object: @comments %>
-      </div>
-    </div>
+  <div id="messages">
+    <%= render partial: 'comments/comments', object: @comments %>
   </div>
 <% else %>
+  <br>
   <h3 class="center">No comments yet</h3>
+  <br>
 <% end %>
