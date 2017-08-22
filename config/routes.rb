@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get '/starting', to: 'pages#starting'
   get '/cookie', to: 'pages#cookie'
 
-  resources :articles
+  resources :articles do
+    resources :comments, only: [:create, :destroy]
+  end
+
   get '/signup', to: 'users#new'
   resources :users, except: [:new]
 

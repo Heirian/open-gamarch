@@ -12,7 +12,9 @@
       <p><%= truncate(article.description, length: 500) %></p>
       <p>
         <span class="quiet">
-          <small>Created <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.name.capitalize %></small>
+          <small>Created <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.name.capitalize %>
+            | <%= pluralize(article.comments.count, "comment") %>
+          </small>
         </span>
       </p>
       <% if logged_in? && (current_user == article.user || current_user.admin?) %>

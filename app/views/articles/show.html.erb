@@ -30,6 +30,28 @@
 
 <hr />
 
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for([@article, @comment], :html => { class: "form-horizontal", role: "form" }) do |f| %>
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-1">
+            <%= f.text_field :description, class: "form-control", placeholder: "Write a comment...", autofocus: true %>
+          </div>
+          <div class="col-md-2">
+            <%= f.submit "Post", class: "btn btn-purple" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
+  <h4 class="center">Are you new here? <%= link_to "Sign in to comment", signup_path %></h4>
+<% end %>
+
+<hr />
+
 <% if @article.comments.any? %>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
