@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-2">
+    <section class="center">
+      <%= link_to gravatar_for(comment.user, size: 80), user_path(comment.user) %>
+    </section>
+  </div>
+  <div class="col-md-8 well">
+    <p>
+      <%= comment.description %>
+    </p>
+    <p>
+      <span class="quiet">
+        <small>
+          Created <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
+        </small>
+      </span>
+    </p>
+  </div>
+</div>
