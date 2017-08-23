@@ -47,13 +47,13 @@
   </div>
 <% else %>
   <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
-  <h4 class="center">Are you new here? <%= link_to "Sign in to comment", signup_path %></h4>
+  <h4 class="center">Are you new here? <%= link_to "Sign up", signup_path %></h4>
 <% end %>
 
 <hr />
 
 <% if @article.comments.any? %>
-  <div id="real-time-messages">
+  <div class="real-time-messages">
     <%= render partial: 'comments/comments', object: @comments %>
   </div>
 <% else %>
