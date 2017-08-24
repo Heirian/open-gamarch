@@ -1,19 +1,23 @@
 <%= render 'shared/page_title', title: @article.name %>
 
 <div class="row">
-  <div class="well justify col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+  <div class="justify col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+
+    <div align="center">
+      <%= image_tag @article.image.url if @article.image? %>
+    </div>
+    <hr />
     <%= simple_format(@article.description) %>
     <hr />
-    <div class="pull-right">
+    <div class="pull-left">
+      <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
       <small>
-        <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
-        <div class="separator">
-          Created by: <%= @article.user.name.capitalize %>
+        <div class="separator justify">
+          Created <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name.capitalize %>
         </div>
-        Created <%= time_ago_in_words(@article.created_at) %> ago
       </small>
     </div>
-    <div class="pull-left well-footer">
+    <div class="pull-right well-footer">
       <%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
       <% if logged_in? %>
         <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" %>
@@ -34,12 +38,10 @@
   <div class="row">
     <div class="col-md-12">
       <%= form_for([@article, @comment], remote: true, :html => { class: "form-horizontal", role: "form" }) do |f| %>
-        <div class="form-group">
-          <div class="col-md-1 col-md-offset-1">
-            <%= link_to gravatar_for(current_user, size: 30), user_path(current_user) %>
-          </div>
-          <div class="col-md-9">
-            <%= f.text_field :description, class: "form-control", placeholder: "Write a comment...", autofocus: true %>
+        <div>
+          <div class="input-group col-md-10 col-md-offset-1">
+            <%= link_to gravatar_for(current_user, size: 30), user_path(current_user), class:"input-group-addon" %>
+            <%= f.text_field :description, class: "form-control", placeholder: "Write a comment..." %>
           </div>
         </div>
       <% end %>

@@ -5,7 +5,7 @@ $navbar-default-link-hover-bg:  darken($navbar-default-bg, 1.0%);
 $navbar-default-link-active-color: #fff;
 $navbar-default-link-active-bg: darken($navbar-default-bg, 1.0%);
 $navbar-height: 40px;
-$navbar-padding-vertical: 5px;
+$navbar-padding-vertical: 4px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -43,12 +43,6 @@ body {
   }
 }
 
-.navbar-default {
-  a {
-    padding-top: 10px;
-  }
-}
-
 .navbar-default .navbar-nav .link-bar {
   padding-top: 10px;
 }
@@ -65,4 +59,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;     /* Align the flex-items vertically */
+}
+
+.form-inline {
+  display: flex;
+  width: auto
 }

@@ -3,7 +3,6 @@
 }
 
 .well {
-  
   a {
     color: #390046;
     &:hover {
@@ -20,7 +19,8 @@
 .well-footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  right: 0;
+  width: 60%;
   padding-top: 15px;
   /* Set the fixed height of the footer here */
   height: 70px;
@@ -29,4 +29,11 @@
 .separator {
   margin-top: 0.2cm;
   margin-bottom: 0.1cm;
+}
+
+.comment-remover-button {
+  color: gray;
+  &:hover {
+    color: red;
+  }
 }

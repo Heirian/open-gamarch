@@ -1,14 +1,8 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid col-md-offset-1">
+<nav class="navbar navbar-default col-md-12">
+  <div class="container-fluid col-md-offset-2">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <%= link_to "Gamarch", root_path, class: "navbar-brand", id: "logo" %>
+        <%= link_to (render 'shared/logo'), root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,7 +15,7 @@
           <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
 
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right col-md-7">
           <li>
             <%= link_to "Write a new article", new_article_path, class: "link-bar", title: "Write something new" %>
           </li>
@@ -62,19 +56,23 @@
           </li>
 
         </ul>
+        <div class="col-md-2">
+        </div>
       </div><!-- /.navbar-collapse -->
     <% else %>
-      <%= form_for(:session, :html => { class: "form-vertical navbar-form navbar-right", role: "form" }, url: login_path) do |f| %>
+      <%= form_for(:session, :html => { class: "form-inline navbar-right", role: "form" }, url: login_path) do |f| %>
         <div class="form-group">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <%= f.text_field :email, class: "form-control", placeholder: "Enter your email" %>
           </div>
-          <div class="col-md-6">
+        </div>
+        <div class="form-group">
+          <div class="col-md-5">
             <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
           </div>
         </div>
         <div class="form-group">
-          <div>
+          <div class="col-md-2">
             <%= f.submit "Log in", class: "btn btn-purple" %>
           </div>
         </div>
