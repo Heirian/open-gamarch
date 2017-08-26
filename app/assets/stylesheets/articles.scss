@@ -1,3 +1,31 @@
+.article-index {
+  .article-index-title {
+    a {
+      color: #390046;
+      &:hover {
+        color: #390046;
+        text-decoration: none;
+        text-shadow: 0.1px 0.1px 0.1px #390046;
+      }
+    }
+  }
+  .btn {
+    margin-bottom: 10px;
+  }
+  .avatar-article-index {
+    margin-bottom: 10px;
+    .avatar-article-index-font {
+      padding-left: 5px;
+      font-family: impact;
+      font-size: 20px;
+      color: black;
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
 
 .row .input-group .input-group-addon {
   background-color: white;
