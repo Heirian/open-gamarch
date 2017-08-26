@@ -11,7 +11,4 @@ class Article < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  def self.true_image
-    self if :image
-  end
 end
