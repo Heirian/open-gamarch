@@ -51,8 +51,11 @@ body {
   }
 }
 
-.navbar-default .navbar-nav .link-bar {
-  padding-top: 10px;
+.navbar-default {
+  font-size: 15px;
+  .navbar-nav .link-bar {
+    padding-top: 10px;
+  }
 }
 
 .font-icon-nav {

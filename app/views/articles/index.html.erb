@@ -16,7 +16,12 @@
       <hr />
       <div class="avatar-article-index">
         <%= link_to gravatar_for(article.user, size: 50), user_path(article.user) %>
-        <%= link_to article.user.name.capitalize, user_path(article.user), class: "avatar-article-index-font" %>
+        <div class="avatar-article-index-text">
+          <%= link_to article.user.name.capitalize, user_path(article.user), class: "avatar-article-index-font" %>
+          <%= pluralize(article.user.articles.count, "article") %>
+        </div>
+
+
       </div>
       <% if logged_in? && (current_user == article.user || current_user.admin?) %>
         <div class="btn-group">
