@@ -1,16 +1,4 @@
 
-#logo {
-  float: left;
-  font-size: 30px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: Impact;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 #img-logo {
   border-radius: 50%;
   height: 32px;
@@ -40,6 +28,7 @@
 .btn-purple {
   color: #fff;
   background-color: #390046;
+  font-size: 18px;
   outline: 1px solid white;
   &:hover {
     color: #390046;

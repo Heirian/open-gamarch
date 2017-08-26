@@ -6,6 +6,14 @@ $navbar-default-link-active-color: #fff;
 $navbar-default-link-active-bg: darken($navbar-default-bg, 1.0%);
 $navbar-height: 40px;
 $navbar-padding-vertical: 4px;
+$custom-file-text: (
+  placeholder: (
+    en: "Cover image",
+  ),
+  button-label: (
+    en: "Browse",
+  )
+);
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

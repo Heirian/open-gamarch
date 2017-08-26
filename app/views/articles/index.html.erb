@@ -7,9 +7,10 @@
         <%= link_to gravatar_for(article.user, size: 137), user_path(article.user) %>
       </section>
     </div>
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0 well">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0 well justify">
+      <%= image_tag(article.image.url, class: "img-ratio") if article.image? %>
       <h4><%= link_to article.name, article_path(article) %></h4>
-      <p><%= truncate(article.description, length: 500) %></p>
+      <p><%= truncate(article.description, length: 500, class:"justify") %></p>
       <p>
         <span class="quiet">
           <small>Created <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.name.capitalize %>

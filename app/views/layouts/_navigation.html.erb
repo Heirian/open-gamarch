@@ -1,12 +1,9 @@
 <nav class="navbar navbar-default col-md-12">
   <div class="container-fluid col-md-offset-2">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <%= link_to (render 'shared/logo'), root_path, class: "navbar-brand" %>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <% if logged_in? %>
+      <div class="navbar-header">
+          <%= link_to (render 'shared/logo'), root_path, class: "navbar-brand" %>
+      </div>
       <div class="collapse navbar-collapse">
         <form class="navbar-form navbar-left">
           <div class="form-group">
@@ -60,23 +57,33 @@
         </div>
       </div><!-- /.navbar-collapse -->
     <% else %>
-      <%= form_for(:session, :html => { class: "form-inline navbar-right", role: "form" }, url: login_path) do |f| %>
-        <div class="form-group">
-          <div class="col-md-5">
-            <%= f.text_field :email, class: "form-control", placeholder: "Enter your email" %>
-          </div>
+      <div class="row">
+        <div class="navbar-header">
+          <%= link_to 'Gamarch', root_path, class: "navbar-brand", id: 'logo' %>
         </div>
-        <div class="form-group">
-          <div class="col-md-5">
-            <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
-          </div>
+        <div class="col-md-8">
+          <%= form_for(:session, :html => { class: "form-inline navbar-right", role: "form" }, url: login_path) do |f| %>
+            <div class="form-group form-login">
+              <div class="col-md-5">
+                <%= f.text_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
+              </div>
+            </div>
+            <div class="form-group form-login">
+              <div class="col-md-5">
+                <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+              </div>
+            </div>
+            <div class="form-group form-login">
+              <div class="col-md-2">
+                <%= f.submit "Log in", class: "btn btn-purple" %>
+              </div>
+            </div>
+          <% end %>
         </div>
-        <div class="form-group">
-          <div class="col-md-2">
-            <%= f.submit "Log in", class: "btn btn-purple" %>
-          </div>
+        <div class="forgot-account">
+            <%= link_to 'Forgot account?', root_path, class: "" %>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div><!-- /.container-fluid -->
 </nav>

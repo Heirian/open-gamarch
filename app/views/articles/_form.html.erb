@@ -1,13 +1,15 @@
+<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+
 <div class="row">
   <div class="col-md-12">
     <%= form_for(object, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>
 
       <div class="form-group">
-        <div class="control-label col-md-2">
-          <%= f.label :image, "Cover" %>
-        </div>
-        <div class="col-md-8">
-          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', title: "Cover" %>
+        <div class="col-md-8 col-md-offset-2">
+          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'inputfile' %>
+          <span class="custom-file-control">
+            <p class="custom-file-control-label center"><i class="fa fa-file-image-o" aria-hidden="true"></i> Select cover image</p>
+          </span>
         </div>
       </div>
 

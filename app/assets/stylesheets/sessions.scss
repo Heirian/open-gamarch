@@ -1,3 +1,29 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#logo {
+  float: left;
+  font-size: 60px;
+  color: #fff;
+  text-transform: uppercase;
+
+  font-family: Impact;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+.form-login {
+  padding-top: 45px;
+  padding-bottom: 20px;
+}
+
+.forgot-account {
+  padding-top: 52px;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

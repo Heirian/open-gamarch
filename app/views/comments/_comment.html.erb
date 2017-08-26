@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="row">
-      <div class="col-md-2">
-        <%= link_to gravatar_for(comment.user, size: 80), user_path(comment.user) %>
+      <div class="col-md-1">
+        <%= link_to gravatar_for(comment.user, size: 50), user_path(comment.user) %>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-11">
         <% if logged_in? && (current_user == comment.user || current_user.admin? || current_user == comment.article.user) %>
           <%= link_to (render 'shared/close'), article_comment_path(@article, comment), method: :delete,
                                                                   class: "pull-right comment-remover-button" %>
@@ -15,7 +15,7 @@
         <p>
           <span class="quiet">
             <small>
-              Created <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
+              <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
             </small>
           </span>
         </p>
@@ -23,4 +23,4 @@
     </div>
   </div>
 </div>
-<hr />
+<br>
