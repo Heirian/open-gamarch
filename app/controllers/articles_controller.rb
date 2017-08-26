@@ -4,12 +4,12 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    @articles = Article.paginate(page: params[:page], per_page: 8)
   end
 
   def show
     @comment = Comment.new
-    @comments = @article.comments.paginate(page: params[:page], per_page: 5)
+    @comments = @article.comments.paginate(page: params[:page], per_page: 10)
   end
 
   def new

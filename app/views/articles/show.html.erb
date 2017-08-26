@@ -2,22 +2,13 @@
 
 <div class="row">
   <div class="justify col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-
     <div align="center">
       <%= image_tag(@article.image.url, class: "img-ratio") if @article.image? %>
     </div>
     <hr />
     <%= simple_format(@article.description) %>
     <hr />
-    <div class="pull-left">
-      <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
-      <small>
-        <div class="separator">
-          Created <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name.capitalize %>
-        </div>
-      </small>
-    </div>
-    <div class="pull-right well-footer">
+    <div class="btn-group">
       <%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
       <% if logged_in? %>
         <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" %>
@@ -28,6 +19,14 @@
                                                                 data: { confirm: "Are you sure?" },
                                                                 class: "btn btn-purple" %>
       <% end %>
+    </div>
+    <div class="pull-right">
+      <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+      <small>
+        <div class="separator">
+          Created <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name.capitalize %>
+        </div>
+      </small>
     </div>
   </div>
 </div>
@@ -51,8 +50,7 @@
   <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
   <h4 class="center">Are you new here? <%= link_to "Sign up", signup_path %></h4>
 <% end %>
-
-<hr />
+<br>
 
 <% if @article.comments.any? %>
   <div class="real-time-messages">

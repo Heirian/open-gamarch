@@ -26,7 +26,7 @@
       </div>
 
       <div class="form-group">
-        <div class="col-md-10 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-2 btn-group">
           <%= f.submit class: "btn btn-purple" %>
           <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" unless @article.new_record?%>
           <%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
