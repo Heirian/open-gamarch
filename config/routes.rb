@@ -14,11 +14,17 @@ Rails.application.routes.draw do
   end
 
   get '/signup', to: 'users#new'
-  resources :users, except: [:new]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  resources :relationships, only: [:create, :destroy]
 
   mount ActionCable.server => '/cable'
 end
