@@ -5,6 +5,14 @@
         <%= link_to gravatar_for(comment.user, size: 50), user_path(comment.user) %>
       </div>
       <div class="col-md-11">
+        <p>
+        <strong class="comment-user"><%= link_to comment.user.name, user_path(comment.user) %></strong>
+          <span class="quiet">
+            <small>
+              <%= time_ago_in_words(comment.created_at) %> ago
+            </small>
+          </span>
+        </p>
         <% if logged_in? && (current_user == comment.user || current_user.admin? || current_user == comment.article.user) %>
           <%= link_to (render 'shared/close'), article_comment_path(@article, comment), method: :delete,
                                                                   class: "pull-right comment-remover-button" %>
@@ -12,13 +20,7 @@
         <p>
           <%= comment.description %>
         </p>
-        <p>
-          <span class="quiet">
-            <small>
-              <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
-            </small>
-          </span>
-        </p>
+
       </div>
     </div>
   </div>

@@ -60,16 +60,10 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user && !current_user.admin?
-      flash[:danger] = "You can't change another users things"
-      redirect_to users_path
-    end
+    redirect_to(root_url) if current_user != @user && !current_user.admin?
   end
 
   def require_admin
-    if !current_user.admin?
-      flash[:danger] = "Only admin users can perfom that action"
-      redirect_to root_path
-    end
+    redirect_to(root_url) unless current_user.admin?
   end
 end

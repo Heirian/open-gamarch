@@ -116,12 +116,12 @@
   height: 250px;
 }
 
-.pagination .current {
-    background: #390046 none repeat scroll 0 0;
-    color: white;
-    text-shadow: 1px 1px 1px #171717;
-}
-
-.pagination .disabled {
-    color: #390046;
+.comment-user {
+  a {
+    color: black;
+    &:hover {
+      color: #390046;
+      text-decoration: none;
+    }
+  }
 }

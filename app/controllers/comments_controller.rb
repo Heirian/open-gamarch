@@ -8,10 +8,8 @@ class CommentsController < ApplicationController
     @comment = @article.comments.build(comments_params)
     @comment.user = current_user
     if @comment.save
-      ActionCable.server.broadcast "comments", render(partial: 'comments/comment', object: @comment)
-    else
-      flash[:danger] = "Comment wasn't created"
-      redirect_back(fallback_location: article_path(@article))
+      ActionCable.server.broadcast "comments",
+      render(partial: 'comments/comment', object: @comment)
     end
   end
 
