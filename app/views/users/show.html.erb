@@ -1,9 +1,10 @@
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-4 center">
-    <%= gravatar_for @user, size: 150 %>
+  <div class="col-sm-12 text-center">
+    <%= gravatar_for @user, size: 150, class: 'profile-avatar' %>
     <h3 class="user-name-profile"><%= @user.name.capitalize %></h3>
-    <section class="stats">
+    <h4 class="biografy">Biografia</h4>
+    <section class="stats ">
       <%= render 'follow_form', friend: @user if logged_in? %>
       <%= render 'shared/stats' %>
     </section>
@@ -11,38 +12,35 @@
 
 </div>
 
-<br>
+
 
 <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <header class="section_header text-center">
-                        <h2>Articles</h2>
-                    </header>
-
-                    <div class="row">
-                      <% @user_articles.each do |article| %>
-                        <div class="col-md-4 col-sm-6">
-                          <%= image_tag(article.image.url, class: "img-ratio") if article.image? %>
-                          <h4><%= link_to article.name, article_path(article) %></h4>
-                          <p><%= truncate(article.description, length: 150) %></p>
-                          <p>
-                            <span class="quiet">
-                              <small>Created <%= time_ago_in_words(article.created_at) %> ago</small>
-                            </span>
-                          </p>
-                          <% if logged_in? && current_user == article.user %>
-                            <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-purple" %>
-                            <%= link_to "Delete this article", article_path(article), method: :delete,
-                                                                                    data: { confirm: "Are you sure?" },
-                                                                                    class: "btn btn-purple" %>
-                          <% end %>
-                        </div>
-                      <% end %>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="row">
+    <div class="col-sm-12">
+      <header class="text-center">
+        <h2>Articles</h2>
+      </header>
+      <hr />
+      <div class="row">
+        <% @user_articles.each do |article| %>
+          <div class="col-md-4 col-sm-6">
+            <%= image_tag(article.image.url, class: "img-ratio") if article.image? %>
+            <h4><%= link_to article.name, article_path(article) %></h4>
+            <p><%= truncate(article.description, length: 150) %></p>
+            <p>
+              <span class="quiet">
+                <small>Created <%= time_ago_in_words(article.created_at) %> ago</small>
+              </span>
+            </p>
+            <% if logged_in? && current_user == article.user %>
+              <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-purple" %>
+              <%= link_to "Delete this article", article_path(article), method: :delete,
+                                                                      data: { confirm: "Are you sure?" },
+                                                                      class: "btn btn-purple" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
