@@ -9,6 +9,7 @@
       <p>
         <span class="quiet">
           <small><%= time_ago_in_words(article.created_at) %> ago
+            | <%= article.reading_time %> min read
             | <%= pluralize(article.comments.count, "comment") %>
           </small>
         </span>
@@ -19,6 +20,7 @@
         <div class="avatar-article-index-text">
           <%= link_to article.user.name.capitalize, user_path(article.user), class: "avatar-article-index-font" %>
           <%= pluralize(article.user.articles.count, "article") %>
+
         </div>
 
 

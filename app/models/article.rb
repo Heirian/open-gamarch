@@ -11,4 +11,11 @@ class Article < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  def word_count
+     self.description.split.size
+  end
+
+  def reading_time
+     (word_count / 180.0).ceil
+  end
 end

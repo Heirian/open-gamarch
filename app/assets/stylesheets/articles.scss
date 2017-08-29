@@ -33,6 +33,26 @@
   }
 }
 
+.inline {
+  display: inline-block;
+  .btn-purple {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  .btn-following {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  a {
+    color: black;
+    font-family: impact;
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
 .row .input-group .input-group-addon {
   background-color: white;
   padding-top: 0;

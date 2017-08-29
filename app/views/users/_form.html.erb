@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="form-group">
-        <div class="col-md-offset-8 col-md-4">
+        <div class="col-md-offset-8 col-md-4 btn-group">
           <%= f.submit(@user.new_record? ? "Create my account" : "Update my account",
                             class: "btn btn-purple") %>
           <%= link_to "Return to home", pages_home_path, class: "btn btn-purple" unless @user.new_record? %>

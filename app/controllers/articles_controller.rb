@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.paginate(page: params[:page], per_page: 10)
+    @user = @article.user
   end
 
   def new
