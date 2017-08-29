@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :bio, presence: true, allow_nil: true, length: { maximum: 255 }
   has_many :comments, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                 foreign_key: "follower_id",

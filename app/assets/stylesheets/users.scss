@@ -16,7 +16,6 @@
 
 .stats {
   overflow: auto;
-  margin-top: 10px;
   padding-left: 5px;
   a {
     padding: 0 10px;
@@ -55,4 +54,21 @@
 
 .profile-avatar {
   padding: -5;
+}
+
+.user-index {
+  height: 300px;
+}
+
+.user-name {
+  a {
+    color: black;
+    font-family: impact;
+    font-size: 20px;
+    padding: 5px;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 }

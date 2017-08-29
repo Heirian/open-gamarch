@@ -3,8 +3,8 @@
   <div class="col-sm-12 text-center">
     <%= gravatar_for @user, size: 150, class: 'profile-avatar' %>
     <h3 class="user-name-profile"><%= @user.name.capitalize %></h3>
-    <h4 class="biografy">Biografia</h4>
-    <section class="stats ">
+    <h4 class="biografy col-sm-6 col-md-offset-3"><%= @user.bio %></h4>
+    <section class="stats col-sm-12">
       <%= render 'follow_form', friend: @user if logged_in? %>
       <%= render 'shared/stats' %>
     </section>
