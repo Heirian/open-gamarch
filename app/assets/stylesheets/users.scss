@@ -32,7 +32,7 @@
   }
 }
 
-.user_avatars {
+.user-avatars {
   overflow: auto;
   margin-top: 10px;
   .gravatar {
@@ -45,4 +45,9 @@
 
 .users.follow {
   padding: 0;
+}
+
+.user-name-profile {
+  color: black;
+  font-family: impact;
 }
