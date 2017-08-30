@@ -4,13 +4,14 @@
     <div class="col-md-2">
       <%= link_to gravatar_for(@article.user, size: 100), user_path(@article.user) %>
     </div>
-    <h2 class="inline">
+    <p class="inline article-user-name">
         <%= link_to @article.user.name.capitalize, user_path(@article.user) %>
-    </h2>
+    </p>
     <div class="inline">
       <%= render 'users/follow_form' if logged_in? %>
     </div>
     <div>
+      <p><%= @article.user.bio %></p>
       <small>
         <%= time_ago_in_words(@article.created_at) %> ago
         | <%= @article.reading_time %> min read

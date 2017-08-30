@@ -16,9 +16,29 @@
 
 .stats {
   overflow: auto;
-  padding-left: 5px;
+  .btn {
+    margin-bottom: 10px;
+  }
   a {
     padding: 0 10px;
+    border-left: 1px solid gray;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.stats-profile {
+  overflow: auto;
+  .btn {
+    margin-bottom: 10px;
+  }
+  a {
     border-left: 1px solid gray;
     color: gray;
     &:first-child {
