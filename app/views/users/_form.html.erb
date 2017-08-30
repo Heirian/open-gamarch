@@ -35,6 +35,14 @@
         </div>
       </div>
       <div class="form-group">
+        <div class="col-md-4 col-md-offset-8">
+          <%= f.radio_button :gender, 'boy', checked: true %>
+          <%= label :gender, 'Boy' %>
+          <%= f.radio_button :gender, 'girl' %>
+          <%= label :gender, 'Girl' %>
+        </div>
+      </div>
+      <div class="form-group">
         <div class="col-md-offset-8 col-md-4">
           <%= render 'warning_terms' if @user.new_record? %>
         </div>
