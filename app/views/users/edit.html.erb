@@ -30,6 +30,16 @@
         </div>
       </div>
       <div class="form-group">
+        <div class="control-label col-md-8">
+          <%= f.label :birthday %>
+        </div>
+        <div class="col-md-4">
+          <div class="form-control">
+            <%= date_select :user, :birthday, start_year: 1905, end_year: 2017 , order: [:day, :month, :year] %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
         <div class="col-md-4 col-md-offset-8">
           <%= f.radio_button :gender, 'boy' %>
           <%= label :gender, 'Boy' %>

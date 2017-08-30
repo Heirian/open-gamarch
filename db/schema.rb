@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830022002) do
+ActiveRecord::Schema.define(version: 20170830031028) do
 
   create_table "articles", force: :cascade do |t|
     t.string "name"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170830022002) do
     t.string "remember_digest"
     t.string "bio"
     t.integer "gender", default: 0
+    t.date "birthday"
   end
 
 end
