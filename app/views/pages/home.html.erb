@@ -1,1 +1,21 @@
-<%= render 'shared/page_title', title: 'Home' %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info text-center">
+      <%= gravatar_for current_user %>
+      <h1><%= link_to current_user.name, current_user %></h1>
+      <%= current_user.bio %>
+      <div class="stats">
+        <%= render 'shared/stats' %>
+        <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
+      </div>
+    </section>
+
+      <div class="user-avatars">
+      </div>
+    
+  </aside>
+
+  <div class="col-md-8">
+    <%= render 'shared/feed' %>
+  </div>
+</div>

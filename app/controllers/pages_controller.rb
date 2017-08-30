@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   def home
-    redirect_to signup_path unless logged_in?
+    unless logged_in?
+      redirect_to signup_path
+    else
+      @feed_items = current_user.feed.paginate(page: params[:page])
+    end
   end
 
   def about

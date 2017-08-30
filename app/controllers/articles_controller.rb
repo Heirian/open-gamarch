@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article was created successfully!"
       redirect_to @article
     else
+      @feed_items = []
       render 'new'
     end
   end
