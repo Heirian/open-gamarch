@@ -21,6 +21,8 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   enum gender: { boy: 0, girl: 1 }
+  validates :gender, presence: true
+  validates :birthday, presence: true
 
   # Returns the hash digest of the given string.
   def User.digest(string)
