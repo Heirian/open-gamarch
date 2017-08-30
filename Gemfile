@@ -30,8 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+#will_paginate
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+
+#form select
+#gem 'bootstrap-datepicker-rails'
 
 # To use upload images
 gem 'carrierwave', '0.11.2'

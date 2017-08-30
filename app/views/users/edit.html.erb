@@ -34,9 +34,7 @@
           <%= f.label :birthday %>
         </div>
         <div class="col-md-4">
-          <div class="form-control">
-            <%= date_select :user, :birthday, start_year: 1905, end_year: 2017 , order: [:day, :month, :year] %>
-          </div>
+          <%= date_select :user, :birthday, start_year: 1905, end_year: 2017 , order: [:day, :month, :year] %>
         </div>
       </div>
       <div class="form-group">
