@@ -2,16 +2,16 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="col-md-2">
-      <%= link_to gravatar_for(@article.user, size: 100), user_path(@article.user) %>
+      <%= link_to gravatar_for(@article.user, size: 100, class: 'gravatar'), user_path(@article.user) %>
     </div>
-    <p class="inline article-user-name">
+    <div class="inline article-user-name">
         <%= link_to @article.user.name.capitalize, user_path(@article.user) %>
-    </p>
+    </div>
     <div class="inline">
       <%= render 'users/follow_form' if logged_in? %>
     </div>
     <div>
-      <p><%= @article.user.bio %></p>
+      <div><%= @article.user.bio %></div>
       <small>
         <%= time_ago_in_words(@article.created_at) %> ago
         | <%= @article.reading_time %> min read

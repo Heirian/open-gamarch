@@ -27,3 +27,13 @@
     }
   }
 }
+
+.btn-login {
+  color: #fff;
+  background-color: #390046;
+  outline: 1px solid #fff;
+  &:hover {
+    color: #390046;
+    background-color: #fff;
+  }
+}
