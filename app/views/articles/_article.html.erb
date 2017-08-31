@@ -1,13 +1,26 @@
-<li id="article-<%= article.id %>" class="justify">
-  <%= link_to gravatar_for(article.user, size: 50, class: 'gravatar-feed'), article.user %>
-  <span class="user"><%= link_to article.user.name, article.user %></span>
-  <span class="timestamp">
-    <%= time_ago_in_words(article.created_at) %> ago.
-  </span>
-  <div>
-    <%= link_to article.name, article_path(article) %>
+<li id="article-<%= article.id %>" class="justify col-sm-12 articler-container article-content">
+  <div class="col-sm-1 article-home-proprety">
+    <%= link_to gravatar_for(article.user, size: 50, class: 'gravatar-feed'), article.user %>
   </div>
-  <div><%= truncate(article.description, length: 500) %></div>
+  <div class="col-sm-11 article-home-proprety">
+    <span class="users-home-name inline-home article-home-ajust">
+      <%= link_to article.user.name, article.user %>
+    </span>
+    <small class="timestamp inline">
+      <%= time_ago_in_words(article.created_at) %> ago
+    </small>
+    <div class="article-home-ajust">
+      <%= link_to article.name, article_path(article) %>
+    </div>
+  </div>
+
+  <div class="col-sm-12 article-home-description">
+    <%= image_tag(article.image.url, class: "img-ratio article-home-cover") if article.image? %>
+
+    <div>
+      <%= truncate(article.description, length: 500) %>
+    </div>
+  </div>
 
 </li>
 <br>

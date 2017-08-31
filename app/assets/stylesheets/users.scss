@@ -122,7 +122,8 @@
   position: relative;
   display: inline-block;
   margin:5px;
-  border: 0.5px solid #390046;
+  border: 0.5px solid rgba(0, 0, 0, 0.125);
+  background-color: #fff;
 }
 
 .profile-content {

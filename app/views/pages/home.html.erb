@@ -1,21 +1,24 @@
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info text-center">
-      <%= gravatar_for current_user %>
-      <h1><%= link_to current_user.name, current_user %></h1>
-      <%= current_user.bio %>
-      <div class="stats">
-        <%= render 'shared/stats' %>
-        <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
-      </div>
-    </section>
+  <div class="col-md-12 col-sm-12">
+    <aside class="col-md-3 col-sm-12">
+      <section class="article-content home-cover">
+          <%= image_tag(current_user.image, class: "cover-home-ratio") if current_user.image? %>
+          <div class="home-content">
+            <%= gravatar_for(current_user, size: 100, class: 'gravatar') %>
+            <div>
+              <%= link_to current_user.name, current_user %>
+            </div>
+            <%= current_user.bio %>
+            <div class="stats">
+              <%= render 'shared/stats' %>
+              <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
+            </div>
+          </div>
+      </section>
+    </aside>
 
-      <div class="user-avatars">
-      </div>
-    
-  </aside>
-
-  <div class="col-md-8">
-    <%= render 'shared/feed' %>
+    <div class="col-md-6 col-sm-12">
+      <%= render 'shared/feed' %>
+    </div>
   </div>
 </div>
