@@ -24,6 +24,9 @@ class User < ApplicationRecord
   validates :gender, presence: true
   validates :birthday, presence: true
 
+  mount_uploader :avatar, AvatarUploader
+  validate  :avatar_size
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -76,6 +79,13 @@ class User < ApplicationRecord
     # Converts email to all lower-case.
     def downcase_email
       self.email = email.downcase
+    end
+
+    # Validates the size of an uploaded picture.
+    def avatar_size
+      if avatar.size > 2.megabytes
+        errors.add(:avatar, "size should be less than 2MB")
+      end
     end
 
 end

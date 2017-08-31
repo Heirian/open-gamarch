@@ -4,6 +4,7 @@
 <div class="row">
   <div class="col-md-12">
     <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+
       <div class="form-group">
         <div class="control-label col-md-8">
           <%= f.label :name %>
@@ -12,6 +13,7 @@
           <%= f.text_field :name, class: "form-control", placeholder: "Enter your name" %>
         </div>
       </div>
+
       <div class="form-group">
         <div class="control-label col-md-8">
           <%= f.label :email %>
@@ -21,6 +23,7 @@
           <small>We'll never share your email with anyone else.</small>
         </div>
       </div>
+
       <div class="form-group">
         <div class="control-label col-md-8">
           <%= f.label :bio %>
@@ -29,6 +32,7 @@
           <%= f.text_area :bio, class: "form-control", placeholder: "Enter your bio..." %>
         </div>
       </div>
+
       <div class="form-group">
         <div class="control-label col-md-8">
           <%= f.label :birthday %>
@@ -37,6 +41,7 @@
           <%= date_select :user, :birthday, start_year: 1905, end_year: 2017 , order: [:day, :month, :year] %>
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-md-4 col-md-offset-8">
           <%= f.radio_button :gender, 'boy' %>
@@ -45,6 +50,18 @@
           <%= label :gender, 'Girl' %>
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="control-label col-md-8">
+          <%= f.label :avatar %>
+        </div>
+        <div class="col-md-4">
+          <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'user-avatar' %>
+          <div class="warning">
+          </div>
+        </div>
+      </div>
+
       <div class="form-group">
         <div class="col-md-offset-8 col-md-4 btn-group">
           <%= f.submit "Update my account",
@@ -55,3 +72,12 @@
     <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $('#user-avatar').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 2) {
+      $(".warning").html('<span>Maximum avatar size is 2MB. Please choose a smaller file.</span>');
+    }
+  });
+</script>
