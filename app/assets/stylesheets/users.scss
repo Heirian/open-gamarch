@@ -1,6 +1,12 @@
 .gravatar {
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+
+.gravatar-feed {
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 .listing {
@@ -51,6 +57,10 @@
   }
 }
 
+.follow {
+  padding-bottom: 10px;
+}
+
 .user-avatars {
   overflow: auto;
   margin-top: 10px;
@@ -74,6 +84,9 @@
 
 .profile-avatar {
   padding: -5;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 .user-index {
@@ -93,6 +106,28 @@
   }
 }
 
-.warning {
-  color: red;
+.form-group {
+  .warning-avatar {
+    color: red;
+  }
+  .warning-cover {
+    color: red;
+  }
+}
+
+.profile-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 430px;
+  position: relative;
+  display: inline-block;
+  margin:5px;
+  border: 0.5px solid #390046;
+}
+
+.profile-content {
+  top:70%;
+  margin-top: -170px;
+  position: absolute;
+  display:block;
 }

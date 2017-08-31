@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  validates :bio, presence: true, allow_nil: true, length: { maximum: 255 }
+  validates :bio, length: { maximum: 255 }
   has_many :comments, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                 foreign_key: "follower_id",
@@ -26,6 +26,9 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
   validate  :avatar_size
+
+  mount_uploader :image, ImageUploader
+  validate :image_size
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -81,10 +84,17 @@ class User < ApplicationRecord
       self.email = email.downcase
     end
 
-    # Validates the size of an uploaded picture.
+    # Validates the size of an uploaded avatar.
     def avatar_size
       if avatar.size > 2.megabytes
-        errors.add(:avatar, "size should be less than 2MB")
+        errors.add(:avatar, "size after resize process should be less than 2MB")
+      end
+    end
+
+    # Validates the size of an uploaded image.
+    def image_size
+      if image.size > 2.megabytes
+        errors.add(:image, "Cover size after resize process should be less than 2MB")
       end
     end
 

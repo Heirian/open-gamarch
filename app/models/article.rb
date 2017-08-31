@@ -10,6 +10,7 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   mount_uploader :image, ImageUploader
+  validate :image_size
 
   def word_count
      self.description.split.size
@@ -17,5 +18,14 @@ class Article < ApplicationRecord
 
   def reading_time
      (word_count / 180.0).ceil
+  end
+
+  private
+
+  # Validates the size of an uploaded image.
+  def image_size
+    if image.size > 2.megabytes
+      errors.add(:image, "Cover size after resize process should be less than 2MB")
+    end
   end
 end

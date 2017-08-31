@@ -1,5 +1,5 @@
 <li id="article-<%= article.id %>" class="justify">
-  <%= link_to gravatar_for(article.user, size: 50), article.user %>
+  <%= link_to gravatar_for(article.user, size: 50, class: 'gravatar-feed'), article.user %>
   <span class="user"><%= link_to article.user.name, article.user %></span>
   <span class="timestamp">
     <%= time_ago_in_words(article.created_at) %> ago.
