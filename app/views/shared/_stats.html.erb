@@ -3,10 +3,10 @@
   <div class="col-sm-12">
     <div class="stats">
       <div class="col-sm-6">
-        Following
+        <%= link_to 'Following', following_user_path(@user) %>
       </div>
       <div class="col-sm-6 followers-border">
-        Followers
+        <%= link_to 'Followers', followers_user_path(@user) %>
       </div>
     </div>
   </div>
@@ -14,10 +14,10 @@
   <div class="col-sm-12">
     <div class="stats">
       <div class="col-sm-6">
-        <%= link_to (@user.following.count), following_user_path(@user) %>
+        <%= @user.following.count %>
       </div>
       <div class="col-sm-6 followers-border">
-        <%= link_to (@user.followers.count), followers_user_path(@user) %>
+        <%= @user.followers.count %>
       </div>
     </div>
   </div>
