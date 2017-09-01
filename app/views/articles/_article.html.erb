@@ -8,6 +8,7 @@
     </span>
     <small class="timestamp inline">
       <%= time_ago_in_words(article.created_at) %> ago
+      | <%= article.reading_time %> min read
     </small>
     <div class="article-home-ajust">
       <%= link_to article.name, article_path(article) %>
@@ -18,7 +19,7 @@
     <%= image_tag(article.image.url, class: "img-ratio article-home-cover") if article.image? %>
 
     <div>
-      <%= truncate(article.description, length: 500) %>
+      <%= truncate(article.description, length: 255) %>
     </div>
   </div>
 
