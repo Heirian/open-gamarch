@@ -4,6 +4,7 @@ class PagesController < ApplicationController
       redirect_to signup_path
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
+      @comment = Comment.new
     end
   end
 

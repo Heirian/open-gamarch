@@ -74,11 +74,15 @@ body {
   width: auto
 }
 
-.nav-margin {
+.nav-margin-logged {
   margin-bottom: 50px;
 }
 
-.fix-positions {
+.nav-margin-login {
+  margin-bottom: 105px;
+}
+
+.fix-position {
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;

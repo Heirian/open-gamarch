@@ -23,5 +23,22 @@
     </div>
   </div>
 
+  <% if logged_in? %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= form_for([article, @comment], remote: true, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+          <div>
+            <div class="input-group col-md-11 col-md-offset-1">
+              <%= link_to gravatar_for(current_user, size: 30, class: 'gravatar-comment-home'), user_path(current_user), class:"input-group-addon" %>
+              <%= f.text_field :description, class: "form-control comment-home-form", placeholder: "Write a comment..." %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
+    <h4 class="center">Are you new here? <%= link_to "Sign up", signup_path %></h4>
+  <% end %>
 </li>
 <br>
