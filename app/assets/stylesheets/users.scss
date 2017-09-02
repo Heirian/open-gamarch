@@ -32,14 +32,15 @@
   }
   a {
     padding: 0 10px;
-    border-left: 1px solid gray;
-    color: gray;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
     &:first-child {
       padding-left: 0;
-      border: 0;
     }
     &:hover {
       text-decoration: none;
+      color: inherit;
     }
   }
 }

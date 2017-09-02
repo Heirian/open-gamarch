@@ -17,10 +17,29 @@
             <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
           </div>
       </section>
+      <section class="article-content home-cover">
+          <div class="center home-user-name">
+            <%= link_to 'Communities', current_user %>
+          </div>
+      </section>
     </aside>
 
     <div class="col-md-6 col-sm-12 home-feed">
       <%= render 'shared/feed' %>
     </div>
+
+    <aside class="col-md-3 col-sm-12">
+      <section class="article-content home-cover">
+          <div class="center home-user-name">
+            <%= link_to 'Featured', current_user %>
+          </div>
+      </section>
+
+      <section class="article-content home-cover">
+          <div class="center home-user-name">
+            <%= link_to 'Sponsored', current_user %>
+          </div>
+      </section>
+    </aside>
   </div>
 </div>
