@@ -10,9 +10,13 @@
   </head>
 
   <body>
+    <% if logged_in? %>
     <div class="nav-margin">
       <%= render 'layouts/navigation' %>
     </div>
+    <% else %>
+      <%= render 'layouts/navigation' %>
+    <% end %>
 
     <%= render 'layouts/messages' %>
 
