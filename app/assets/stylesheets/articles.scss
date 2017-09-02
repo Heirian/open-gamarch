@@ -36,7 +36,23 @@
 .article-user-name {
   font-size: 30px;
   font-family: impact;
+  a {
+    color: black;
+    font-family: impact;
+    &:hover {
+      color: inherit;
+    }
+  }
 }
+
+.article-avatar {
+  padding: -5;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(0, 0, 0, 0.125);
+}
+
 .inline {
   display: inline-block;
   .btn-purple {
@@ -48,11 +64,8 @@
     margin-bottom: 15px;
   }
   a {
-    color: black;
-    font-family: impact;
     &:hover {
       text-decoration: none;
-      color: inherit;
     }
   }
 }
@@ -62,8 +75,12 @@
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+.biografy-show {
+  margin-top: -12px;
+}
+
 .row .input-group .input-group-addon {
-  background-color: #fff;
+  background-color: #f5f8fa;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 4px;

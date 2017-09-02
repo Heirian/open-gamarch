@@ -85,9 +85,10 @@
 
       <div class="form-group">
         <div class="col-md-offset-8 col-md-4 btn-group">
-          <%= f.submit "Update my account",
+          <%= f.submit "Update my Account",
                             class: "btn btn-purple" %>
-          <%= link_to "Return to home", pages_home_path, class: "btn btn-purple" unless @user.new_record? %>
+          <%= link_to "Go to Profile", user_path(@user), class: "btn btn-purple" unless @user.new_record? %>
+          <%= link_to "Go to Home", root_path, class: "btn btn-purple" unless @user.new_record? %>
         </div>
       </div>
     <% end %>

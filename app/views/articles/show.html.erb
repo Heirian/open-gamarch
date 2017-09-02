@@ -2,16 +2,20 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="col-md-2">
-      <%= link_to gravatar_for(@article.user, size: 100, class: 'gravatar'), user_path(@article.user) %>
+      <%= link_to gravatar_for(@article.user, size: 100, class: 'article-avatar article-avatar-second-border'), user_path(@article.user) %>
     </div>
     <div class="inline article-user-name">
         <%= link_to @article.user.name.capitalize, user_path(@article.user) %>
     </div>
     <div class="inline">
-      <%= render 'users/follow_form' if logged_in? %>
+      <% if current_user == @article.user %>
+        <%= link_to 'Edit Profile', edit_user_path(@article.user), class: 'btn btn-purple' %>
+      <% else %>
+        <%= render 'users/follow_form' if logged_in? %>
+      <% end %>
     </div>
     <div>
-      <div><%= @article.user.bio %></div>
+      <div class="biografy-show"><%= @article.user.bio %></div>
       <small>
         <%= time_ago_in_words(@article.created_at) %> ago
         | <%= @article.reading_time %> min read
@@ -35,7 +39,7 @@
     <hr />
     <%= simple_format(@article.description) %>
     <hr />
-    <div class="btn-group">
+    <div class="btn-group btn-article-show-adjust">
       <%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
       <% if logged_in? %>
         <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" %>
@@ -58,7 +62,7 @@
       <%= form_for([@article, @comment], remote: true, :html => { class: "form-horizontal", role: "form" }) do |f| %>
         <div>
           <div class="input-group input-group-lg col-md-10 col-md-offset-1">
-            <%= link_to gravatar_for(current_user, size: 50), user_path(current_user), class:"input-group-addon" %>
+            <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user), class:"input-group-addon" %>
             <%= f.text_field :description, class: "form-control comment-form", placeholder: "Write a comment..." %>
           </div>
         </div>

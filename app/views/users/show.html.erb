@@ -17,7 +17,7 @@
 
               <div class="btn-float col-md-1 col-sm-1">
                 <% if current_user == @user %>
-                  <%= link_to 'Edit profile', edit_user_path(@user), class: 'btn btn-purple' %>
+                  <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-purple' %>
                 <% else %>
                   <%= render 'follow_form' if logged_in? %>
                 <% end %>
