@@ -145,3 +145,17 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.row .input-group .input-group-addon-feed {
+  background-color: #fff;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+.row .input-group {
+  .comment-home-form {
+    height: 30px;
+    width: 98%;
+  }
+}

@@ -67,7 +67,7 @@
       <%= form_for([@article, @comment], remote: true, :html => { class: "form-horizontal", role: "form" }) do |f| %>
         <div>
           <div class="input-group input-group-lg col-md-10 col-md-offset-1">
-            <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user), class:"input-group-addon" %>
+            <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user), class:"input-group-addon input-group-addon-article" %>
             <%= f.text_field :description, class: "form-control comment-form", placeholder: "Write a comment..." %>
           </div>
         </div>
