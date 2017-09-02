@@ -77,3 +77,16 @@ body {
 .nav-margin {
   margin-bottom: 50px;
 }
+
+.fix-positions {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+
+.fix-position-top {
+  top: 50px;
+  bottom: auto;
+}

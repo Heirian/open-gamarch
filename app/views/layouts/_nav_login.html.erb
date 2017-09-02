@@ -1,0 +1,35 @@
+
+  <nav class="navbar navbar-default col-md-12">
+    <div class="container-fluid col-md-offset-2">
+        <div class="row">
+
+          <div class="navbar-header">
+            <%= link_to 'Gamarch', root_path, class: "navbar-brand", id: 'logo' %>
+          </div>
+
+          <div class="col-md-8">
+            <%= form_for(:session, :html => { class: "form-inline navbar-right", role: "form" }, url: login_path) do |f| %>
+              <div class="form-group form-login">
+                <div class="col-md-5">
+                  <%= f.text_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
+                </div>
+              </div>
+              <div class="form-group form-login">
+                <div class="col-md-5">
+                  <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+                </div>
+              </div>
+              <div class="form-group form-login">
+                <div class="col-md-2">
+                  <%= f.submit "Log in", class: "btn btn-login" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="forgot-account">
+              <%= link_to 'Forgot account?', root_path, class: "" %>
+          </div>
+        </div>
+    </div><!-- /.container-fluid -->
+  </nav>

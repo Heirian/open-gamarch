@@ -11,13 +11,12 @@
 
   <body>
     <% if logged_in? %>
-    <div class="nav-margin">
-      <%= render 'layouts/navigation' %>
-    </div>
+      <div class="nav-margin">
+        <%= render 'layouts/nav_logged' %>
+      </div>
     <% else %>
-      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/nav_login' %>
     <% end %>
-
     <%= render 'layouts/messages' %>
 
     <div class="container">

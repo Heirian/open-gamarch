@@ -1,0 +1,66 @@
+
+  <nav class="navbar navbar-default navbar-fixed-top col-md-12">
+    <div class="container-fluid col-md-offset-2">
+      <div class="row">
+        <div class="navbar-header">
+            <%= link_to (render 'shared/logo'), root_path, class: "navbar-brand" %>
+        </div>
+        <div class="collapse navbar-collapse">
+
+            <form class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right col-md-7">
+              <li>
+                <%= link_to "Write a article", new_article_path, class: "link-bar", title: "Write something new" %>
+              </li>
+
+              <li>
+                <%= link_to (render 'shared/articles'), articles_path %>
+              </li>
+
+              <li>
+                <%= link_to (render 'shared/gamepad'), users_path %>
+              </li>
+
+              <li>
+                <%= link_to (render 'shared/community'), users_path %>
+              </li>
+
+              <li>
+                <%= link_to (render 'shared/explore'), users_path %>
+              </li>
+
+              <li>
+                <%= link_to (gravatar_for current_user, size: 30, class: 'gravatar'), user_path(current_user), id: "gravatar_nav", title: "Profile" %>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <%= render 'shared/gears'%>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to (render 'shared/edit'), edit_user_path(current_user) %>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <%= link_to (render 'shared/pass'), edit_user_pass_path(current_user) %>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <%= link_to (render 'shared/logout'), logout_path, method: :delete %>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </div><!-- /.container-fluid -->
+</nav>

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12 col-sm-12">
-    <aside class="col-md-3 col-sm-12">
+    <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
       <section class="article-content home-cover">
           <%= image_tag(current_user.image, class: "cover-home-ratio") if current_user.image? %>
           <div class="home-content">
@@ -28,7 +28,7 @@
       <%= render 'shared/feed' %>
     </div>
 
-    <aside class="col-md-3 col-sm-12">
+    <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
       <section class="article-content home-cover">
           <div class="center home-user-name">
             <%= link_to 'Featured', current_user %>
