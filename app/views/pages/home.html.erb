@@ -4,20 +4,22 @@
       <section class="article-content home-cover">
           <%= image_tag(current_user.image, class: "cover-home-ratio") if current_user.image? %>
           <div class="home-content">
-            <%= gravatar_for(current_user, size: 100, class: 'gravatar') %>
-            <div>
+            <%= link_to gravatar_for(current_user, size: 100, class: 'gravatar'), current_user %>
+            <div class="home-user-name">
               <%= link_to current_user.name, current_user %>
             </div>
-            <%= current_user.bio %>
-            <div class="stats">
-              <%= render 'shared/stats' %>
-              <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
+            <div class="col-md-12 col-sm-12">
+              <%= current_user.bio %>
             </div>
+            <div class="home-stats col-md-12 col-sm-12">
+              <%= render 'shared/stats' %>
+            </div>
+            <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
           </div>
       </section>
     </aside>
 
-    <div class="col-md-6 col-sm-12">
+    <div class="col-md-6 col-sm-12 home-feed">
       <%= render 'shared/feed' %>
     </div>
   </div>
