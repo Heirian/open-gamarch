@@ -11,11 +11,11 @@ class SessionsController < ApplicationController
       log_in user
       remember user
       cookies.signed[:user_id] = user.id
-      flash[:success] = "You have successfully logged in!"
-      redirect_to user
+      flash[:success] = "Welcome, #{current_user.name}. You have successfully logged in!"
+      redirect_to root_path
     else
-      flash.now[:danger] = "Invalid email/password combination"
-      render 'new'
+      flash[:danger] = "Invalid email/password combination"
+      redirect_back(fallback_location: root_path)
     end
   end
 
