@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, only: [:edit, :update, :destroy]
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :pass]
+  before_action :require_user, only: [:edit, :update, :destroy, :pass]
+  before_action :require_same_user, only: [:edit, :update, :destroy, :pass]
   before_action :require_admin, only: [:destroy]
 
   def index
@@ -61,6 +61,9 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def pass
   end
 
   private

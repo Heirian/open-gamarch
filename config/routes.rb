@@ -14,11 +14,15 @@ Rails.application.routes.draw do
   end
 
   get '/signup', to: 'users#new'
+
+
+  get '/users/pass/:id', to: 'users#pass', :as => 'edit_user_pass'
   resources :users do
     member do
       get :following, :followers
     end
   end
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

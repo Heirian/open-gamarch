@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default col-md-12">
+<nav class="navbar navbar-default navbar-fixed-top col-md-12">
   <div class="container-fluid col-md-offset-2">
     <% if logged_in? %>
       <div class="navbar-header">
@@ -44,6 +44,10 @@
             <ul class="dropdown-menu">
               <li>
                 <%= link_to (render 'shared/edit'), edit_user_path(current_user) %>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <%= link_to (render 'shared/pass'), edit_user_pass_path(current_user) %>
               </li>
               <li role="separator" class="divider"></li>
               <li>
