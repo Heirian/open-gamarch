@@ -2,7 +2,9 @@
   <ol class="listing" id="my-feed">
     <%= render @feed_items %>
   </ol>
-  <div id="infinite-scrolling" align="center">
-    <%= will_paginate @feed_items %>
-  </div>
+  <% if @feed_items.next_page %>
+    <div id="infinite-scrolling" align="center">
+      <%= will_paginate @feed_items %>
+    </div>
+  <% end %>
 <% end %>
