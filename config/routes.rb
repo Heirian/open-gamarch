@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/starting', to: 'pages#starting'
   get '/cookie', to: 'pages#cookie'
 
+  get '/comments_with_button', to: 'article#comments_with_button', as: 'comments_with_button'
+
   resources :articles do
     resources :comments, only: [:create, :destroy]
   end
@@ -22,7 +24,6 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

@@ -13,5 +13,8 @@
 //= require rails-ujs
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery.history.js
+//= require pagination
+//= require loadmore
 //= require turbolinks
 //= require_tree .
