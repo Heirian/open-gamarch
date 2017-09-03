@@ -25,8 +25,17 @@
     </aside>
 
     <div class="col-md-6 col-sm-12 home-feed">
-      <%= render 'shared/feed' %>
+      <% if @feed_items.any? %>
+        <ol class="listing" id="my-feed">
+          <%= render @feed_items %>
+        </ol>
+        <div id="infinite-scrolling" align="center">
+          <%= will_paginate @feed_items %>
+        </div>
+      <% end %>
     </div>
+
+
 
     <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
       <section class="article-content home-cover">

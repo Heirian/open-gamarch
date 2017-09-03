@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   belongs_to :user
   validates :user_id, presence: true
 
-  default_scope -> { order(updated_at: :desc) }
+  default_scope -> { order(created_at: :desc) }
 
   has_many :comments, dependent: :destroy
 
@@ -18,6 +18,10 @@ class Article < ApplicationRecord
 
   def reading_time
      (word_count / 180.0).ceil
+  end
+
+  def timestamp
+    created_at.strftime('%d %B %Y at %H:%M')
   end
 
   private

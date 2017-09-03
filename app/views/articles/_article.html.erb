@@ -7,7 +7,7 @@
       <%= link_to article.user.name, article.user %>
     </span>
     <small class="timestamp inline">
-      <%= time_ago_in_words(article.created_at) %> ago
+      <%= article.timestamp %>
       | <%= article.reading_time %> min read
     </small>
     <div class="article-home-ajust">
@@ -40,7 +40,6 @@
             <%= f.text_field :description, class: "form-control comment-home-form", placeholder: "Write a comment..." %>
           </div>
       <% end %>
-
 
   <% else %>
     <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
