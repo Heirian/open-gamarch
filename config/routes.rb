@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "pages#home"
   get "pages/home", to: 'pages#home'
   get '/help', to: 'pages#help'
@@ -32,4 +33,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   mount ActionCable.server => '/cable'
+  mount Ckeditor::Engine => '/ckeditor'
 end

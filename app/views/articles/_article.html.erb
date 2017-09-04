@@ -18,9 +18,11 @@
   <div class="col-sm-12 article-home-description">
     <%= image_tag(article.image.url, class: "img-ratio article-home-cover") if article.image? %>
 
-    <div>
-      <%= truncate(article.description, length: 255) %>
+    <div class="article-home-description-proprety">
+      <%= truncate(simple_format(article.description), escape: false, length: 255) %>
     </div>
+
+
     <% if article.comments.count > 2 %>
     <div >
       <%= link_to "View all comments", article_path(article, anchor: "wall"), class: 'btn btn-purple btn-view-all-comments', target: '_blank' %>

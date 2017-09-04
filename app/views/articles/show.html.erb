@@ -35,7 +35,7 @@
 
 <div class="row">
 
-  <div class="justify col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 article-show">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 article-show">
     <%= render 'shared/page_title', title: @article.name, class: 'article-show' %>
     <hr />
     <div align="center">
@@ -88,3 +88,22 @@
   <div class="real-time-messages">
   </div>
 <% end %>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $(window).load(function(){
+      // Remove the # from the hash, as different browsers may or may not include it
+      var hash = location.hash.replace('#','');
+
+      if(hash == 'wall'){
+
+         // Clear the hash in the URL
+         // location.hash = '';   // delete front "//" if you want to change the address bar
+          $('html, body').animate({ scrollTop: $('#my-comments').offset().top}, 1000);
+
+         }
+     });
+  });
+</script>

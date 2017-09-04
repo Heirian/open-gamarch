@@ -36,6 +36,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 
 gem 'bootstrap-filestyle-rails'
 
+gem 'ckeditor', '4.2.4'
 #form select
 #gem 'bootstrap-datepicker-rails'
 
