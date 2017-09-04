@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 comment-home-proprety">
 
       <div class="col-md-1">
         <%= link_to gravatar_for(comment_feed.user, size: 30, class: 'gravatar'), user_path(comment_feed.user) %>
@@ -18,7 +18,7 @@
           </span>
         </p>
 
-        <p>
+        <p class="comment-home-proprety-content">
           <%= comment_feed.description %>
         </p>
 

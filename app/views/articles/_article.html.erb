@@ -23,7 +23,7 @@
     </div>
     <% if article.comments.count > 2 %>
     <div >
-      <%= link_to "View all comments", article_path(article), class: 'btn btn-purple btn-view-all-comments' %>
+      <%= link_to "View all comments", article_path(article, anchor: "wall"), class: 'btn btn-purple btn-view-all-comments', target: '_blank' %>
     </div>
     <% end %>
   </div>

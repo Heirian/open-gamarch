@@ -17,3 +17,20 @@
 //= require loadmore
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+
+  $(window).load(function(){
+    // Remove the # from the hash, as different browsers may or may not include it
+    var hash = location.hash.replace('#','');
+
+    if(hash == 'wall'){
+
+       // Clear the hash in the URL
+       // location.hash = '';   // delete front "//" if you want to change the address bar
+        $('html, body').animate({ scrollTop: $('#my-comments').offset().top}, 1000);
+
+       }
+   });
+});
