@@ -1,3 +1,14 @@
-<% comments_feed.each do |comment| %>
-  <%= render(partial: 'comments/comment_feed', object: comment) %>
-<% end %>
+
+
+<div class="row">
+
+    <div class="col-sm-12">
+      <% comments_feed.each_with_index do |comment, index| %>
+        <% if index < 2 %>
+          <%= render(partial: 'comments/comment_feed', object: comment) %>
+        <% else %>
+          <% break %>
+        <% end %>
+      <% end %>
+    </div>
+</div>

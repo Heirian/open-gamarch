@@ -21,29 +21,37 @@
     <div>
       <%= truncate(article.description, length: 255) %>
     </div>
+    <% if article.comments.count > 2 %>
+    <div >
+      <%= link_to "View all comments", article_path(article), class: 'btn btn-purple btn-view-all-comments' %>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-sm-12 comments-feed-proprety">
+    <% if article.comments.any? %>
+      <div class="real-time-messages">
+        <%= render partial: 'comments/comments_feed', object: article.comments %>
+      </div>
+    <% else %>
+      <div class="real-time-messages">
+      </div>
+    <% end %>
   </div>
 
-  <% if article.comments.any? %>
-    <div class="real-time-messages">
-      <%= render partial: 'comments/comments_feed', object: article.comments %>
-    </div>
-  <% else %>
-    <div class="real-time-messages">
-    </div>
-  <% end %>
+  <div class="col-sm-12 commenter-home-proprety">
+    <% if logged_in? %>
 
-  <% if logged_in? %>
+        <%= form_for([article, @comment], remote: true, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+            <div class="input-group">
+              <%= link_to gravatar_for(current_user, size: 30, class: 'gravatar'), user_path(current_user), class:"input-group-addon input-group-addon-feed" %>
+              <%= f.text_field :description, class: "form-control comment-home-form", placeholder: "Write a comment..." %>
+            </div>
+        <% end %>
 
-      <%= form_for([article, @comment], remote: true, :html => { class: "form-horizontal", role: "form" }) do |f| %>
-          <div class="input-group col-sm-12">
-            <%= link_to gravatar_for(current_user, size: 30, class: 'gravatar'), user_path(current_user), class:"input-group-addon input-group-addon-feed" %>
-            <%= f.text_field :description, class: "form-control comment-home-form", placeholder: "Write a comment..." %>
-          </div>
-      <% end %>
-
-  <% else %>
-    <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
-    <h4 class="center">Are you new here? <%= link_to "Sign up", signup_path %></h4>
-  <% end %>
+    <% else %>
+      <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
+      <h4 class="center">Are you new here? <%= link_to "Sign up", signup_path %></h4>
+    <% end %>
+  </div>
 </li>
 <br>
