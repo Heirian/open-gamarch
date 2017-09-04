@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require pagination
 //= require loadmore
+//= require bootstrap-filestyle
 //= require turbolinks
 //= require_tree .
 

@@ -7,9 +7,6 @@
       <div class="form-group">
         <div class="col-md-8 col-md-offset-2">
           <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'inputfile' %>
-          <span class="custom-file-control">
-            <p class="custom-file-control-label center"><i class="fa fa-file-image-o" aria-hidden="true"></i> Select cover image</p>
-          </span>
         </div>
       </div>
 
@@ -21,7 +18,7 @@
 
       <div class="form-group">
         <div class="col-md-8 col-md-offset-2">
-          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Show us your ability..." %>
+          <%= f.text_area :description, rows: 25, class: "form-control", placeholder: "Show us your ability..." %>
         </div>
       </div>
 
@@ -29,10 +26,14 @@
         <div class="col-md-10 col-md-offset-2 btn-group">
           <%= f.submit class: "btn btn-purple" %>
           <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" unless @article.new_record?%>
-          <%= link_to "Return to articles listing", articles_path, class: "btn btn-purple" %>
+          <%= link_to "Seek new articles", articles_path, class: "btn btn-purple" %>
           <%= link_to "Delete this article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple" unless @article.new_record? %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(".inputfile").filestyle({buttonBefore: true, placeholder: "Select article's cover - Max height is 250 pixels"});
+</script>
