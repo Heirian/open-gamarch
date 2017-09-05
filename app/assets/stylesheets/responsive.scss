@@ -1,0 +1,35 @@
+
+
+@media only screen and (min-width: 1000px) {
+  .home-feed {
+    margin-left: -15px;
+  }
+  .fix-position {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+  }
+  .fix-position-top {
+    top: 50px;
+    bottom: auto;
+  }
+  .home-stats {
+    padding-top: 5px;
+    margin-left: -12px;
+    padding-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+  .home-stats {
+    margin-left: -42px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .home-cover {
+    height: 330px;
+  }
+}
