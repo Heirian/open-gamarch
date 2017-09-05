@@ -365,13 +365,10 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 	if ( hasFileBrowser ) {
 		srcBoxChildren.push( {
 			type: 'button',
-			id: 'browse',
+			id: 'browse', //remove button to server - ga
 			// v-align with the 'txtUrl' field.
 			// TODO: We need something better than a fixed size here.
-			style: 'display:inline-block;margin-top:14px;',
-			align: 'center',
-			label: editor.lang.common.browseServer,
-			hidden: true,
+			class: 'hidden',
 			filebrowser: 'info:src'
 		} );
 	}
@@ -444,6 +441,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 								type: 'text',
 								width: '45px',
 								id: 'width',
+								class: 'hidden',
 								label: commonLang.width,
 								validate: validateDimension,
 								onKeyUp: onChangeDimension,
@@ -489,42 +487,6 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 							}
 						]
 					},
-					{
-						type: 'hbox',
-						id: 'alignment',
-						requiredContent: features.align.requiredContent,
-						children: [
-							{
-								id: 'align',
-								type: 'radio',
-								items: [
-									[ commonLang.alignNone, 'none' ],
-									[ commonLang.alignLeft, 'left' ],
-									[ commonLang.alignCenter, 'center' ],
-									[ commonLang.alignRight, 'right' ]
-								],
-								label: commonLang.align,
-								setup: function( widget ) {
-									this.setValue( widget.data.align );
-								},
-								commit: function( widget ) {
-									widget.setData( 'align', this.getValue() );
-								}
-							}
-						]
-					},
-					{
-						id: 'hasCaption',
-						type: 'checkbox',
-						label: lang.captioned,
-						requiredContent: features.caption.requiredContent,
-						setup: function( widget ) {
-							this.setValue( widget.data.hasCaption );
-						},
-						commit: function( widget ) {
-							widget.setData( 'hasCaption', this.getValue() );
-						}
-					}
 				]
 			},
 			{

@@ -11,6 +11,8 @@ CKEDITOR.editorConfig = function( config )
   config.removePlugins = 'image';
   config.extraPlugins = 'button,toolbar,notification,clipboard,widgetselection,lineutils,widget,image2,';
   config.height = '80vh';
+  config.skin = 'moono-dark';
+
   /* Filebrowser routes */
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";

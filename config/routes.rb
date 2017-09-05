@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new'
 
-
   get '/users/pass/:id', to: 'users#pass', :as => 'edit_user_pass'
   resources :users do
     member do

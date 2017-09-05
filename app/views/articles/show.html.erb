@@ -42,7 +42,9 @@
       <%= image_tag(@article.image.url, class: "img-ratio") if @article.image? %>
     </div>
     <hr />
-    <%= simple_format(@article.description) %>
+    <div class="article-show-content">
+      <%= simple_format(@article.description) %>
+    </div>
     <hr />
     <div class="btn-group btn-article-show-adjust">
       <%= link_to "Seek new articles", articles_path, class: "btn btn-purple" %>

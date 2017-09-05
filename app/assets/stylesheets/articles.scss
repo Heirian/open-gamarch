@@ -1,6 +1,12 @@
 .article-index {
   width: 100%;
   height: 600px;
+  p {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
   .article-index-title {
     a {
       color: #390046;
@@ -175,4 +181,11 @@
 #load_more_comments {
   display: none;
   margin-bottom: 10px;
+}
+
+.article-show-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

@@ -44,7 +44,7 @@
   padding: 5px;
   margin: 5px;
   padding-left: -15px;
-  background-color: #fff;
+  background-color: white;
 }
 
 .article-home-description {
@@ -54,7 +54,7 @@
 
 .article-home-description-proprety {
   img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 }

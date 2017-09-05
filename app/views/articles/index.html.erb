@@ -5,7 +5,7 @@
     <div class="col-md-3 justify article-index">
       <%= image_tag(article.image.url, class: "img-ratio") if article.image? %>
       <h4 class="article-index-title"><%= link_to truncate(article.name, length: 30, class:"justify"), article_path(article) %></h4>
-      <p><%= truncate(article.description, length: 150, class:"justify") %></p>
+      <p><%= truncate(simple_format(article.description), escape: false, length: 150) %></p>
       <p>
         <span class="quiet">
           <small><%= time_ago_in_words(article.created_at) %> ago
