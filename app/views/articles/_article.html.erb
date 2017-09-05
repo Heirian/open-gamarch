@@ -6,7 +6,7 @@
     <span class="users-home-name inline-home article-home-ajust">
       <%= link_to article.user.name, article.user %>
     </span>
-    <small class="timestamp inline">
+    <small class="right inline">
       <%= article.timestamp %>
       | <%= article.reading_time %> min read
     </small>
@@ -19,9 +19,9 @@
     <%= image_tag(article.image.url, class: "article-home-cover") if article.image? %>
 
     <div class="article-home-description-proprety">
-      <%= truncate(simple_format(article.description), escape: false, length: 255) %>
+      <%= simple_format(article.make_safe_255) %>
       <% if article.description.size > 255 %>
-        <%= link_to 'See more', article_path(article) %>
+         <%= link_to('See more', article_path(article), class:'right') %>
       <% end %>
     </div>
 

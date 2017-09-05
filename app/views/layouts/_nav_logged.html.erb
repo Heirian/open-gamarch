@@ -18,26 +18,26 @@
 
             <ul class="nav navbar-nav navbar-right col-md-7 col-sm-6 col-xs-2">
               <li class="mobile-off">
-                <%= link_to "Write a article", new_article_path, class: "link-bar", title: "Write something new" %>
+                <%= link_to "Back off, newbie", new_article_path, class: "link-bar", title: "Write something new" %>
               </li>
 
               <li>
-                <%= link_to '<i class="fa fa-file font-icon-nav" aria-hidden="true" title="Seek new articles"></i>'.html_safe,
+                <%= link_to simple_format('<i class="fa fa-file font-icon-nav" aria-hidden="true" title="Seek new articles"></i>'),
                                 articles_path %>
               </li>
 
               <li>
-                <%= link_to '<i class="fa fa-gamepad font-icon-nav" aria-hidden="true" title="Games"></i>'.html_safe,
+                <%= link_to simple_format('<i class="fa fa-gamepad font-icon-nav" aria-hidden="true" title="Games"></i>'),
                                 users_path %>
               </li>
 
               <li>
-                <%= link_to '<i class="fa fa-object-group font-icon-nav" aria-hidden="true" title="Community"></i>'.html_safe,
+                <%= link_to simple_format('<i class="fa fa-object-group font-icon-nav" aria-hidden="true" title="Community"></i>'),
                                 users_path %>
               </li>
 
               <li>
-                <%= link_to '<i class="fa fa-heartbeat font-icon-nav" aria-hidden="true" title="Explore our universe"></i>'.html_safe,
+                <%= link_to simple_format('<i class="fa fa-heartbeat font-icon-nav" aria-hidden="true" title="Explore our universe"></i>'),
                                 users_path %>
               </li>
 
@@ -52,17 +52,17 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <%= link_to '<i class="fa fa-pencil-square-o font-icon-dropdown" aria-hidden="true" title="Edit your Profile"></i> Edit Profile'.html_safe,
+                    <%= link_to simple_format('<i class="fa fa-pencil-square-o font-icon-dropdown" aria-hidden="true" title="Edit your Profile"></i> Edit Profile'),
                                 edit_user_path(current_user) %>
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
-                    <%= link_to '<i class="fa fa-key font-icon-dropdown" aria-hidden="true" title="Change Password"></i> New Pass'.html_safe,
+                    <%= link_to simple_format('<i class="fa fa-key font-icon-dropdown" aria-hidden="true" title="Change Password"></i> New Pass'),
                                 edit_user_pass_path(current_user) %>
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
-                    <%= link_to '<i class="fa fa-sign-out font-icon-dropdown" aria-hidden="true" title="Log out"></i> Log out'.html_safe,
+                    <%= link_to simple_format('<i class="fa fa-sign-out font-icon-dropdown" aria-hidden="true" title="Log out"></i> Log out'),
                                 logout_path, method: :delete %>
                   </li>
                 </ul>

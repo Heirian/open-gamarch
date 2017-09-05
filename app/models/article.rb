@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  include ActionView::Helpers::TextHelper
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 5, maximum: 10000 }
 
@@ -22,6 +23,10 @@ class Article < ApplicationRecord
 
   def timestamp
     created_at.strftime('%d %B %Y at %H:%M')
+  end
+
+  def make_safe_255
+    simple_format(description.gsub(/^(.{255,}?).*$/m,'\1...'))
   end
 
   private
