@@ -92,17 +92,3 @@ body {
   width: 100%;
   padding: 0;
 }
-
-@media only screen and (min-width: 1000px) {
-  .fix-position {
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -ms-sticky;
-    position: -o-sticky;
-    position: sticky;
-  }
-  .fix-position-top {
-    top: 50px;
-    bottom: auto;
-  }
-}
