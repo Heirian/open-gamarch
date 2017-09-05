@@ -2,9 +2,12 @@
   <nav class="navbar navbar-default navbar-fixed-top col-md-12">
     <div class="container-fluid col-md-offset-2">
       <div class="row">
+
         <div class="navbar-header">
-            <%= link_to (render 'shared/logo'), root_path, class: "navbar-brand" %>
+            <%= link_to image_tag("logoback.png", title: "GAMARCH!", id: "img-logo"),
+                                root_path, class: "navbar-brand" %>
         </div>
+
         <div class="collapse navbar-collapse">
 
             <form class="navbar-form navbar-left">
@@ -20,23 +23,28 @@
               </li>
 
               <li>
-                <%= link_to (render 'shared/articles'), articles_path %>
+                <%= link_to '<i class="fa fa-file font-icon-nav" aria-hidden="true" title="Seek new articles"></i>'.html_safe,
+                                articles_path %>
               </li>
 
               <li>
-                <%= link_to (render 'shared/gamepad'), users_path %>
+                <%= link_to '<i class="fa fa-gamepad font-icon-nav" aria-hidden="true" title="Games"></i>'.html_safe,
+                                users_path %>
               </li>
 
               <li>
-                <%= link_to (render 'shared/community'), users_path %>
+                <%= link_to '<i class="fa fa-object-group font-icon-nav" aria-hidden="true" title="Community"></i>'.html_safe,
+                                users_path %>
               </li>
 
               <li>
-                <%= link_to (render 'shared/explore'), users_path %>
+                <%= link_to '<i class="fa fa-heartbeat font-icon-nav" aria-hidden="true" title="Explore our universe"></i>'.html_safe,
+                                users_path %>
               </li>
 
               <li>
-                <%= link_to (gravatar_for current_user, size: 30, class: 'gravatar'), user_path(current_user), id: "gravatar_nav", title: "Profile" %>
+                <%= link_to (gravatar_for current_user, size: 30, class: 'gravatar'),
+                                user_path(current_user), id: "gravatar_nav", title: "Profile" %>
               </li>
 
               <li class="dropdown">
@@ -45,20 +53,23 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <%= link_to '<i class="fa fa-pencil-square-o font-icon-dropdown" aria-hidden="true" title="Edit your Profile"></i> Edit Profile'.html_safe, edit_user_path(current_user) %>
+                    <%= link_to '<i class="fa fa-pencil-square-o font-icon-dropdown" aria-hidden="true" title="Edit your Profile"></i> Edit Profile'.html_safe,
+                                edit_user_path(current_user) %>
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
-                    <%= link_to (render 'shared/pass'), edit_user_pass_path(current_user) %>
+                    <%= link_to '<i class="fa fa-key font-icon-dropdown" aria-hidden="true" title="Change Password"></i> New Pass'.html_safe,
+                                edit_user_pass_path(current_user) %>
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
-                    <%= link_to (render 'shared/logout'), logout_path, method: :delete %>
+                    <%= link_to '<i class="fa fa-sign-out font-icon-dropdown" aria-hidden="true" title="Log out"></i> Log out'.html_safe,
+                                logout_path, method: :delete %>
                   </li>
                 </ul>
               </li>
-            </ul>
 
+            </ul>
 
         </div><!-- /.navbar-collapse -->
       </div>
