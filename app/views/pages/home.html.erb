@@ -2,7 +2,16 @@
   <div class="col-md-12 col-sm-12">
     <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
       <section class="article-content home-cover">
-          <%= image_tag(current_user.image, class: "cover-home-ratio") if current_user.image? %>
+
+          <% if current_user.image? %>
+            <%= image_tag(current_user.image, class: "cover-home-ratio") %>
+          <% else %>
+            <% if current_user.gender == 'girl' %>
+              <%= image_tag('girl-cover.jpg', class: "cover-home-ratio") %>
+            <% else %>
+              <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
+            <% end %>
+          <% end %>
           <div class="home-content">
             <%= link_to gravatar_for(current_user, size: 100, class: 'gravatar'), current_user %>
             <div class="home-user-name">

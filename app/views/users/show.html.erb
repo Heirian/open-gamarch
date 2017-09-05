@@ -4,6 +4,13 @@
 <section>
   <div class="row">
     <div class="profile-cover ">
+      <% unless @user.image? %>
+        <% if @user.gender == 'girl' %>
+          <%= image_tag('girl-cover.jpg', class: "img-ratio") %>
+        <% else %>
+          <%= image_tag('boy-cover.jpg', class: "img-ratio") %>
+        <% end %>
+      <% end %>
       <%= image_tag(@user.image, class: "img-ratio") if @user.image? %>
         <div class="col-md-12 col-sm-12 profile-content">
 

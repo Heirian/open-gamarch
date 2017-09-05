@@ -16,10 +16,13 @@
   </div>
 
   <div class="col-sm-12 article-home-description">
-    <%= image_tag(article.image.url, class: "img-ratio article-home-cover") if article.image? %>
+    <%= image_tag(article.image.url, class: "article-home-cover") if article.image? %>
 
     <div class="article-home-description-proprety">
       <%= truncate(simple_format(article.description), escape: false, length: 255) %>
+      <% if article.description.size > 255 %>
+        <%= link_to 'See more', article_path(article) %>
+      <% end %>
     </div>
 
 

@@ -82,19 +82,6 @@ body {
   margin-bottom: 105px;
 }
 
-.fix-position {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-}
-
-.fix-position-top {
-  top: 50px;
-  bottom: auto;
-}
-
 .btn-view-all-comments {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -104,4 +91,18 @@ body {
 .comments-feed-proprety {
   width: 100%;
   padding: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .fix-position {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+  }
+  .fix-position-top {
+    top: 50px;
+    bottom: auto;
+  }
 }
