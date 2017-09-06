@@ -1,13 +1,12 @@
 
   <nav class="navbar navbar-default navbar-fixed-top col-md-12">
-    <div class="container-fluid col-md-offset-2">
-        <div class="row">
+        <div class="row col-md-offset-2">
 
           <div class="navbar-header">
             <%= link_to 'Gamarch', root_path, class: "navbar-brand", id: 'logo' %>
           </div>
 
-          <div class="col-md-8">
+          <div class="col-md-7">
             <%= form_for(:session, :html => { class: "form-inline navbar-right", role: "form" }, url: login_path) do |f| %>
               <div class="form-group form-login">
                 <div class="col-md-5">
@@ -27,9 +26,8 @@
             <% end %>
           </div>
 
-          <div class="forgot-account">
+          <div class="forgot-account navbar-right col-md-3">
               <%= link_to 'Forgot account?', root_path, class: "" %>
           </div>
         </div>
-    </div><!-- /.container-fluid -->
   </nav>

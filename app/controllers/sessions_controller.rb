@@ -12,17 +12,17 @@ class SessionsController < ApplicationController
       remember user
       cookies.signed[:user_id] = user.id
       flash[:success] = "Welcome, #{current_user.name}. You have successfully logged in!"
-      redirect_to root_path
+      back_to_location
     else
       flash[:danger] = "Invalid email/password combination"
-      redirect_back(fallback_location: root_path)
+      back_to_location
     end
   end
 
   def destroy
     log_out
     flash[:success] = "You have successfully logged out!"
-    redirect_to root_path
+    back_to_location
   end
 
   private
@@ -30,8 +30,12 @@ class SessionsController < ApplicationController
   def require_no_user
     if logged_in?
       flash[:danger] = "You must log out to log in with another user!"
-      redirect_to root_path
+      back_to_location
     end
+  end
+
+  def back_to_location
+    redirect_back(fallback_location: root_path)
   end
 
 end

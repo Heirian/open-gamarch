@@ -1,4 +1,6 @@
-<%= render 'shared/forms_title', title: 'Gaming better', subtitle: 'Improve your favorite game community' %>
+<% provide(:title, "Log in or Sign up") %>
+
+<%= render 'shared/forms_title', page_title: 'Gaming better', page_subtitle: 'Improve your favorite game community' %>
 
 <%= render 'shared/errors', object: @user %>
 

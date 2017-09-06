@@ -3,12 +3,9 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-danger">
         <div class="panel-heading">
-          <h2 class="panel-title">
-            <%= pluralize(object.errors.count, "error") %>
-            prohibited this <%= object.class %> from being saved:
-          </h2>
           <div class="panel-body">
             <ul>
+              <a href="#" class="close">&#215</a>
               <% object.errors.full_messages.each do |message| %>
                 <li>
                   <%= message %>
@@ -21,3 +18,10 @@
     </div>
   </div>
 <% end %>
+<script type="text/javascript">
+$(".panel a").click(function() {
+    $(".panel").hide()
+    return false;
+});
+</script>
+​
