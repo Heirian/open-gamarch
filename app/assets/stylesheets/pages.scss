@@ -151,16 +151,30 @@
   margin-top: -10px;
 }
 
-.row .input-group .input-group-addon-feed {
-  background-color: #fff;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  border: none;
-}
-
 .row .input-group {
+  .input-group-addon-feed {
+    background-color: #fff;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    border: none;
+  }
   .comment-home-form {
     height: 30px;
   }
+  .diary-form {
+    height: 52px;
+    width: 101%;
+    margin-top: 5px;
+  }
+  .input-group-addon-home {
+    background-color: #f5f8fa;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 4px;
+    padding-right: 28px;
+    border: none;
+    margin-top: 5px;
+  }
+
 }

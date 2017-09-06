@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
   def home
-    unless logged_in?
-      redirect_to signup_path
-    else
+    if logged_in?
       @article = Article.new
       @comment = Comment.new
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 8)
@@ -10,6 +8,8 @@ class PagesController < ApplicationController
         format.html
         format.js
       end
+    else
+      @user = User.new
     end
   end
 

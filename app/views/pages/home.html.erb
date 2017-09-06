@@ -1,67 +1,149 @@
-<div class="row">
-  <div class="col-md-12 col-sm-12">
-    <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
-      <section class="article-content home-cover">
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
+        <section class="article-content home-cover">
 
-          <% if current_user.image? %>
-            <%= image_tag(current_user.image, class: "cover-home-ratio") %>
-          <% else %>
-            <% if current_user.gender == 'girl' %>
-              <%= image_tag('girl-cover.jpg', class: "cover-home-ratio") %>
+            <% if current_user.image? %>
+              <%= image_tag(current_user.image, class: "cover-home-ratio") %>
             <% else %>
-              <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
+              <% if current_user.gender == 'girl' %>
+                <%= image_tag('girl-cover.jpg', class: "cover-home-ratio") %>
+              <% else %>
+                <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
+              <% end %>
             <% end %>
-          <% end %>
-          <div class="home-content">
-            <%= link_to gravatar_for(current_user, size: 100, class: 'gravatar'), current_user %>
-            <div class="home-user-name">
-              <%= link_to current_user.name, current_user %>
-            </div>
-            <div class="col-md-12 col-sm-12">
-              <%= current_user.bio %>
-            </div>
-            <div class="home-stats col-md-12 col-sm-12">
-              <%= render 'shared/stats' %>
-            </div>
-            <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
-          </div>
-      </section>
-      <section class="article-content home-cover">
-          <div class="center home-user-name">
-            <%= link_to 'Communities', current_user %>
-          </div>
-      </section>
-    </aside>
-
-    <div class="col-md-6 col-sm-12 home-feed">
-      <div>
-            <%= form_for(@article, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>
-              <div class="input-group">
-                <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user),
-                                 class:"input-group-addon" %>
-                <%= f.text_field :description, class: "form-control",
-                                 placeholder: "What your gamer's mind is planning, #{current_user.name}?" %>
+            <div class="home-content">
+              <%= link_to gravatar_for(current_user, size: 100, class: 'gravatar'), current_user %>
+              <div class="home-user-name">
+                <%= link_to current_user.name, current_user %>
               </div>
-            <% end %>
+              <div class="col-md-12 col-sm-12">
+                <%= current_user.bio %>
+              </div>
+              <div class="home-stats col-md-12 col-sm-12">
+                <%= render 'shared/stats' %>
+              </div>
+              <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
+            </div>
+        </section>
+        <section class="article-content home-cover">
+            <div class="center home-user-name">
+              <%= link_to 'Communities', current_user %>
+            </div>
+        </section>
+      </aside>
 
+      <div class="col-md-6 col-sm-12 home-feed">
+        <div>
+          <%= form_for(@article, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>
+            <div class="input-group">
+              <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user),
+                               class:"input-group-addon input-group-addon-home" %>
+              <%= f.text_field :description, class: "form-control diary-form",
+                               placeholder: "What your gamer's brain is planning, #{current_user.name}?" %>
+            </div>
+          <% end %>
+        </div>
+        <% if current_user.following.empty? %>
+          <div class="center">
+            <h1>Welcome to Gamarch!</h1>
+            <p>Get started by following Pro Players. You'll see their articles, diary and communities here.</p>
+            <%= link_to("Let's go", users_path, class: "btn btn-purple") %>
+          </div>
+        <% else %>
+          <%= render 'shared/feed' %>
+        <% end %>
       </div>
-      <%= render 'shared/feed' %>
+
+
+
+      <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
+        <section class="article-content home-cover">
+            <div class="center home-user-name">
+              <%= link_to 'Featured', current_user %>
+            </div>
+        </section>
+
+        <section class="article-content home-cover">
+            <div class="center home-user-name">
+              <%= link_to 'Sponsored', current_user %>
+            </div>
+        </section>
+      </aside>
     </div>
-
-
-
-    <aside class="col-md-3 col-sm-12 fix-position fix-position-top">
-      <section class="article-content home-cover">
-          <div class="center home-user-name">
-            <%= link_to 'Featured', current_user %>
-          </div>
-      </section>
-
-      <section class="article-content home-cover">
-          <div class="center home-user-name">
-            <%= link_to 'Sponsored', current_user %>
-          </div>
-      </section>
-    </aside>
   </div>
-</div>
+
+<% else %>
+  <%= render 'shared/forms_title', page_title: 'Gaming better', page_subtitle: 'Improve your favorite game community' %>
+
+  <%= render 'shared/errors', object: @user %>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+        <div class="form-group">
+          <div class="control-label col-md-5">
+            <%= f.label :name, "Choose a name" %>
+          </div>
+          <div class="col-md-4">
+            <%= f.text_field :name, class: "form-control", placeholder: "Enter your name" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-md-5">
+            <%= f.label :email %>
+          </div>
+          <div class="col-md-4">
+            <%= f.text_field :email, class: "form-control", placeholder: "Enter your email" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-md-5">
+            <%= f.label :password %>
+          </div>
+          <div class="col-md-4">
+            <%= f.password_field :password, class: "form-control", placeholder: "Choose a password" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-md-5">
+            <%= f.label :password_confirmation, "Confirm password" %>
+          </div>
+          <div class="col-md-4">
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-md-5">
+            <%= f.label :birthday %>
+          </div>
+          <div class="col-md-4">
+            <%= date_select :user, :birthday, start_year: 1905, end_year: 2017 , order: [:day, :month, :year] %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-4 col-md-offset-5">
+            <%= f.radio_button :gender, 'girl' %>
+            <%= label :gender, 'Girl' %>
+            <%= f.radio_button :gender, 'boy', checked: true %>
+            <%= label :gender, 'Boy' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-5 col-md-4">
+            <%= render 'users/warning_terms' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-5 col-md-4 btn-group">
+            <%= f.submit(@user.new_record? ? "Create my account" : "Update my account",
+                              class: "btn btn-purple") %>
+            <%= link_to "Return to home", pages_home_path, class: "btn btn-purple" unless @user.new_record? %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
