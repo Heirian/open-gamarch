@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     unless logged_in?
       redirect_to signup_path
     else
+      @article = Article.new
       @comment = Comment.new
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 8)
       respond_to do |format|

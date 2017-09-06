@@ -18,7 +18,7 @@
 
       <div class="form-group">
         <div class="col-md-8 col-md-offset-2">
-          <%= f.cktext_area :description, cols: 40, class: "form-control", placeholder: "Show us your ability..." %>
+          <%= f.cktext_area(:description, cols: 40, class: "form-control", placeholder: "Show us your ability, #{current_user.name}, we trusting you") %>
         </div>
       </div>
 

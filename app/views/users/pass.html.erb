@@ -1,11 +1,11 @@
 <%= render 'shared/errors', object: @user %>
-<%= render 'shared/forms_title', page_title: 'Change your password', page_subtitle: 'Is everything okay?' %>
+<%= render 'shared/forms_title', page_title: 'Change your password', page_subtitle: 'Keep your password safe' %>
 
 <div class="row">
   <div class="col-md-12">
     <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
       <div class="form-group">
-        <div class="control-label col-md-8">
+        <div class="control-label col-md-5">
           <%= f.label :password, "New" %>
         </div>
         <div class="col-md-4">
@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="form-group">
-        <div class="control-label col-md-8">
+        <div class="control-label col-md-5">
           <%= f.label :password_confirmation, "Confirm new password" %>
         </div>
         <div class="col-md-4">
@@ -22,7 +22,7 @@
       </div>
 
       <div class="form-group">
-        <div class="col-md-offset-8 col-md-4 btn-group">
+        <div class="col-md-offset-5 col-md-4 btn-group">
           <%= f.submit "Change Password",
                           class: "btn btn-purple" %>
           <%= link_to "Go to Profile", user_path(@user), class: "btn btn-purple" unless @user.new_record? %>

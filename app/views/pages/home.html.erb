@@ -34,6 +34,17 @@
     </aside>
 
     <div class="col-md-6 col-sm-12 home-feed">
+      <div>
+            <%= form_for(@article, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>
+              <div class="input-group">
+                <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user),
+                                 class:"input-group-addon" %>
+                <%= f.text_field :description, class: "form-control",
+                                 placeholder: "What your gamer's mind is planning, #{current_user.name}?" %>
+              </div>
+            <% end %>
+
+      </div>
       <%= render 'shared/feed' %>
     </div>
 
