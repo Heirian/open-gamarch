@@ -1,15 +1,18 @@
 
-  <nav class="navbar navbar-default navbar-fixed-top col-md-12">
-        <div class="row col-md-offset-2">
+  <nav class="navbar navbar-default navbar-fixed-top col-md-12 col-sm-12 col-xs-12">
+        <div class="row col-md-offset-2 col-sm-offset-0 col-xs-offset-0">
+          <div class="login-button pull-right">
+            <%= link_to("Log in", login_path, class:"btn btn-login") %>
+          </div>
 
           <div class="navbar-header">
             <%= link_to 'Gamarch', root_path, class: "navbar-brand", id: 'logo' %>
           </div>
 
-          <div class="col-md-7">
+          <div class="col-md-7 col-sm-8 col-xs-12 form-login-proprety">
             <%= form_for(:session, :html => { class: "form-inline navbar-right", role: "form" }, url: login_path) do |f| %>
               <div class="form-group form-login">
-                <div class="col-md-5">
+                <div class="col-md-5 col-sm-">
                   <%= f.text_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
                 </div>
               </div>
@@ -26,8 +29,10 @@
             <% end %>
           </div>
 
-          <div class="forgot-account navbar-right col-md-3">
-              <%= link_to 'Forgot account?', root_path, class: "" %>
+          <div class="forgot-account center navbar-right col-md-3">
+              <%= link_to 'Forgot account?', root_path %>
           </div>
         </div>
+
+
   </nav>

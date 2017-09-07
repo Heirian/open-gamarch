@@ -1,6 +1,5 @@
 #logo {
   float: left;
-  font-size: 60px;
   color: #fff;
   text-transform: uppercase;
   font-family: Impact;
@@ -17,14 +16,9 @@
   padding-bottom: 20px;
 }
 
-
-.form-login {
-  padding-top: 45px;
-  padding-bottom: 20px;
-}
-
 .forgot-account {
   padding-top: 52px;
+  padding-right: 150px;
   a {
     color: white;
     &:hover {
@@ -41,4 +35,9 @@
     color: #390046;
     background-color: #fff;
   }
+}
+
+.login-button {
+  padding-right: 20px;
+  padding-top: 17px;
 }

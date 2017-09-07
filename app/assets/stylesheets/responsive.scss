@@ -1,6 +1,23 @@
-
-
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1500px) {
+  .forgot-account {
+    padding-top: 52px;
+    padding-right: 150px;
+  }
+  .form-login {
+    padding-top: 45px;
+    padding-bottom: 20px;
+  }
+  #logo {
+    float: left;
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Impact;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 1499px) and (min-width: 1200px) {
   .home-feed {
     margin-left: -15px;
   }
@@ -20,7 +37,41 @@
     margin-left: -12px;
     padding-bottom: 5px;
   }
+  .form-login {
+    padding-top: 45px;
+    padding-bottom: 20px;
+  }
+  .form-login-proprety {
+    margin-left: -100px;
+  }
 }
+
+@media only screen and (max-width: 1299px) and (min-width: 1200px) {
+  .form-login-proprety {
+    margin-left: -35px
+  }
+  .forgot-account {
+    margin-top: -10px;
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 1000px) {
+  .form-login-proprety {
+    padding-top: 30px;
+    margin-left: 70px;
+    padding-bottom: 10px;
+  }
+  #logo {
+    margin-top: -14px;
+    margin-left: -170px;
+    padding-bottom: 10px;
+  }
+  .forgot-account {
+    margin-top: -26px;
+    padding-bottom: 10px;
+  }
+}
+
 
 @media only screen and (max-width: 1200px) and (min-width: 1000px) {
   .home-stats {
@@ -34,6 +85,19 @@
       display: none;
     }
   }
+  .form-login-proprety {
+    display: none;
+  }
+  .forgot-account {
+    display: none;
+  }
+  #logo {
+    margin-top: -26px;
+    margin-bottom: 25px;
+    margin-left: -15px;
+    font-size: 50px;
+  }
+
 }
 @media only screen and (max-width: 1500px) and (min-width: 1450px) {
   .navbar-default {
@@ -69,5 +133,11 @@
   .fix-position-top {
     top: 50px;
     bottom: auto;
+  }
+  .login-button {
+    display: none;
+  }
+  #logo {
+      font-size: 60px;
   }
 }
