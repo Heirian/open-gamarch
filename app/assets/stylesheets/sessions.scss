@@ -41,3 +41,56 @@
   padding-right: 20px;
   padding-top: 17px;
 }
+
+.font-awesome-icon-sign {
+  font-size: 50px;
+}
+
+.form-email-fix-position {
+  margin-top: -5px;
+}
+.form-password-fix-position {
+  margin-top: -5px;
+}
+.form-cpassword-fix-position {
+  margin-top: -5px;
+}
+.form-birthday-fix-position {
+  margin-top: -10px;
+}
+.form-gender-fix-position {
+  margin-top: -10px;
+}
+.form-terms {
+  margin-top: -25px;
+}
+.form-create {
+  margin-top: -5px;
+}
+.home-topics {
+  margin-top: 20px;
+}
+
+select.select-date {
+  height: 40px;
+  width: 33%;
+  margin-right: 1px;
+  float: left;
+}
+.select-date-wrapper{
+  select:first-of-type{
+    width: 25%;
+  }
+  select:nth-of-type(2){
+    width: 45%;
+  }
+  select:last-of-type{
+    width: 29%;
+    margin-right: 0;
+  }
+}
+
+.form-home-sign {
+  height: 40px;
+  padding-bottom: -20px;
+}
