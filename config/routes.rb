@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
+  get '/blog', to: 'posts#index'
+  resources :posts
+
   get '/signup', to: 'users#new'
 
   get '/users/pass/:id', to: 'users#pass', :as => 'edit_user_pass'
