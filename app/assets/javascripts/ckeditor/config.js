@@ -6,10 +6,11 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 CKEDITOR.editorConfig = function( config )
 {
   // Define changes to default configuration here. For example:
-  // config.language = 'fr';
+  // config.languages = 'en';
   // config.uiColor = '#AADC6E';
-  config.removePlugins = 'image';
-  config.extraPlugins = 'button,toolbar,notification,clipboard,widgetselection,lineutils,widget,image2,';
+  //config.assets_languages = 'en', 'pt-BR', 'pt-PT';
+  config.removePlugins = 'image,sourcearea';
+  config.extraPlugins = 'widgetselection,lineutils,image2,widget,';
   config.height = '60vh';
   config.skin = 'moono-dark';
 
@@ -45,7 +46,7 @@ CKEDITOR.editorConfig = function( config )
     { name: 'links', items: [ 'Link', 'Unlink' ] },
     { name: 'insert', items: [ 'Image' ] },
     { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Blockquote' ] },
-    { name: 'styles', items: [ 'Styles', 'Format' ] },
+    { name: 'styles', items: [ 'Format' ] },
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] }
   ];
 

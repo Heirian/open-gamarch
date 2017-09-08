@@ -17,5 +17,8 @@
 //= require loadmore
 //= require bootstrap-filestyle
 //= require ckeditor/init
+//= require ckeditor/plugins/image2/plugin
+//= require ckeditor/plugins/widget/plugin
+//= require ckeditor/config
 //= require turbolinks
 //= require_tree .
