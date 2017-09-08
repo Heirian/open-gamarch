@@ -57,6 +57,13 @@
     max-width: 100%;
     height: auto;
   }
+  a {
+    color: #390046;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 }
 
 .article-home-proprety {
