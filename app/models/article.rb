@@ -25,8 +25,8 @@ class Article < ApplicationRecord
     created_at.strftime('%d %B %Y at %H:%M')
   end
 
-  def make_safe_255
-    simple_format(description.gsub(/^(.{255,}?).*$/m,'\1...'))
+  def make_safe(size)
+    simple_format(description.gsub(/^(.{#{size},}?).*$/m,'\1...'))
   end
 
   private
@@ -37,4 +37,5 @@ class Article < ApplicationRecord
       errors.add(:image, "Cover size after resize process should be less than 2MB")
     end
   end
+
 end

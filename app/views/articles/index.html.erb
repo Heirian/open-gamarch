@@ -1,40 +1,45 @@
 
 <hr />
-<div class="row">
-  <% @articles.each do |article| %>
-    <div class="col-md-3 justify article-index">
-      <%= image_tag(article.image.url, class: "img-ratio") if article.image? %>
-      <h4 class="article-index-title"><%= link_to truncate(article.name, length: 30, class:"justify"), article_path(article) %></h4>
-      <p><%= truncate(simple_format(article.description), escape: false, length: 150) %></p>
-      <p>
-        <span class="quiet">
-          <small><%= time_ago_in_words(article.created_at) %> ago
-            | <%= article.reading_time %> min read
-            | <%= pluralize(article.comments.count, "comment") %>
-          </small>
-        </span>
-      </p>
-      <hr />
-      <div class="avatar-article-index">
-        <%= link_to gravatar_for(article.user, size: 50), user_path(article.user) %>
-        <div class="avatar-article-index-text">
-          <%= link_to article.user.name.capitalize, user_path(article.user), class: "avatar-article-index-font" %>
-          <%= pluralize(article.user.articles.count, "article") %>
-
-        </div>
-
-
-      </div>
-      <% if logged_in? && (current_user == article.user || current_user.admin?) %>
-        <div class="btn-group">
-          <%= link_to "Edit", edit_article_path(article), class: "btn btn-purple" %>
-          <%= link_to "Delete", article_path(article), method: :delete,
-                                                                  data: { confirm: "#{current_user.name}, are you sure you want to delete this article?" },
-                                                                  class: "btn btn-purple" %>
+<div class="album">
+  <div class="container">
+    <div class="col-md-12">
+      <% @articles.each do |article| %>
+        <div class="col-md-4 card justify article-index">
+          <%= image_tag(article.image.url, class: "img-cover-ratio") if article.image? %>
+          <h4 class="article-index-title">
+            <%= link_to truncate(article.name, length: 30, class:"justify"), article_path(article) %>
+          </h4>
+          <p>
+            <%= article.make_safe(255) %>
+          </p>
+          <p>
+            <span class="quiet">
+              <small><%= time_ago_in_words(article.created_at) %> ago
+                | <%= article.reading_time %> min read
+                | <%= link_to(pluralize(article.comments.count, "comment"), article_path(article, anchor: "wall"),  target: '_blank') %>
+              </small>
+            </span>
+          </p>
+          <hr />
+          <div class="avatar-article-index">
+            <%= link_to gravatar_for(article.user, size: 50), user_path(article.user) %>
+            <div class="avatar-article-index-text">
+              <%= link_to article.user.name.capitalize, user_path(article.user), class: "avatar-article-index-font" %>
+              <%= pluralize(article.user.articles.count, "article") %>
+            </div>
+          </div>
+          <% if logged_in? && (current_user == article.user || current_user.admin?) %>
+            <div class="btn-group">
+              <%= link_to "Edit", edit_article_path(article), class: "btn btn-purple" %>
+              <%= link_to "Delete", article_path(article), method: :delete,
+                                                                      data: { confirm: "#{current_user.name}, are you sure you want to delete this article?" },
+                                                                      class: "btn btn-purple" %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
 
 <div align="center">

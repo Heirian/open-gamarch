@@ -3,5 +3,5 @@
 $('#my-feed').append('<%= j render @feed_items %>');
 $('.pagination').replaceWith('<%= j will_paginate @feed_items %>');
 <% unless @feed_items.next_page %>
-$('#infinite-scrolling .pagination').remove();
+  $('#infinite-scrolling .pagination').remove();
 <% end %>

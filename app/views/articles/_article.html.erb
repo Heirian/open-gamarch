@@ -19,17 +19,16 @@
     <%= image_tag(article.image.url, class: "article-home-cover") if article.image? %>
 
     <div class="article-home-description-proprety">
-      <%= simple_format(article.make_safe_255) %>
+      <%= simple_format(article.make_safe(255)) %>
       <% if article.description.size > 255 %>
          <%= link_to('See more', article_path(article), class:'right') %>
       <% end %>
     </div>
 
-
     <% if article.comments.count > 2 %>
-    <div >
-      <%= link_to "View all comments", article_path(article, anchor: "wall"), class: 'btn btn-purple btn-view-all-comments', target: '_blank' %>
-    </div>
+      <div >
+        <%= link_to "View all comments", article_path(article, anchor: "wall"), class: 'btn btn-purple btn-view-all-comments', target: '_blank' %>
+      </div>
     <% end %>
   </div>
   <div class="col-sm-12 comments-feed-proprety">
