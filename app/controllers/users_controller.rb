@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :pass]
-  before_action :require_user, only: [:edit, :update, :destroy, :pass]
+  before_action :require_user
   before_action :require_same_user, only: [:edit, :update, :destroy, :pass]
   before_action :require_admin, only: [:destroy]
 

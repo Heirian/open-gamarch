@@ -12,12 +12,18 @@
 
   <body>
     <% if logged_in? %>
-      <div class="nav-margin-logged">
-        <%= render 'layouts/nav_logged' %>
-      </div>
+      <% if logged_in? %>
+        <div class="nav-margin-logged">
+          <%= render 'layouts/nav_logged' %>
+        </div>
+      <% else %>
+        <div class="nav-margin-login">
+          <%= render 'layouts/nav_login' %>
+        </div>
+      <% end %>
     <% else %>
-      <div class="nav-margin-login">
-        <%= render 'layouts/nav_login' %>
+      <div class="nav-margin-blog">
+        <%= render 'layouts/nav_blog' %>
       </div>
     <% end %>
     <%= render 'layouts/messages' %>
@@ -25,7 +31,11 @@
     <div class="container">
       <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
+    <% if logged_in? %>
+      <%= render 'layouts/footer' %>
+    <% else %>
+      <%= render 'layouts/blog_footer' %>
+    <% end %>
   </body>
 
 </html>

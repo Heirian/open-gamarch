@@ -4,10 +4,12 @@
 
 - O que é Gamarch?
 
-É um site que possibilita a que os jogadores se comuniquem em uma única plataforma
+Como jogar em alto nível? Gamarch é um site que possibilita a jogadores se comunicarem em uma única plataforma assim
 desenvolvendo a comunidade de seus jogos favoritos. Aprendendo uns com os outros e aumentando o nivel
-do multiplayer e do proprio experiencia com jogos. Cada jogo tendo sua propria area e forum para que os usuarios
-se sintam a vontade em conversar uns com os outros. Compartilhar experiencias, estrategias e desenvolver novas coisas.
+do multiplayer e da propria experiencia com jogos. Cada jogo possui sua propria area e um forum para que os usuarios
+se sintam a vontade em conversar uns com os outros. Compartilhe experiencias, crie estrategias e desenvolva novas coisas.
+
+How to gaming at a high level? Gamarch is a site that allows players to communicate on a single platform thus developing the community of their favorite games. Learning from each other and increasing the level of multiplayer and own experience with games. Each game has its own area and a forum for users to feel comfortable talking to each other. Share experiences, strategize and develop new things in your newest playground
 
 ==================================================
 
