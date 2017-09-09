@@ -6,7 +6,7 @@
       </div>
       <div class="col-md-11 col-sm-11 col-xs-11">
         <% if logged_in? && (current_user == comment.user || current_user.admin? || current_user == comment.article.user) %>
-          <%= link_to (render 'shared/close'), article_comment_path(@article, comment), method: :delete,
+          <%= link_to (render 'shared/close'), article_comment_path(@article, comment, anchor: "wall"), method: :delete,
                                                                   class: "pull-right comment-remover-button" %>
         <% end %>
         <p>
