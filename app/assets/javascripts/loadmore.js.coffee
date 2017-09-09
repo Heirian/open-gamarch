@@ -16,5 +16,6 @@ jQuery ->
               $.getScript more_comments_url, ->
                 $this.text('Load comments').removeClass('disabled') if $this
                 loading_comments = false
+          return
 
     return

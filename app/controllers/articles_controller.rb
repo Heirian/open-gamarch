@@ -11,9 +11,9 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
     @comments = @article.comments.paginate(page: params[:page], per_page: 5)
     respond_to do |format|
-        format.html
-        format.js
-      end
+      format.html
+      format.js
+    end
     @user = @article.user
   end
 
