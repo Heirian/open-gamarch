@@ -1,23 +1,24 @@
 <div class="row">
   <div class="col-md-12">
-    <h1 class="blog-name">
+    <h1 class="blog-name pull-right">
       <%= link_to "/Blog", blog_path %>
     </h1>
   </div>
 </div>
 
+
 <hr />
-<div class="album">
-  <div class="container">
-    <div class="col-md-12">
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="col-md-8">
       <% @posts.each do |post| %>
-        <div class="justify post-index">
+        <div class="col-md-12 justify post-index">
           <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
           <h4 class="article-index-title">
-            <%= link_to truncate(post.name, length: 30, class:"justify"), post_path(post) %>
+            <%= link_to truncate(post.name, length: 60, class:"justify"), post_path(post) %>
           </h4>
           <p>
-            <%= post.make_safe(255) %>
+            <%= post.make_safe(500) %>
           </p>
           <p>
             <span class="quiet">
@@ -44,10 +45,29 @@
           <% end %>
         </div>
       <% end %>
+      </div>
+      <aside class="col-md-4 col-sm-12 fix-position fix-position-blog">
+        <section class="article-content home-cover">
+          <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
+          <div class="home-content">
+            <%= link_to gravatar_for(@user, size: 100, class: 'gravatar'), @user %>
+            <div class="home-user-name">
+              <%= link_to @user.name, @user %>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <%= @user.bio %>
+            </div>
+            <%= pluralize(@user.posts.count, "post") if @user.posts %>
+          </div>
+        </section>
+        <section class="article-content home-cover">
+            <div class="center home-user-name">
+              <%= link_to 'Featured', @user %>
+            </div>
+        </section>
+      </aside>
     </div>
-  </div>
 </div>
-
 <div align="center">
   <%= will_paginate %>
 </div>

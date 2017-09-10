@@ -15,20 +15,19 @@
 
 .img-blog-cover-ratio {
   object-fit: cover;
-  width: 282px;
-  height: auto;
+  width: 100%;
+  height: 250px;
 }
 
 .post-index {
+  display: inline-block;
+  margin: 5;
   width: 282px;
   height: auto;
   p {
     img {
-      max-width: 100%;
-      width: auto;
+      width: 100%;
       height: auto;
-      max-height: 200px;
-      width: auto;
     }
   }
   .article-index-title {
