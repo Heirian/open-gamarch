@@ -11,8 +11,8 @@
   <div class="container">
     <div class="col-md-12">
       <% @posts.each do |post| %>
-        <div class="col-md-4 card justify article-index">
-          <%= image_tag(post.image.url, class: "img-cover-ratio") if post.image? %>
+        <div class="justify post-index">
+          <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
           <h4 class="article-index-title">
             <%= link_to truncate(post.name, length: 30, class:"justify"), post_path(post) %>
           </h4>

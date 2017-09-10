@@ -12,3 +12,53 @@
     }
   }
 }
+
+.img-blog-cover-ratio {
+  object-fit: cover;
+  width: 282px;
+  height: auto;
+}
+
+.post-index {
+  width: 282px;
+  height: auto;
+  p {
+    img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 200px;
+      width: auto;
+    }
+  }
+  .article-index-title {
+    a {
+      color: #390046;
+      &:hover {
+        color: #390046;
+        text-decoration: none;
+        text-shadow: 0.1px 0.1px 0.1px #390046;
+      }
+    }
+  }
+  .btn {
+    margin-bottom: 10px;
+  }
+  .avatar-article-index {
+    margin-bottom: 10px;
+    display: flex;
+    .avatar-article-index-text {
+      padding-left: 5px;
+      .avatar-article-index-font {
+        font-family: impact;
+        font-size: 20px;
+        display: grid;
+        color: black;
+        &:hover {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+}
