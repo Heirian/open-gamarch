@@ -29,7 +29,7 @@
     .avatar-article-index-text {
       padding-left: 5px;
       .avatar-article-index-font {
-        font-family: impact;
+        font-family: 'Concert One', cursive;
         font-size: 20px;
         display: grid;
         color: black;
@@ -44,10 +44,10 @@
 
 .article-user-name {
   font-size: 30px;
-  font-family: impact;
+  font-family: 'Concert One', cursive;
   a {
     color: black;
-    font-family: impact;
+    font-family: 'Concert One', cursive;
     &:hover {
       color: inherit;
     }
