@@ -68,13 +68,13 @@
 <hr />
 
 <section>
-    <div class="center home-user-name">
-      <%= link_to 'Featured', @user %>
+    <div class="center">
+      <%= link_to 'Featured', @user , class:'featured-name'%>
       <div class="row">
         <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 article-content home-cover">
           <% @random_posts.each do |random_post| %>
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <div class="article-content home-cover">
+              <div class="article-content home-cover home-user-name">
                 <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
                 <%= link_to random_post.name, post_path(random_post) %>
                 <%= random_post.make_safe(251) %>
@@ -88,23 +88,25 @@
 </section>
 
 <section>
-  <div class="article-content col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1">
-    <div id="disqus_thread"></div>
-<script>
+  <div class="row">
+    <div class="comment-disqus col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1">
+      <div id="disqus_thread"></div>
+        <script>
 
-var disqus_config = function () {
-this.page.url = 'https://gamarch.herokuapp.com/';
-this.page.identifier = '<%= @post.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
+        var disqus_config = function () {
+        this.page.url = 'https://gamarch.herokuapp.com/';
+        this.page.identifier = '<%= @post.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
 
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://http-www-gamarch-com-blog.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>)
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://http-www-gamarch-com-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
   </div>
 </section>
