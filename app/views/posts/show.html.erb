@@ -64,14 +64,14 @@
     </div>
   </div>
 </div>
-
 <hr />
-
 <section>
     <div class="center">
-      <%= link_to 'Featured', @user , class:'featured-name'%>
       <div class="row">
-        <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 article-content home-cover">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1">
+          <div class="col-md-12">
+            <%= link_to 'Featured', @user , class:'featured-name'%>
+          </div>
           <% @random_posts.each do |random_post| %>
             <div class="col-md-4 col-sm-12 col-xs-12">
               <div class="article-content home-cover home-user-name">
