@@ -58,6 +58,7 @@
           </h4>
           <p class="article-index-title">
             <%= post.make_safe(1000) %>
+            <script id="dsq-count-scr" src="//gamarch.disqus.com/count.js" async></script>
             <% if post.description.size > 255 %>
                <%= link_to('See more', post_path(post), class:'right') %>
             <% end %>

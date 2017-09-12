@@ -38,7 +38,7 @@
 <div class="row">
 
   <div class="justify col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 article-show">
-    <div class="col-md-12">
+    <div class="col-md-12 col-xs-12 col-sm-12">
       <%= render 'shared/page_title', page_title: @post.name, class: 'article-show' %>
     </div>
 
@@ -71,9 +71,9 @@
     <div class="center home-user-name">
       <%= link_to 'Featured', @user %>
       <div class="row">
-        <div class="col-md-10 col-md-offset-1 article-content home-cover">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 article-content home-cover">
           <% @random_posts.each do |random_post| %>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12 col-xs-12">
               <div class="article-content home-cover">
                 <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
                 <%= link_to random_post.name, post_path(random_post) %>
@@ -85,4 +85,10 @@
 
       </div>
     </div>
+</section>
+
+<section>
+  <div class="article-content col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1">
+    <%= render 'disqus' %>
+  </div>
 </section>
