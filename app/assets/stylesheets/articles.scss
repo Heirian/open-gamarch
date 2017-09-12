@@ -1,13 +1,15 @@
 .article-index {
-  width: 100%;
-  height: 500px;
+  width: 350px;
+  height: auto;
+  float: left;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 5px;
+  margin-bottom: 15px;
   p {
     img {
       max-width: 100%;
-      width: auto;
       height: auto;
-      max-height: 200px;
-      width: auto;
     }
   }
   .article-index-title {
@@ -19,9 +21,6 @@
         text-shadow: 0.1px 0.1px 0.1px #390046;
       }
     }
-  }
-  .btn {
-    margin-bottom: 10px;
   }
   .avatar-article-index {
     margin-bottom: 10px;
