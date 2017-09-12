@@ -1,12 +1,12 @@
 
-<% provide(:title, @post.name + " | " + @post.user.name) %>
+<% provide(:title, @post.name ) %>
 <div class="row">
   <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
     <div class="col-md-2 col-sm-3 col-xs-12">
-      <%= link_to gravatar_for(@post.user, size: 100, class: 'article-avatar article-avatar-second-border'), user_path(@post.user) %>
+      <%= link_to gravatar_for(@post.user, size: 100, class: 'article-avatar article-avatar-second-border'), about_path %>
     </div>
     <div class="inline article-user-name">
-        <%= link_to @post.user.name.capitalize, user_path(@post.user) %>
+        <%= link_to @post.user.name.capitalize, about_path %>
     </div>
     <div class="inline">
       <% if logged_in? %>
@@ -66,3 +66,23 @@
 </div>
 
 <hr />
+
+<section>
+    <div class="center home-user-name">
+      <%= link_to 'Featured', @user %>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 article-content home-cover">
+          <% @random_posts.each do |random_post| %>
+            <div class="col-md-4">
+              <div class="article-content home-cover">
+                <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
+                <%= link_to random_post.name, post_path(random_post) %>
+                <%= random_post.make_safe(251) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+</section>

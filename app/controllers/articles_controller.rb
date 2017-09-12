@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     flash[:success] = "Article was deleted successfully!"
-    redirect_back(fallback_location: root_path)
+    redirect_to articles_path
   end
 
   private

@@ -1,58 +1,20 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 col-sm-12">
     <h1 class="blog-name pull-right">
       <%= link_to "/Blog", blog_path %>
     </h1>
   </div>
 </div>
 
-
-<hr />
 <div class="row">
     <div class="col-md-12 col-sm-12">
-      <div class="col-md-8">
-      <% @posts.each do |post| %>
-        <div class="col-md-12 justify post-index">
-          <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
-          <h4 class="article-index-title">
-            <%= link_to truncate(post.name, length: 60, class:"justify"), post_path(post) %>
-          </h4>
-          <p>
-            <%= post.make_safe(500) %>
-          </p>
-          <p>
-            <span class="quiet">
-              <small><%= time_ago_in_words(post.created_at) %> ago
-                | <%= post.reading_time %> min read
-              </small>
-            </span>
-          </p>
-          <hr />
-          <div class="avatar-article-index">
-            <%= link_to gravatar_for(post.user, size: 50, class:"gravatar"), user_path(post.user) %>
-            <div class="avatar-article-index-text">
-              <%= link_to post.user.name.capitalize, user_path(post.user), class: "avatar-article-index-font" %>
-              <%= pluralize(post.user.posts.count, "post") %>
-            </div>
-          </div>
-          <% if logged_in? && (current_user == post.user || current_user.admin?) %>
-            <div class="btn-group">
-              <%= link_to "Edit", edit_post_path(post), class: "btn btn-purple" %>
-              <%= link_to "Delete", post_path(post), method: :delete,
-                                                                      data: { confirm: "#{current_user.name}, are you sure you want to delete this post?" },
-                                                                      class: "btn btn-purple" %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-      </div>
-      <aside class="col-md-4 col-sm-12 fix-position fix-position-blog">
+      <aside class="col-md-4 col-sm-12 fix-position fix-position-blog pull-right">
         <section class="article-content home-cover">
           <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
           <div class="home-content">
-            <%= link_to gravatar_for(@user, size: 100, class: 'gravatar'), @user %>
+            <%= link_to gravatar_for(@user, size: 100, class: 'gravatar'), about_path %>
             <div class="home-user-name">
-              <%= link_to @user.name, @user %>
+              <%= link_to @user.name, about_path %>
             </div>
             <div class="col-md-12 col-sm-12">
               <%= @user.bio %>
@@ -63,9 +25,47 @@
         <section class="article-content home-cover">
             <div class="center home-user-name">
               <%= link_to 'Featured', @user %>
+              <div class="row">
+                <div class="col-md-12">
+                  <% @random_posts.each do |random_post| %>
+                    <div class="col-md-12">
+                      <div class="article-content home-cover">
+                        <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
+                        <%= link_to random_post.name, post_path(random_post) %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+
+              </div>
             </div>
         </section>
       </aside>
+      <div class="col-md-8 col-sm-12">
+      <% @posts.each do |post| %>
+        <div class="col-md-12 col-sm-12 justify post-index">
+          <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
+          <h4 class="article-index-title">
+            <p>
+              <span class="quiet right">
+                <small><%= time_ago_in_words(post.created_at) %> ago
+                  | <%= post.reading_time %> min read
+                </small>
+              </span>
+            </p>
+            <%= link_to truncate(post.name, length: 60, class:"justify"), post_path(post) %>
+
+          </h4>
+          <p class="article-index-title">
+            <%= post.make_safe(1000) %>
+            <% if post.description.size > 255 %>
+               <%= link_to('See more', post_path(post), class:'right') %>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+      </div>
+
     </div>
 </div>
 <div align="center">

@@ -7,10 +7,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.paginate(page: params[:page], per_page: 9)
     @user = User.find(3)
+    @random_posts = Post.where(id: Post.pluck(:id).sample(4))
   end
 
   def show
     @user = @post.user
+    @random_posts = Post.where(id: Post.pluck(:id).sample(3))
   end
 
   def new
