@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12 col-sm-12">
+  <div class="col-md-12 col-sm-12 col-xs-12">
     <h1 class="blog-name pull-right">
       <%= link_to "/Blog", blog_path %>
     </h1>
@@ -7,8 +7,8 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12 col-sm-12">
-      <aside class="col-md-4 col-sm-12 fix-position fix-position-blog pull-right">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <aside class="col-md-4 col-sm-12 col-xs-12 fix-position fix-position-blog pull-right">
         <section class="article-content home-cover">
           <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
           <div class="home-content">
@@ -16,7 +16,7 @@
             <div class="home-user-name">
               <%= link_to @user.name, about_path %>
             </div>
-            <div class="col-md-12 col-sm-12">
+            <div class="col-md-12 col-sm-12 col-xs-12">
               <%= @user.bio %>
             </div>
             <%= pluralize(@user.posts.count, "post") if @user.posts %>
@@ -24,11 +24,11 @@
         </section>
         <section class="article-content home-cover">
             <div class="center home-user-name">
-              <%= link_to 'Featured', @user %>
+              <%= link_to 'Featured', blog_path %>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <% @random_posts.each do |random_post| %>
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="article-content home-cover">
                         <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
                         <%= link_to random_post.name, post_path(random_post) %>
@@ -41,9 +41,9 @@
             </div>
         </section>
       </aside>
-      <div class="col-md-8 col-sm-12">
+      <div class="col-md-8 col-sm-12 col-xs-12">
       <% @posts.each do |post| %>
-        <div class="col-md-12 col-sm-12 justify post-index">
+        <div class="col-md-12 col-sm-12 col-xs-12 justify post-index">
           <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
           <h4 class="article-index-title">
             <p>

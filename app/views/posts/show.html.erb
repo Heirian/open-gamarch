@@ -16,7 +16,7 @@
           <%= render 'users/follow_form' if logged_in? %>
         <% end %>
       <% elsif @user.id == 3 %>
-        <%= link_to 'About', root_path, class: 'btn btn-purple' %>
+        <%= link_to 'About', about_path, class: 'btn btn-purple' %>
       <% else %>
         <%= link_to 'Log in or Sign up', root_path, class: 'btn btn-purple' %>
       <% end %>
