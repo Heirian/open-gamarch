@@ -39,6 +39,7 @@ gem 'bootstrap-filestyle-rails'
 gem 'ckeditor', '4.2.4'
 #form select
 #gem 'bootstrap-datepicker-rails'
+gem 'disqus_rails'
 
 # To use upload images
 gem 'carrierwave', '0.11.2'

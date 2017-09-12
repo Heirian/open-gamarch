@@ -20,5 +20,6 @@
 //= require ckeditor/plugins/image2/plugin
 //= require ckeditor/plugins/widget/plugin
 //= require ckeditor/config
+//= require disqus_rails
 //= require turbolinks
 //= require_tree .

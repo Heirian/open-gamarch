@@ -30,6 +30,7 @@
 
     <div class="container">
       <%= yield %>
+      <%= disqus_init %>
     </div>
     <% if logged_in? %>
       <%= render 'layouts/footer' %>
