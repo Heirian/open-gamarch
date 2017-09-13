@@ -87,7 +87,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .navbar-default {
+  .custom-nav {
     .mobile-off {
       display: none;
     }
@@ -100,7 +100,7 @@
   }
   #logo {
     margin-left: -15px;
-    font-size: 50px;
+    font-size: 80px;
   }
   .home-topics {
     h4 {
@@ -118,6 +118,22 @@
       margin-left: 0px;
       font-size: 15px;
       margin-top: 5px;
+    }
+  }
+  #logo {
+    margin-left: -28px;
+    font-size: 60px;
+  }
+  .btn-nav-responsive {
+    padding-left: 5px;
+    padding-top: 3px;
+  }
+  .gravatar-nav {
+    padding-left: 5px;
+  }
+  .custom-nav {
+    .navbar-responsive-right {
+      margin-right: 15px;
     }
   }
 }
@@ -145,7 +161,7 @@
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1001px) {
   .fix-position {
     position: -webkit-sticky;
     position: -moz-sticky;
@@ -165,7 +181,7 @@
     display: none;
   }
   #logo {
-    font-size: 60px;
+    font-size: 80px;
   }
   .home-topics {
     margin-top: 20px;
