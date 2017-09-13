@@ -20,6 +20,9 @@
     margin-left: -17px;
     padding: 5px;
   }
+  .navbar-responsive-right {
+    padding-left: 110px
+  }
 }
 @media only screen and (max-width: 1499px) and (min-width: 1200px) {
   .home-feed {
@@ -91,6 +94,15 @@
     .mobile-off {
       display: none;
     }
+    .navbar-responsive-right {
+      margin-right: 15px;
+    }
+  }
+  .btn-nav-responsive {
+    padding-left: 15px;
+  }
+  .gravatar-nav {
+    padding-left: 15px;
   }
   .form-login-proprety {
     display: none;
@@ -126,10 +138,10 @@
   }
   .btn-nav-responsive {
     padding-left: 5px;
-    padding-top: 3px;
   }
   .gravatar-nav {
     padding-left: 5px;
+    padding-right: 0;
   }
   .custom-nav {
     .navbar-responsive-right {
@@ -139,26 +151,14 @@
 }
 
 @media only screen and (max-width: 1500px) and (min-width: 1450px) {
-  .navbar-default {
-    .navbar-header {
-      margin-left: 50px;
-    }
-  }
+
 }
 @media only screen and (max-width: 1449px) and (min-width: 1000px) {
-  .navbar-default {
-    .navbar-header {
-      margin-left: -15px;
-    }
-  }
+
 }
 
 @media only screen and (min-width: 1200px) {
-  .navbar-default {
-    .navbar-right {
-      margin-right: -100px;
-    }
-  }
+
 }
 
 @media only screen and (min-width: 1001px) {
@@ -189,5 +189,11 @@
       margin-left: -20px;
       font-size: 30px;
     }
+  }
+  .btn-nav-responsive {
+    padding-left: 15px;
+  }
+  .gravatar-nav {
+    padding-left: 15px;
   }
 }

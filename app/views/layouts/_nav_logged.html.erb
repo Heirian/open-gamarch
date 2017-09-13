@@ -8,10 +8,10 @@
     </span>
     <button type="submit" class="btn btn-default navbar-btn mobile-off"><i class="fa fa-search" aria-hidden="true"></i></button>
   </div>
-  <div class="navbar-header navbar-responsive-right pull-right col-md-5 col-xs-10 col-sm-5">
+  <div class="navbar-header navbar-responsive-right pull-right col-md-6 col-xs-10 col-sm-6">
 
-      <div class="mobile-off navbar-btn btn-nav-responsive">
-        <%= link_to "Back off, newbie", new_article_path, class: "inline", title: "Write something new" %>
+      <div class="mobile-off navbar-btn link-nav-responsive navbar-text">
+        <%= link_to "Back off, Newbie", new_article_path, class: "inline", title: "Write something new" %>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
@@ -34,8 +34,8 @@
                         users_path %>
       </div>
 
-      <div class="gravatar-nav">
-        <%= link_to (gravatar_for current_user, size: 30, class: 'gravatar'),
+      <div class="gravatar-nav navbar-brand">
+        <%= link_to (gravatar_for current_user, size: 36, class: 'gravatar'),
                         user_path(current_user), title: "Profile" %>
       </div>
 
