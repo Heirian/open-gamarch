@@ -3,7 +3,7 @@
 
 <section>
   <div class="row">
-    <div class="profile-cover ">
+    <div class="profile-cover">
       <% unless @user.image? %>
         <% if @user.gender == 'girl' %>
           <%= image_tag('girl-cover.jpg', class: "img-ratio") %>
@@ -12,17 +12,16 @@
         <% end %>
       <% end %>
       <%= image_tag(@user.image, class: "img-ratio") if @user.image? %>
-        <div class="col-md-12 col-sm-12 profile-content">
-
-              <div class="center col-md-12 col-sm-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 profile-content">
+              <div class="center col-md-12 col-sm-12 col-xs-12">
                 <%= gravatar_for(@user, size: 150, class: 'profile-avatar') %>
               </div>
 
-              <div class="stats-float center col-md-3 col-md-offset-8 col-sm-4 col-sm-offset-7">
+              <div class="stats-float profile-stats center col-md-3 col-md-offset-8 col-sm-4 col-sm-offset-7 col-xs-12">
                 <%= render 'shared/stats' %>
               </div>
 
-              <div class="btn-float col-md-1 col-sm-1">
+              <div class="btn-float col-md-1 col-sm-1 col-xs-12">
                 <% if current_user == @user %>
                   <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-purple' %>
                 <% else %>
@@ -30,11 +29,11 @@
                 <% end %>
               </div>
 
-          <div class="user-name-profile center col-md-12 col-sm-12">
+          <div class="user-name-profile center col-md-12 col-sm-12 col-xs-12">
             <%= @user.name.capitalize %>
           </div>
           <% if @user.bio %>
-            <h5 class="biografy center col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+            <h5 class="biografy center col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
               <%= @user.bio %>
             </h5>
           <% end %>

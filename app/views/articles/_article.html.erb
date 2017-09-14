@@ -1,8 +1,8 @@
-<li id="article-<%= article.id %>" class="justify col-sm-12 articler-container article-content">
-  <div class="col-sm-1 article-home-proprety">
+<li id="article-<%= article.id %>" class="justify col-sm-12 col-md-12 col-xs-12 articler-container article-content">
+  <div class="col-sm-1 col-md-1 col-xs-1 article-home-proprety">
     <%= link_to gravatar_for(article.user, size: 50, class: 'gravatar-feed'), article.user %>
   </div>
-  <div class="col-sm-11 article-home-proprety">
+  <div class="col-sm-11 col-md-11 col-xs-11 article-home-proprety">
     <span class="users-home-name inline-home article-home-ajust">
       <%= link_to article.user.name, article.user %>
     </span>
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="col-sm-12 article-home-description">
+  <div class="col-sm-12 col-md-12 col-xs-12 article-home-description">
     <%= image_tag(article.image.url, class: "article-home-cover") if article.image? %>
 
     <div class="article-home-description-proprety">
@@ -31,7 +31,7 @@
       </div>
     <% end %>
   </div>
-  <div class="col-sm-12 comments-feed-proprety">
+  <div class="col-sm-12 col-md-12 col-xs-12 comments-feed-proprety">
     <% if article.comments.any? %>
       <div class="real-time-messages">
         <%= render partial: 'comments/comments_feed', object: article.comments %>
