@@ -1,3 +1,4 @@
+//100% screen md
 @media only screen and (min-width: 1500px) {
   .forgot-account {
     padding-top: 52px;
@@ -16,14 +17,22 @@
     padding-top: 50px;
     padding-bottom: 20px;
   }
+  #img-logo {
+    margin-left: -30px;
+  }
   .home-stats {
     margin-left: -17px;
     padding: 5px;
   }
   .navbar-responsive-right {
-    padding-left: 110px
+    padding-left: 108px
+  }
+  .search-btn {
+    margin-left: -25px;
   }
 }
+
+//#110screen md
 @media only screen and (max-width: 1499px) and (min-width: 1200px) {
   .home-feed {
     margin-left: -15px;
@@ -55,8 +64,39 @@
   .form-login-proprety {
     margin-left: -100px;
   }
+  #img-logo {
+    margin-left: -70px;
+  }
+  .navbar-responsive-right {
+    padding-left: 90px
+  }
+  .search-forms {
+    margin-left: -30px;
+  }
+  .search-btn {
+    margin-left: -25px;
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .search-forms{margin-left: 0;}
+      .search-btn{margin-top: 2px;height: 33.5px;}
+  }
 }
-
+//120% screen md
+@media only screen and (max-width: 1399px) and (min-width: 1300px) {
+  #img-logo {
+    margin-left: -115px;
+  }
+  .search-forms {
+    margin-left: -70px;
+  }
+  .search-btn {
+    margin-left: -25px;
+    height: 34px;
+  }
+}
+//130% screen md
 @media only screen and (max-width: 1299px) and (min-width: 1200px) {
   .form-login-proprety {
     margin-left: -35px
@@ -64,8 +104,25 @@
   .forgot-account {
     margin-top: -10px;
   }
+  #img-logo {
+    margin-left: -150px;
+  }
+  .search-forms {
+    margin-left: -110px;
+  }
+  .search-btn {
+    margin-left: -25px;
+    height: 34px;
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .search-forms{margin-left: 0;}
+      .search-btn{margin-top: 4px;height: 34px;}
+      #img-logo{margin-left: -135px;}
+  }
 }
-
+//140%-160% screen md
 @media only screen and (max-width: 1199px) and (min-width: 1000px) {
   .form-login-proprety {
     padding-top: 30px;
@@ -80,14 +137,204 @@
     margin-top: -26px;
     padding-bottom: 10px;
   }
-}
-
-
-@media only screen and (max-width: 1200px) and (min-width: 1000px) {
   .home-stats {
     margin-left: -42px;
   }
+  #img-logo {
+    margin-left: -105px;
+  }
+  .navbar-responsive-right {
+    padding-left: 5px
+  }
+  .search-forms {
+    margin-left: -70px;
+  }
+  .search-btn {
+    margin-left: -25px;
+    height: 34px;
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .search-forms{margin-left: 0;}
+      .search-btn{margin-top: 2.5px;height: 34px;}
+  }
 }
+//140% screen md
+@media only screen and (max-width: 1199px) and (min-width: 1100px) {
+  #img-logo {
+    margin-left: -80px;
+  }
+  .search-forms {
+    margin-left: -50px;
+  }
+}
+//160% screen md
+@media only screen and (max-width: 1050px) and (min-width: 1000px) {
+  #img-logo {
+    margin-left: -125px;
+  }
+  .search-forms {
+    margin-left: -85px;
+  }
+}
+
+//170% screen md
+@media only screen and (max-width: 999px) and (min-width: 900px) {
+  #img-logo {
+    margin-left: 115px;
+  }
+  .navbar-responsive-right {
+    padding-left: 55px
+  }
+}
+
+//180% screen md
+@media only screen and (max-width: 899px) and (min-width: 865px) {
+  #img-logo {
+    margin-left: 90px;
+  }
+  .navbar-responsive-right {
+    padding-left: 55px
+  }
+}
+
+//190% screen md
+@media only screen and (max-width: 864px) and (min-width: 850px) {
+  #img-logo {
+    margin-left: 75px;
+  }
+  .navbar-responsive-right {
+    padding-left: 55px
+  }
+}
+
+//200% screen md
+@media only screen and (max-width: 849px) and (min-width: 800px) {
+  #img-logo {
+    margin-left: 50px;
+  }
+  .navbar-responsive-right {
+    padding-left: 55px
+  }
+}
+
+//210% screen md
+@media only screen and (max-width: 799px) and (min-width: 750px) {
+  #img-logo {
+    margin-left: 35px;
+  }
+  .navbar-responsive-right {
+    padding-left: 55px
+  }
+}
+
+//220% screen md
+@media only screen and (max-width: 749px) and (min-width: 725px) {
+  #img-logo {
+    margin-left: 20px;
+  }
+  .navbar-responsive-right {
+    padding-left: 278px
+  }
+}
+
+//230% screen md
+@media only screen and (max-width: 724px) and (min-width: 700px) {
+  #img-logo {
+    margin-left: 50px;
+  }
+  .navbar-responsive-right {
+    padding-left: 278px
+  }
+}
+
+//240% screen md
+@media only screen and (max-width: 699px) and (min-width: 650px) {
+  #img-logo {
+    margin-left: 20px;
+  }
+  .navbar-responsive-right {
+    padding-left: 235px
+  }
+}
+
+//250% screen md
+@media only screen and (max-width: 649px) and (min-width: 625px) {
+  #img-logo {
+    margin-left: 20px;
+  }
+  .navbar-responsive-right {
+    padding-left: 212px
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .navbar-responsive-right{padding-left: 209px;}
+  }
+}
+
+//260% screen md
+@media only screen and (max-width: 624px) and (min-width: 600px) {
+  #img-logo {
+    margin-left: 20px;
+  }
+  .navbar-responsive-right {
+    padding-left: 190px
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .navbar-responsive-right{padding-left: 185px;}
+  }
+}
+
+//270% screen md
+@media only screen and (max-width: 599px) and (min-width: 575px) {
+  #img-logo {
+    margin-left: 20px;
+  }
+  .navbar-responsive-right {
+    padding-left: 167px
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .navbar-responsive-right{padding-left: 162px;}
+  }
+}
+
+//280%-290% screen md
+@media only screen and (max-width: 574px) and (min-width: 550px) {
+  #img-logo {
+    margin-left: 20px;
+  }
+  .navbar-responsive-right {
+    padding-left: 145px
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .navbar-responsive-right{padding-left: 140px;}
+  }
+}
+
+//300% screen md
+@media only screen and (max-width: 549px) and (min-width: 500px) {
+  #img-logo {
+    margin-left: 20px;
+  }
+  .navbar-responsive-right {
+    padding-left: 123px
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .navbar-responsive-right{padding-left: 120px;}
+  }
+}
+
+
 
 @media only screen and (max-width: 1000px) {
   .custom-nav {
