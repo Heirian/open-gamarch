@@ -21,7 +21,7 @@
       color: #fff;
       text-shadow: -1px 0 rgba(0, 0, 0, 0.125), 0 1px rgba(0, 0, 0, 0.125), 1px 0 rgba(0, 0, 0, 0.125), 0 -1px rgba(0, 0, 0, 0.125);
       &:hover {
-        color: #fff;
+        color: #F0F8FF;
         text-decoration: none;
       }
     }
@@ -32,11 +32,11 @@
   .btn-nav-responsive {
       display: inline-block;
       padding-top: 3px;
-    a {
+    .btn-nav {
       color: #fff;
       text-shadow: -1px 0 rgba(0, 0, 0, 0.125), 0 1px rgba(0, 0, 0, 0.125), 1px 0 rgba(0, 0, 0, 0.125), 0 -1px rgba(0, 0, 0, 0.125);
       &:hover {
-        color: #fff;
+        color: #F0F8FF;
         text-decoration: none;
       }
     }

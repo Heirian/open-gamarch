@@ -3,31 +3,32 @@
 
 <section>
   <div class="row">
-    <div class="profile-cover">
-      <% unless @user.image? %>
-        <% if @user.gender == 'girl' %>
-          <%= image_tag('girl-cover.jpg', class: "img-ratio") %>
-        <% else %>
-          <%= image_tag('boy-cover.jpg', class: "img-ratio") %>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="profile-cover">
+        <% unless @user.image? %>
+          <% if @user.gender == 'girl' %>
+            <%= image_tag('girl-cover.jpg', class: "img-ratio") %>
+          <% else %>
+            <%= image_tag('boy-cover.jpg', class: "img-ratio") %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= image_tag(@user.image, class: "img-ratio") if @user.image? %>
+        <%= image_tag(@user.image, class: "img-ratio") if @user.image? %>
         <div class="col-md-12 col-sm-12 col-xs-12 profile-content">
-              <div class="center col-md-12 col-sm-12 col-xs-12">
-                <%= gravatar_for(@user, size: 150, class: 'profile-avatar') %>
-              </div>
+          <div class="center col-md-12 col-sm-12 col-xs-12">
+            <%= gravatar_for(@user, size: 150, class: 'profile-avatar') %>
+          </div>
 
-              <div class="stats-float profile-stats center col-md-3 col-md-offset-8 col-sm-4 col-sm-offset-7 col-xs-12">
-                <%= render 'shared/stats' %>
-              </div>
+          <div class="stats-float profile-stats center col-md-3 col-md-offset-8 col-sm-4 col-sm-offset-7 col-xs-12">
+            <%= render 'shared/stats' %>
+          </div>
 
-              <div class="btn-float col-md-1 col-sm-1 col-xs-12">
-                <% if current_user == @user %>
-                  <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-purple' %>
-                <% else %>
-                  <%= render 'follow_form' if logged_in? %>
-                <% end %>
-              </div>
+          <div class="btn-float col-md-1 col-sm-1 col-xs-1">
+            <% if current_user == @user %>
+              <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-purple' %>
+            <% else %>
+              <%= render 'follow_form' if logged_in? %>
+            <% end %>
+          </div>
 
           <div class="user-name-profile center col-md-12 col-sm-12 col-xs-12">
             <%= @user.name.capitalize %>
@@ -38,38 +39,33 @@
             </h5>
           <% end %>
         </div>
-
+      </div>
     </div>
-
   </div>
 </section>
 
 <section>
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 col-md-12 col-xs-12">
       <header class="text-center">
         <h2>Articles</h2>
       </header>
       <hr />
       <div class="row">
         <% @user_articles.each do |article| %>
-          <div class="col-md-4 col-sm-6">
-            <%= image_tag(article.image.url, class: "img-ratio") if article.image? %>
-            <h4><%= link_to article.name, article_path(article) %></h4>
-            <p><%= truncate(article.description, length: 150) %></p>
-            <p>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="article-user-show">
+              <%= image_tag(article.image.url, class: "img-cover-ratio") if article.image? %>
+              <h4><%= link_to article.name, article_path(article) %></h4>
               <span class="quiet">
-                <small>Created <%= time_ago_in_words(article.created_at) %> ago</small>
+                <small class="article-show-footer"><%= time_ago_in_words(article.created_at) %> ago
+                  | <%= article.reading_time %> min read
+                  | <%= link_to(pluralize(article.comments.count, "comm"), article_path(article, anchor: "wall"),  target: '_blank') %>
+                </small>
               </span>
-            </p>
-            <% if logged_in? && current_user == article.user %>
-              <div class="btn-group">
-                <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-purple" %>
-                <%= link_to "Delete this article", article_path(article), method: :delete,
-                                                                        data: { confirm: "Are you sure?" },
-                                                                        class: "btn btn-purple" %>
-              </div>
-            <% end %>
+
+            </div>
+  
           </div>
         <% end %>
       </div>
