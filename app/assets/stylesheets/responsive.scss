@@ -14,10 +14,6 @@
   background-color: #fff;
 }
 
-.users-home-name {
-  font-family: impact, fantasy;
-}
-
 //100% screen md
 @media only screen and (min-width: 1500px) {
   .forgot-account {
@@ -649,7 +645,7 @@
     margin-left: 10px;
   }
   .navbar-responsive-right {
-    padding-left: 20px
+    padding-left: 60px
   }
   .profile-stats {
     margin-top: 10px;
@@ -664,7 +660,7 @@
   }
   .data-read-timing-feed {
     font-size: 8px;
-    margin-top: -15px;
+    margin-top: -30px;
   }
   .comment-feed-ajust {
     display: none;
@@ -675,7 +671,7 @@
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
-      .navbar-responsive-right{padding-left: 20px;}
+      .navbar-responsive-right{padding-left: 60px;}
       .profile-content {
         top:50%;
         margin-top: -200px;

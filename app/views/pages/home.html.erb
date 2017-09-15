@@ -51,7 +51,7 @@
       <div class="col-md-6 col-sm-12 col-xs-12 home-feed">
         <div>
           <%= form_for(@article, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>
-            <div class="input-group">
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
               <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user),
                                class:"input-group-addon input-group-addon-home" %>
               <%= f.text_field :description, class: "form-control diary-form",
