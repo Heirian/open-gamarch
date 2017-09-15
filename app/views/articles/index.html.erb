@@ -1,18 +1,18 @@
 
 <hr />
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-12 col-xs-12">
       <% @articles.each do |article| %>
-        <div class="col-md-4 justify">
+        <div class="col-md-3 col-sm-6 col-xs-12 justify">
           <div class="article-index">
             <%= image_tag(article.image.url, class: "img-cover-ratio") if article.image? %>
             <h4 class="article-index-title">
               <%= link_to truncate(article.name, length: 30, class:"justify"), article_path(article) %>
             </h4>
             <p>
-              <span class="quiet">
+              <span class="quiet article-index-comms">
                 <small><%= time_ago_in_words(article.created_at) %> ago
                   | <%= article.reading_time %> min read
-                  | <%= link_to(pluralize(article.comments.count, "comment"), article_path(article, anchor: "wall"),  target: '_blank') %>
+                  | <%= link_to(pluralize(article.comments.count, "comm"), article_path(article, anchor: "wall"),  target: '_blank') %>
                 </small>
               </span>
             </p>
@@ -24,7 +24,6 @@
               </div>
             </div>
           </div>
-
         </div>
       <% end %>
     </div>

@@ -24,7 +24,9 @@
               <div class="home-stats col-md-12 col-sm-12 col-xs-12">
                 <%= render 'shared/stats' %>
               </div>
-              <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
+              <div class="count-articles-home">
+                <%= pluralize(current_user.articles.count, "article") if current_user.articles %>
+              </div>
             </div>
         </section>
         <section class="article-content home-cover">

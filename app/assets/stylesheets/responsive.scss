@@ -645,7 +645,7 @@
     margin-left: 10px;
   }
   .navbar-responsive-right {
-    padding-left: 60px
+    padding-left: 55px
   }
   .profile-stats {
     margin-top: 10px;
@@ -660,7 +660,7 @@
   }
   .data-read-timing-feed {
     font-size: 8px;
-    margin-top: -30px;
+    margin-top: -20px;
   }
   .comment-feed-ajust {
     display: none;
@@ -671,7 +671,7 @@
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
-      .navbar-responsive-right{padding-left: 60px;}
+      .navbar-responsive-right{padding-left: 55px;}
       .profile-content {
         top:50%;
         margin-top: -200px;
