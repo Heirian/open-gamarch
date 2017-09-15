@@ -46,6 +46,10 @@
   .search-btn {
     margin-left: -25px;
   }
+  .btn-float {
+    right: 22px;
+    top: -124px;
+  }
 }
 
 //#110screen md
@@ -92,6 +96,10 @@
   .search-btn {
     margin-left: -25px;
   }
+  .btn-float {
+    right: 18px;
+    top: -123px;
+  }
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
@@ -111,6 +119,10 @@
     margin-left: -25px;
     height: 34px;
   }
+  .btn-float {
+    right: 22px;
+    top: -123px;
+  }
 }
 //130% screen md
 @media only screen and (max-width: 1299px) and (min-width: 1200px) {
@@ -129,6 +141,10 @@
   .search-btn {
     margin-left: -25px;
     height: 34px;
+  }
+  .btn-float {
+    right: 20px;
+    top: -123px;
   }
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
@@ -177,6 +193,15 @@
   .profile-cover {
     height: 400px;
   }
+  .btn-float {
+    right: 38px;
+    top: -143px;
+  }
+
+  .stats-float {
+    margin-top: -45px;
+    display: inline-block;
+  }
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
@@ -192,6 +217,10 @@
   .search-forms {
     margin-left: -50px;
   }
+  .btn-float {
+    right: 40px;
+    top: -144px;
+  }
 }
 //160% screen md
 @media only screen and (max-width: 1050px) and (min-width: 1000px) {
@@ -200,6 +229,10 @@
   }
   .search-forms {
     margin-left: -85px;
+  }
+  .btn-float {
+    right: 35px;
+    top: -144px;
   }
 }
 
@@ -219,6 +252,10 @@
   .profile-cover {
     height: 300px;
   }
+  .btn-float {
+    right: 58px;
+    top: -33px;
+  }
 }
 
 //180% screen md
@@ -236,6 +273,10 @@
   }
   .profile-cover {
     height: 300px;
+  }
+  .btn-float {
+    right: 54px;
+    top: -33px;
   }
 }
 
@@ -255,6 +296,10 @@
   .profile-cover {
     height: 300px;
   }
+  .btn-float {
+    right: 54px;
+    top: -33px;
+  }
 }
 
 //200% screen md
@@ -272,6 +317,10 @@
   }
   .profile-cover {
     height: 300px;
+  }
+  .btn-float {
+    right: 59px;
+    top: -33px;
   }
 }
 
@@ -291,6 +340,10 @@
   .profile-cover {
     height: 300px;
   }
+  .btn-float {
+    right: 57px;
+    top: -33px;
+  }
 }
 
 //220% screen md
@@ -308,8 +361,8 @@
     min-width: 280px;
   }
   .btn-float {
-    margin-left: 560px;
-    margin-top: -85px;
+    right: 59px;
+    top: -68px;
   }
   .profile-cover {
     height: 350px;
@@ -332,8 +385,8 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 540px;
-    margin-top: -85px;
+    right: 62px;
+    top: -68px;
   }
   .profile-cover {
     height: 350px;
@@ -356,8 +409,8 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 530px;
-    margin-top: -85px;
+    right: 63px;
+    top: -68px;
   }
   .profile-cover {
     height: 350px;
@@ -385,8 +438,8 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 505px;
-    margin-top: -85px;
+    right: 65px;
+    top: -68px;
   }
   .profile-cover {
     height: 350px;
@@ -414,8 +467,8 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 480px;
-    margin-top: -85px;
+    right: 69px;
+    top: -82px;
   }
 }
 
@@ -440,8 +493,8 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 450px;
-    margin-top: -85px;
+    right: 71px;
+    top: -82px;
   }
 }
 
@@ -466,8 +519,8 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 420px;
-    margin-top: -85px;
+    right: 72px;
+    top: -82px;
   }
 }
 
@@ -492,8 +545,8 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 390px;
-    margin-top: -85px;
+    right: 75px;
+    top: -82px;
   }
 }
 
@@ -518,24 +571,52 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 260px;
-    margin-top: -90px;
+    right: 85px;
   }
 }
 
+@media only screen and (max-width: 399px) and (min-width: 351px) {
+  #img-logo {
+    margin-left: 10px;
+  }
+  .navbar-responsive-right {
+    padding-left: 20px
+  }
+  .profile-stats {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    min-width: 280px;
+    max-width: 100%;
+  }
+  .btn-float {
+    right: 77px;
+    padding: 0;
+  }
+  //chrome css
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+    and (min-resolution:.001dpcm) {
+      .navbar-responsive-right{padding-left: 20px;}
+      .profile-content {
+        top:50%;
+        margin-top: -200px;
+      }
+    }
+}
+
 //500% screen md
-@media only screen and (max-width: 399px) {
+@media only screen and (max-width: 350px) {
   #img-logo {
     margin-left: 5px;
   }
   .navbar-responsive-right {
-    padding-left: 15px
+    padding-left: 20px
   }
 
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
-      .navbar-responsive-right{padding-left: 15px;}
+      .navbar-responsive-right{padding-left: 17px;}
       .profile-content {
         top:50%;
         margin-top: -200px;
@@ -549,8 +630,11 @@
     max-width: 100%;
   }
   .btn-float {
-    margin-left: 185px;
-    margin-top: -90px;
+    right: 77px;
+    padding: 0;
+  }
+  .stats-float {
+    margin-right: -13px;
   }
 }
 
@@ -637,6 +721,7 @@
     min-width: 280px;
     max-width: 100%;
   }
+
 }
 
 @media only screen and (max-width: 1500px) and (min-width: 1450px) {

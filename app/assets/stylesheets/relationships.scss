@@ -9,12 +9,14 @@
   &:hover {
     background-color: #390046;
     color: #fff;
+    border: 1px solid #fff;
   }
 }
 
 .btn-following {
   color: #fff;
   background-color: #390046;
+  border: 1px solid #fff;
   &:hover {
     color: #390046;
     background-color: #fff;
@@ -23,12 +25,11 @@
 }
 
 .btn-float {
-  margin-top: -24px;
-  margin-left: -50px;
-  display: inline-block;
+  position: absolute;
 }
 
 .stats-float {
+  float: right;
   margin-top: -27px;
   padding-left: 10px;
   display: inline-block;
