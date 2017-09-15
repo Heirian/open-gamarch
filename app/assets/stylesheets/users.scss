@@ -148,4 +148,14 @@
       text-decoration: none;
     }
   }
+  p {
+    img {
+      display: none;
+    }
+  }
+}
+
+.btn-article-more {
+  float: right;
+  width: 100%;
 }

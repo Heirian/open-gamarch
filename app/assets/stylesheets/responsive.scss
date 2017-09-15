@@ -39,6 +39,7 @@
   .home-stats {
     margin-left: -13px;
     padding: 5px;
+    min-width: 300px;
   }
   .navbar-responsive-right {
     padding-left: 108px
@@ -47,8 +48,13 @@
     margin-left: -25px;
   }
   .btn-float {
-    right: 22px;
+    right: 20px;
     top: -124px;
+  }
+  .profile-stats {
+    margin-left: 380px;
+    min-width: 350px;
+    max-width: 100%;
   }
 }
 
@@ -76,6 +82,7 @@
     padding-top: 5px;
     margin-left: -12px;
     padding-bottom: 5px;
+    min-width: 300px;
   }
   .form-login {
     padding-top: 45px;
@@ -100,6 +107,11 @@
     right: 18px;
     top: -123px;
   }
+  .profile-stats {
+    margin-left: 380px;
+    min-width: 350px;
+    max-width: 100%;
+  }
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
@@ -123,6 +135,14 @@
     right: 22px;
     top: -123px;
   }
+  .profile-stats {
+    margin-left: 380px;
+    min-width: 350px;
+    max-width: 100%;
+  }
+  .home-stats {
+    min-width: 300px;
+  }
 }
 //130% screen md
 @media only screen and (max-width: 1299px) and (min-width: 1200px) {
@@ -145,6 +165,14 @@
   .btn-float {
     right: 20px;
     top: -123px;
+  }
+  .profile-stats {
+    margin-left: 380px;
+    min-width: 350px;
+    max-width: 100%;
+  }
+  .home-stats {
+    min-width: 300px;
   }
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
@@ -170,7 +198,8 @@
     padding-bottom: 10px;
   }
   .home-stats {
-    margin-left: -35px;
+    margin-left: -44px;
+    min-width: 300px;
   }
   .profile-stats {
     margin-left: 550px;
@@ -234,6 +263,11 @@
     right: 35px;
     top: -144px;
   }
+  .profile-stats {
+    margin-left: 380px;
+    min-width: 350px;
+    max-width: 100%;
+  }
 }
 
 //170% screen md
@@ -246,7 +280,7 @@
   }
   .profile-stats {
     margin-left: 380px;
-    min-width: 280px;
+    min-width: 300px;
     max-width: 100%;
   }
   .profile-cover {
@@ -268,7 +302,7 @@
   }
   .profile-stats {
     margin-left: 380px;
-    min-width: 280px;
+    min-width: 300px;
     max-width: 100%;
   }
   .profile-cover {
@@ -290,7 +324,7 @@
   }
   .profile-stats {
     margin-left: 380px;
-    min-width: 280px;
+    min-width: 300px;
     max-width: 100%;
   }
   .profile-cover {
@@ -312,7 +346,7 @@
   }
   .profile-stats {
     margin-left: 380px;
-    min-width: 280px;
+    min-width: 300px;
     max-width: 100%;
   }
   .profile-cover {
@@ -334,7 +368,7 @@
   }
   .profile-stats {
     margin-left: 380px;
-    min-width: 280px;
+    min-width: 300px;
     max-width: 100%;
   }
   .profile-cover {
@@ -637,8 +671,6 @@
     margin-right: -13px;
   }
 }
-
-
 
 @media only screen and (max-width: 1000px) {
   .custom-nav {

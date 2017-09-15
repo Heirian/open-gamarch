@@ -52,22 +52,7 @@
       </header>
 
       <div class="row">
-        <% @user_articles.each do |article| %>
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="article-user-show">
-              <%= image_tag(article.image.url, class: "img-cover-ratio") if article.image? %>
-              <h4><%= link_to article.name, article_path(article) %></h4>
-              <span class="quiet">
-                <small class="article-show-footer"><%= time_ago_in_words(article.created_at) %> ago
-                  | <%= article.reading_time %> min read
-                  | <%= link_to(pluralize(article.comments.count, "comm"), article_path(article, anchor: "wall"),  target: '_blank') %>
-                </small>
-              </span>
-
-            </div>
-
-          </div>
-        <% end %>
+        <%= render(partial: 'users/user_articles', object: @user_articles) %>
       </div>
     </div>
   </div>

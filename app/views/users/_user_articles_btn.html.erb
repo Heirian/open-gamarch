@@ -1,0 +1,11 @@
+<div id="my-articles">
+  <% user_articles_btn.each do |user_article| %>
+    <%= render(partial: 'users/user_article', object: user_article) %>
+  <% end %>
+</div>
+
+<% if user_articles_btn.next_page %>
+  <div id="with-button-article" align="center">
+    <%= will_paginate user_articles_btn %>
+  </div>
+<% end %>

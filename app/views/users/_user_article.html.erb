@@ -1,0 +1,17 @@
+<div class="col-md-3 col-sm-6 col-xs-12">
+  <div class="article-user-show">
+    <%= image_tag(user_article.image.url, class: "img-cover-ratio") if user_article.image? %>
+    <h4><%= link_to user_article.name, article_path(user_article) %></h4>
+
+      <%= simple_format(user_article.make_safe(100)) unless user_article.image? %>
+
+    <span class="quiet">
+      <small class="article-show-footer"><%= time_ago_in_words(user_article.created_at) %> ago
+        | <%= user_article.reading_time %> min read
+        | <%= link_to(pluralize(user_article.comments.count, "comm"), article_path(user_article, anchor: "wall"),  target: '_blank') %>
+      </small>
+    </span>
+
+  </div>
+
+</div>
