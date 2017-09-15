@@ -14,6 +14,10 @@
   background-color: #fff;
 }
 
+.users-home-name {
+  font-family: impact, fantasy;
+}
+
 //100% screen md
 @media only screen and (min-width: 1500px) {
   .forgot-account {
@@ -37,7 +41,7 @@
     margin-left: -30px;
   }
   .home-stats {
-    margin-left: -13px;
+    margin-left: -20px;
     padding: 5px;
     min-width: 300px;
   }
@@ -80,7 +84,7 @@
   }
   .home-stats {
     padding-top: 5px;
-    margin-left: -12px;
+    margin-left: -18px;
     padding-bottom: 5px;
     min-width: 300px;
   }
@@ -231,6 +235,14 @@
     margin-top: -45px;
     display: inline-block;
   }
+
+  .users-home-name {
+    margin-left: 25px;
+  }
+  .data-read-timing-feed {
+    font-size: 10px;
+  }
+
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
@@ -504,6 +516,9 @@
     right: 69px;
     top: -82px;
   }
+  .data-read-timing-feed {
+    font-size: 10px;
+  }
 }
 
 //270% screen md
@@ -529,6 +544,9 @@
   .btn-float {
     right: 71px;
     top: -82px;
+  }
+  .data-read-timing-feed {
+    font-size: 10px;
   }
 }
 
@@ -556,6 +574,9 @@
     right: 72px;
     top: -82px;
   }
+  .data-read-timing-feed {
+    font-size: 10px;
+  }
 }
 
 //300% screen md
@@ -582,6 +603,9 @@
     right: 75px;
     top: -82px;
   }
+  .data-read-timing-feed {
+    font-size: 10px;
+  }
 }
 
 //400% screen md
@@ -607,6 +631,17 @@
   .btn-float {
     right: 85px;
   }
+  .data-read-timing-feed {
+    font-size: 8px;
+    margin-top: -10px;
+    padding-right: 30px;
+  }
+  .comment-feed-ajust {
+    display: none;
+  }
+  .gravatar-feed {
+    margin-left: 110px;
+  }
 }
 
 @media only screen and (max-width: 399px) and (min-width: 351px) {
@@ -627,6 +662,16 @@
     right: 77px;
     padding: 0;
   }
+  .data-read-timing-feed {
+    font-size: 8px;
+    margin-top: -15px;
+  }
+  .comment-feed-ajust {
+    display: none;
+  }
+  .gravatar-feed {
+    margin-left: 110px;
+  }
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)
     and (min-resolution:.001dpcm) {
@@ -646,6 +691,21 @@
   .navbar-responsive-right {
     padding-left: 20px
   }
+  .data-read-timing-feed {
+    font-size: 8px;
+    margin-top: -35px;
+    padding-right: 5px;
+  }
+  .comment-feed-ajust {
+    display: none;
+  }
+  .gravatar-feed {
+    margin-left: 75px;
+  }
+  .home-stats {
+    margin-left: -13px;
+  }
+
 
   //chrome css
   @media screen and (-webkit-min-device-pixel-ratio:0)

@@ -6,7 +6,7 @@
     <%= form_for(:session, :html => { class: "form-horizontal", role: "form" }, url: login_path) do |f| %>
       <div class="form-group">
         <div class="col-md-offset-4 col-md-4 col-sm-12 col-xs-12">
-          <%= f.text_field :email, class: "form-control", placeholder: "Enter your email" %>
+          <%= f.text_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
         </div>
       </div>
       <div class="form-group">

@@ -3,15 +3,15 @@
     <%= link_to gravatar_for(article.user, size: 50, class: 'gravatar-feed'), article.user %>
   </div>
   <div class="col-sm-11 col-md-11 col-xs-11 article-home-proprety">
-    <span class="users-home-name inline-home article-home-ajust">
+    <span class="users-home-name inline-home article-home-ajust users-name-feed">
       <%= link_to article.user.name, article.user %>
     </span>
-    <small class="right inline">
+    <small class="right inline data-read-timing-feed">
       <%= article.timestamp %>
       | <%= article.reading_time %> min read
     </small>
-    <div class="article-home-ajust">
-      <%= link_to article.name, article_path(article) %>
+    <div class="article-home-ajust users-home-name title-name-feed">
+      <%= link_to truncate(article.name, length: 80), article_path(article) %>
     </div>
   </div>
 
