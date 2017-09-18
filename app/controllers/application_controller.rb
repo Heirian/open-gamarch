@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
-
+  before_action :set_locale
+  before_action :default_url_options
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -25,5 +26,15 @@ class ApplicationController < ActionController::Base
       flash[:danger] = 'You must logged in to perform that action'
       redirect_to root_path
     end
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || current_user.try(:locale) || I18n.default_locale
+  end
+
+  def default_url_options( options = {})
+    { locale: I18n.locale }.merge options
   end
 end

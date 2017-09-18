@@ -1,0 +1,79 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+pt-BR:
+  hello: "Ola Mundo"
+  #home_page
+  article: "artigo"
+  communities: "Comunidades"
+  following: "Seguindo"
+  followers: "Seguidores"
+  featured: "Destaque"
+  sponsored: "Patrocinado"
+  welcome_to: "Bem-vindo ao Gamarch!"
+  get_stared_message: "Começe seguindo jogadores profissionais. Você verá aqui seus artigos, diário e comunidades"
+  lets_go: "Vamos lá"
+  and_now: "E agora"
+  #loggout_home_page
+  home_title: "Bem-vindo a revolução na expência com jogos"
+  home_community: "Aumente a sua comunidade de jogos"
+  home_experience: "Aumente a sua experiencia"
+  home_players: "Melhores jogadores"
+  home_funny: "Comunidades divertidas"
+  home_gamarch: "O que é Gamarch?"
+  home_gamarch_desc: "Como jogar em alto nível? Gamarch é um site que possibilita a jogadores se comunicarem em uma única plataforma assim desenvolvendo a comunidade de seus jogos favoritos. Aprendendo uns com os outros e aumentando o nivel do multiplayer e da propria experiencia com jogos. Cada jogo possui sua propria area e um forum para que os usuarios se sintam a vontade em conversar uns com os outros. Compartilhe experiencias, crie estrategias e desenvolva novas coisas."
+  home_blog_desc: "Dê uma olhada no nosso blog. Aqui nós vamos te manter informados sobre o progresso do site. Também encontre alguns artigos sobre estrategias de jogos."
+  gaming_better: "Jogue melhor"
+  improve_community: "Melhore a comunidade de seu jogo favorito"
+  your_name: "Escolha um nome de usuário"
+  your_email: "Coloque seu email"
+  your_password: "Escolha uma senha"
+  your_birthday: "Seu aniversário"
+  girl: "Garota"
+  boy: "Garoto"
+  warning_terms: "Clicando em 'Criar minha conta', você aceita os"
+  gamarch_user_terms: "Termos de Usuário"
+  privacy_police: "Política de Privacidade"
+  cookie_police: "Política de Cookies"
+  and: "e"
+  create_account: "Criar minha conta"
+  update_account: "Atualizar minha conta"
+  return_home: "Retornar ao início"
+  rights_reserved: "Todos os direitos reservados"
+  #footer
+  starting: "Começando"
+  help: "Ajuda"
+  about: "Sobre"
+  contact: "Contato"
+  terms: "Termos"
+  privacy: "Privacidade"
+  blog: "Blog"
+  cookies: "Cookie"

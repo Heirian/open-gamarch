@@ -1,4 +1,4 @@
 <small class="center">
-  By clicking 'Create my account', you agree to the <%= link_to("Gamarch User Terms", terms_path, target: "_blank") %>,
-  <%= link_to("Privacy Policy", privacy_path, target: "_blank") %> and <%= link_to("Cookie Policy.", cookie_path, target: "_blank") %>
+  <%= t(:warning_terms) %> <%= link_to(t(:gamarch_user_terms), terms_path, target: "_blank") %>,
+  <%= link_to(t(:privacy_police), privacy_path, target: "_blank") %> <%= t(:and) %> <%= link_to(t(:cookie_police), cookie_path, target: "_blank") %>
 </small>

@@ -17,5 +17,10 @@ module Gamarch
     config.action_cable.mount_path = '/cable'
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
     config.action_view.embed_authenticity_token_in_remote_forms = true
+
+
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.available_locales = [:en, 'pt-BR']
+    config.i18n.default_locale = :en
   end
 end
