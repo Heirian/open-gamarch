@@ -22,24 +22,26 @@
             <%= pluralize(@user.posts.count, "post") if @user.posts %>
           </div>
         </section>
-        <section >
-            <div class="center home-user-name">
-            <h3>  <%= t(:featured) %> </h3>
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <% @random_posts.each do |random_post| %>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="article-content home-cover">
-                        <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
-                        <%= link_to random_post.name, post_path(random_post) %>
+        <% if @user.posts.count > 6 %>
+          <section >
+              <div class="center home-user-name">
+              <h3>  <%= t(:featured) %> </h3>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <% @random_posts.each do |random_post| %>
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="article-content home-cover">
+                          <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
+                          <%= link_to random_post.name, post_path(random_post) %>
+                        </div>
                       </div>
-                    </div>
-                  <% end %>
-                </div>
+                    <% end %>
+                  </div>
 
+                </div>
               </div>
-            </div>
-        </section>
+          </section>
+        <% end %>
         <section class="article-content home-cover">
           <div class="center home-user-name">
             <h3><%=  t(:subscribe_text) %></h3>
