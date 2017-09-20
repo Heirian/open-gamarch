@@ -1,3 +1,29 @@
+<!-- facebook api -->
+<meta property="og:url"                content="<%= post_path(@post) %>"/>
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="<%= @post.name %>" />
+<meta property="og:description"        content="<%= @post.make_safe(50)%>" />
+<meta property="og:image"              content="<%= @post.image %>" />
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '152331878690730',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -6,7 +32,7 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=152331878690730";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
+<!-- facebook api end -->
 <% provide(:title, @post.name ) %>
 <div class="row">
   <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
@@ -79,7 +105,7 @@
 </div>
 <div class="col-md-11">
   <div class="col-md-1 right">
-<div class="fb-share-button" data-href="http://www.gamarch.com/:locale/posts/:id/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.gamarch.com%2F%3Alocale%2Fposts%2F%3Aid%2F&amp;src=sdkpreparse"><%= t(:share) %></a></div>
+<div class="fb-share-button" data-href="http://www.gamarch.com/<%= params[:locale] %>/posts/<%= params[:id] %>/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.gamarch.com%2F%3Alocale%2Fposts%2F%3Aid%2F&amp;src=sdkpreparse"><%= t(:share) %></a></div>
   </div>
 </div>
 
@@ -133,37 +159,3 @@
     </div>
   </div>
 </section>
-
-<meta property="og:url"                content="<%= post_path(@post) %>"/>
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="<%= @post.name %>" />
-<meta property="og:description"        content="<%= @post.make_safe(50)%>" />
-<meta property="og:image"              content="<%= @post.image %>" />
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '152331878690730',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
