@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require jquery
-//= require bootstrap-sprockets
-//= require pagination
-//= require loadmore
+//= require ckeditor/init
+//= require ckeditor/plugins/image2/plugin
+//= require ckeditor/plugins/widget/plugin
+//= require ckeditor/config
+//= require bootstrap-filestyle
 //= require turbolinks
 //= require_tree .
