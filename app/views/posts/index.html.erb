@@ -22,9 +22,9 @@
             <%= pluralize(@user.posts.count, "post") if @user.posts %>
           </div>
         </section>
-        <section class="article-content home-cover">
+        <section >
             <div class="center home-user-name">
-              <%= link_to 'Featured', blog_path %>
+            <h3>  <%= t(:featured) %> </h3>
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <% @random_posts.each do |random_post| %>
@@ -40,19 +40,42 @@
               </div>
             </div>
         </section>
+        <section class="article-content home-cover">
+          <div class="center home-user-name">
+            <h3><%=  t(:subscribe_text) %></h3>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <% if params[:locale] == 'pt' %>
+                    <%= render 'mailchimp_pt' %>
+                  <% else %>
+                    <%= render 'mailchimp' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </aside>
       <div class="col-md-8 col-sm-12 col-xs-12">
       <% @posts.each do |post| %>
         <div class="col-md-12 col-sm-12 col-xs-12 justify post-index">
           <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
+          <p>
+            <span class="quiet right">
+              <small class="data-read-timing-feed">
+                <% if params[:locale] == 'pt' %>
+                  <%= post.timestamp_dmy %>
+                <% else %>
+                  <%= post.timestamp %>
+                <% end %>
+                | <%= post.reading_time %> min <%= t(:read) %>
+              </small>
+            </span>
+          </p>
+          <br>
           <h4 class="article-index-title">
-            <p>
-              <span class="quiet right">
-                <small><%= time_ago_in_words(post.created_at) %> ago
-                  | <%= post.reading_time %> min read
-                </small>
-              </span>
-            </p>
+
             <%= link_to truncate(post.name, length: 60, class:"justify"), post_path(post) %>
 
           </h4>
@@ -60,7 +83,7 @@
             <%= post.make_safe(1000) %>
             <script id="dsq-count-scr" src="//gamarch.disqus.com/count.js" async></script>
             <% if post.description.size > 255 %>
-               <%= link_to('See more', post_path(post), class:'right') %>
+               <%= link_to(t(:see_more), post_path(post), class:'right') %>
             <% end %>
           </p>
         </div>

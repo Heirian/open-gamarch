@@ -5,14 +5,21 @@ class PostsController < ApplicationController
   before_action :require_admin_user, except: [:index, :show]
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 9)
-    @user = User.find(3)
-    @random_posts = Post.where(id: Post.pluck(:id).sample(4))
+    if params[:locale] == 'pt'
+      @user = User.find(1)
+      @posts = @user.posts.paginate(page: params[:page], per_page: 3)
+      @random_posts = @user.posts.where(id: @user.posts.pluck(:id).sample(3))
+    else
+      @user = User.find(1)
+      @posts = @user.posts.paginate(page: params[:page], per_page: 3)
+      @random_posts = @user.posts.where(id: @user.posts.pluck(:id).sample(3))
+    end
   end
 
   def show
     @user = @post.user
-    @random_posts = Post.where(id: Post.pluck(:id).sample(3))
+    @posts = @user.posts.reject { |r| r.id == @post.id }
+    @random_posts = @posts.sample(3)
   end
 
   def new

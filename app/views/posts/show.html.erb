@@ -6,7 +6,7 @@
       <%= link_to gravatar_for(@post.user, size: 100, class: 'article-avatar article-avatar-second-border'), about_path %>
     </div>
     <div class="inline article-user-name">
-        <%= link_to @post.user.name.capitalize, about_path %>
+        <%= link_to @post.user.name, about_path %>
     </div>
     <div class="inline">
       <% if logged_in? %>
@@ -15,8 +15,8 @@
         <% else %>
           <%= render 'users/follow_form' if logged_in? %>
         <% end %>
-      <% elsif @user.id == 3 %>
-        <%= link_to 'About', about_path, class: 'btn btn-purple' %>
+      <% elsif @user.id == 3 || @user.id == 4 %>
+        <%= link_to t(:about), about_path, class: 'btn btn-purple' %>
       <% else %>
         <%= link_to 'Log in or Sign up', root_path, class: 'btn btn-purple' %>
       <% end %>
@@ -24,8 +24,12 @@
     <div>
       <div class="biografy-show"><%= @post.user.bio %></div>
       <small>
-        <%= @post.timestamp %>
-        | <%= @post.reading_time %> min read
+        <% if params[:locale] == 'pt' %>
+          <%= @post.timestamp_dmy %>
+        <% else %>
+          <%= @post.timestamp %>
+        <% end %>
+        | <%= @post.reading_time %> min <%= t(:read) %>
       </small>
     </div>
   </div>
@@ -54,7 +58,7 @@
       <% if logged_in? %>
         <%= link_to "Create a new post", new_post_path, class: "btn btn-purple" %>
       <% end %>
-      <%= link_to "Seek new posts", posts_path, class: "btn btn-purple" %>
+      <%= link_to t(:seek_posts), posts_path, class: "btn btn-purple" %>
       <% if logged_in? && (current_user == @post.user || current_user.admin?) %>
         <%= link_to "Edit", edit_post_path(@post), class: "btn btn-purple" %>
         <%= link_to "Delete", post_path(@post), method: :delete,
@@ -65,12 +69,13 @@
   </div>
 </div>
 <hr />
-<section>
+<% if @user.posts.count > 1 %>
+  <section>
     <div class="center">
       <div class="row">
         <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1">
           <div class="col-md-12">
-            <%= link_to 'Featured', @user , class:'featured-name'%>
+            <%= link_to t(:featured), blog_path, class:'featured-name'%>
           </div>
           <% @random_posts.each do |random_post| %>
             <div class="col-md-4 col-sm-12 col-xs-12">
@@ -85,8 +90,8 @@
 
       </div>
     </div>
-</section>
-
+  </section>
+<% end %>
 <section>
   <div class="row">
     <div class="comment-disqus col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1">
@@ -96,6 +101,9 @@
         var disqus_config = function () {
         this.page.url = 'https://gamarch.herokuapp.com';
         this.page.identifier = '<%= @post.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        <% if params[:locale] == 'pt' %>
+          this.language = "pt";
+        <% end %>
         };
 
         (function() { // DON'T EDIT BELOW THIS LINE

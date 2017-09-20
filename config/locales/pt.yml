@@ -29,7 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-pt-BR:
+pt:
   hello: "Ola Mundo"
   #home_page
   article: "artigo"
@@ -77,3 +77,25 @@ pt-BR:
   privacy: "Privacidade"
   blog: "Blog"
   cookies: "Cookie"
+  #blog
+  email_address: "Seu endereço de email"
+  language: "Lingua"
+  subscribe_btn: "Inscreva-se"
+  subscribe_text: "Entre para a lista do Gamarch"
+  ago: "atrás"
+  read: ""
+  seek_posts: "Procure novos posts"
+  see_more: "Ver mais"
+  at: "às"
+  January: "de Janeiro de"
+  February: "de Fevereiro de"
+  March: "de Março de"
+  April: "de Abril de"
+  May: "de Maio de"
+  June: "de Junho de"
+  July: "de Julho de"
+  August: "de Agosto de"
+  September: "de Setembro de"
+  October: "de Outubro de"
+  November: "de Novembro de"
+  December: "de Dezembro de"
