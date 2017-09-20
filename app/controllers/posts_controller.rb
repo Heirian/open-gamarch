@@ -6,12 +6,12 @@ class PostsController < ApplicationController
 
   def index
     if params[:locale] == 'pt'
-      @user = User.find(1)
-      @posts = @user.posts.paginate(page: params[:page], per_page: 3)
+      @user = User.find(4)
+      @posts = @user.posts.paginate(page: params[:page], per_page: 6)
       @random_posts = @user.posts.where(id: @user.posts.pluck(:id).sample(3))
     else
-      @user = User.find(1)
-      @posts = @user.posts.paginate(page: params[:page], per_page: 3)
+      @user = User.find(3)
+      @posts = @user.posts.paginate(page: params[:page], per_page: 6)
       @random_posts = @user.posts.where(id: @user.posts.pluck(:id).sample(3))
     end
   end
