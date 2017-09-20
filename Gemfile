@@ -8,7 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', :git => 'https://gitlab.com/heirian/bootstrap4-customgem.git'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'font-awesome-sass'
 gem 'rails-i18n', '~> 5.0.0'

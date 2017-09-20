@@ -12,7 +12,8 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require bootstrap-sprockets
+//= require popper
+//= require bootstrap
 //= require pagination
 //= require loadmore
 //= require bootstrap-filestyle
