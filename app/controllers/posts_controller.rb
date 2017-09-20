@@ -62,7 +62,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:name, :description, :image, :file)
+      params.require(:post).permit(:name, :description, :image, :file, :remove_image)
     end
 
     def require_same_user

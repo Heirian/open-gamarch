@@ -6,6 +6,10 @@
 
       <div class="form-group">
         <div class="col-md-8 col-md-offset-2">
+          <% if object.image? %>
+            <%= image_tag(object.image.url, class: "img-ratio") %>
+            <%= f.check_box :remove_image, checked: false %> Remove cover image?
+          <% end %>
           <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'inputfile' %>
         </div>
       </div>
@@ -25,9 +29,9 @@
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2 btn-group">
           <%= f.submit class: "btn btn-purple" %>
-          <%= link_to "Create a new post", new_post_path, class: "btn btn-purple" unless @post.new_record?%>
+          <%= link_to "Create a new post", new_post_path, class: "btn btn-purple" unless object.new_record?%>
           <%= link_to "Seek new posts", posts_path, class: "btn btn-purple" %>
-          <%= link_to "Delete this post", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple" unless @post.new_record? %>
+          <%= link_to "Delete this post", post_path(object), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple" unless object.new_record? %>
         </div>
       </div>
     <% end %>

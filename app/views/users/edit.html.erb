@@ -96,16 +96,16 @@
 
 <script type="text/javascript">
   $('#user-avatar').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 2) {
-      $(".warning-avatar").html('<span>Warning: Maximum avatar size after resize process should be less than 2MB</span>');
+    var size_in_kilobytes = this.files[0].size/1024;
+    if (size_in_kilobytes > 100) {
+      $(".warning-avatar").html('<span>Warning: Maximum avatar size after resize process should be less than 500KB</span>');
     }
   });
 
   $('#user-cover').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 2) {
-      $(".warning-cover").html('<span>Warning: Maximum cover size after resize process should be less than 2MB</span>');
+    var size_in_kilobytes = this.files[0].size/1024;
+    if (size_in_kilobytes > 100) {
+      $(".warning-cover").html('<span>Warning: Maximum cover size after resize process should be less than 500KB</span>');
     }
   });
 </script>

@@ -87,15 +87,15 @@ class User < ApplicationRecord
 
     # Validates the size of an uploaded avatar.
     def avatar_size
-      if avatar.size > 2.megabytes
-        errors.add(:avatar, "size after resize process should be less than 2MB")
+      if avatar.size > 100.kilobytes
+        errors.add(:avatar, "size after resize process should be less than 500KB")
       end
     end
 
     # Validates the size of an uploaded image.
     def image_size
-      if image.size > 2.megabytes
-        errors.add(:image, "Cover size after resize process should be less than 2MB")
+      if image.size > 100.kilobytes
+        errors.add(:image, "Cover size after resize process should be less than 500KB")
       end
     end
 

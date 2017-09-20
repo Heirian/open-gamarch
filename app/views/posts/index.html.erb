@@ -19,7 +19,9 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <%= @user.bio %>
             </div>
-            <%= pluralize(@user.posts.count, "post") if @user.posts %>
+            <div class="count-articles-home">
+              <%= pluralize(@user.posts.count, "post") if @user.posts %>
+            </div>
           </div>
         </section>
         <% if @user.posts.count > 6 %>
