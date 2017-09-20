@@ -5,7 +5,7 @@
 <meta property="og:description"        content="<%= @post.make_safe(50)%>" />
 <meta property="og:image"              content="<%= @post.image %>" />
 
-<script>
+<script type="text/javascript">
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -24,6 +24,15 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+
+<div id="fb-root"></div>
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=152331878690730";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 <!-- facebook api end -->
@@ -87,8 +96,7 @@
       <% if logged_in? %>
         <%= link_to "Create a new post", new_post_path, class: "btn btn-purple" %>
       <% end %>
-      <%= link_to t(:seek_posts), posts_path, class: "btn btn-purple" %>
-
+      <%= link_to t(:seek_posts), posts_path, :"data-turbolinks" => false, class: "btn btn-purple" %>
       <% if logged_in? && (current_user == @post.user || current_user.admin?) %>
         <%= link_to "Edit", edit_post_path(@post), class: "btn btn-purple" %>
         <%= link_to "Delete", post_path(@post), method: :delete,
@@ -117,7 +125,7 @@
             <div class="col-md-4 col-sm-12 col-xs-12">
               <div class="post-content home-cover home-user-name">
                 <%= image_tag(random_post.image.url, class: "img-cover-ratio") if random_post.image? %>
-                <%= link_to random_post.name, post_path(random_post) %>
+                <%= link_to random_post.name, post_path(random_post), :"data-turbolinks" => false %>
                 <%= random_post.make_safe(251) %>
               </div>
             </div>
@@ -154,17 +162,3 @@
     </div>
   </div>
 </section>
-
-<script>
-
-    $(".fb-button").load(location.href + " .fb-button>*", "");
-
-</script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=152331878690730";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
