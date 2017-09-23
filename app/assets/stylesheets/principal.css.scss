@@ -7,12 +7,13 @@ $navbar-height: 40px;
 $navbar-padding-vertical: 4px;
 
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import url('https://fonts.googleapis.com/css?family=Concert+One|Black+Ops+One|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Concert+One|Black+Ops+One|Ubuntu|Open+Sans');
 
 
 html {
@@ -26,7 +27,7 @@ body {
   margin-bottom: 70px;
   min-height: 100%;
   background-color: #f5f8fa;
-  font-family: arial;
+  font-family: helvetica;
 }
 
 .footer {
@@ -98,10 +99,10 @@ body {
 }
 
 .nav-margin-blog {
-  margin-bottom: 85px;
+  margin-bottom: 80px;
   #logo {
-    padding-bottom: 50px;
-    padding-top: 30px;
+    padding-bottom: 44px;
+    padding-top: 35px;
   }
 }
 

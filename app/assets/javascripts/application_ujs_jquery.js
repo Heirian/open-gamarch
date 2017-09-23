@@ -10,8 +10,5 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require ckeditor/init
-//= require ckeditor/plugins/image2/plugin
-//= require ckeditor/plugins/widget/plugin
-//= require ckeditor/config
-//= require bootstrap-filestyle
+//= require rails-ujs
+//= require jquery

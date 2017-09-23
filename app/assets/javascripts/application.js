@@ -15,5 +15,8 @@
 //= require bootstrap-sprockets
 //= require pagination
 //= require loadmore
+//= require cable
+//= require loadmore_articles
+//= require images
+//= require bind_with_delay
 //= require turbolinks
-//= require_tree .

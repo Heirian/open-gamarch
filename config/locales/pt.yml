@@ -43,14 +43,32 @@ pt:
   lets_go: "Vamos lá"
   and_now: "E agora"
   #loggout_home_page
-  home_title: "Bem-vindo, viajante do Universo"
-  home_community: "Aumente a sua comunidade de jogos"
-  home_experience: "Aumente a sua experiencia"
-  home_players: "Melhores jogadores"
-  home_funny: "Comunidades divertidas"
-  home_gamarch: "O que é Gamarch?"
-  home_gamarch_desc: "Como jogar em alto nível? Gamarch é um site que possibilita a jogadores se comunicarem em uma única plataforma assim desenvolvendo a comunidade de seus jogos favoritos. Aprendendo uns com os outros e aumentando o nivel do multiplayer e da propria experiencia com jogos. Cada jogo possui sua propria area e um forum para que os usuarios se sintam a vontade em conversar uns com os outros. Compartilhe experiencias, crie estrategias e desenvolva novas coisas."
-  home_blog_desc: "Dê uma olhada no nosso blog. Aqui nós vamos te manter informados sobre o progresso do site. Também encontre alguns artigos sobre estrategias de jogos."
+  pre_title: "Aqui estamos, viajante"
+  home_title: "Bem-vindo ao Gamarch"
+  sub_title: "Sua revolução do eSport"
+  pre_home_gamarch: "Desde jovem você esperou por esse dia."
+  home_gamarch: "Mas o que diabos é Gamarch?"
+  home_gamarch_desc: "Gamarch será um lugar exclusivo para encontrar outros aventureiros que, como você, buscam crescimento interior.
+  Aqui será possível trocar experiencias pessoais sobre umas das coisas mais cativantes na sociedade contemporânea:"
+  home_gamarch_desc_part: "Sinta-se à vontade para criar comunidades, debater em fórums, escrever artigos, organizar competições e encontrar amizades para muito além do mundo digital."
+  home_gamarch_desc_2: "Este espaço será seu. Criado por gamers para gamers.
+  Gamarch é um refúgio dentro do espaço sideral onde estratégias e discussões a nível profissional serão estabelecidas.
+  Chegou o tempo de se levantar, lenda."
+  home_gamarch_blog: "Acompanhe nosso blog para ficar por dentro do lançamento da plataforma."
+  insise_community: "POR DENTRO DA COMUNIDADE"
+  icons_home_title: "Não é difícil ver como nós faremos sua vida mais fácil a cada dia."
+  home_community: "Troque experiências sobre seu eSport favorito"
+  home_community_desc: "As comunidades deixarão os jogadores mais próximos uns dos outros fazendo a emoção vibrande das partidas raqueados ou de torneio serem cada vez mais intensas.
+  Tópicos para se ajudarem e a cada vez mais subirem o nível do multiplayer de seu jogo favorito."
+  home_experience: "Tenha um crescimento interior no cenário competitivo"
+  home_experience_desc: "Leia e crie os mais váriados assuntos sobre o eSport que você pratica.
+  Se torne cada vez mais poderoso no assunto e veja refletido o seu conhecimento em seu gameplay"
+  home_players: "Se torne o devorador de partidas ranqueadas"
+  home_players_desc: "Doe uma gota de conhecimento e receba um caminho de aprendizado. Os seus oponentes cairão perante as suas jogadas mais insanas. Ensine, aprenda e seja um conquistador de vitórias."
+  home_funny: "Nada é lendário se seus amigos não estiverem assistindo"
+  home_funny_desc: "Traga seus amigos para a comunidade, faça novos amigos e compartilhe toda a experiência em suas mais variadas partidas.
+  Ajude ao seu time a chegar a uma nova compreensão das jogadas."
+  home_blog_desc: "Veja aqui o nosso blog. Nós vamos te manter informado sobre o progresso da plataforma e aumentar o hype de toda a comunidade. Você também vai encontrar aqui alguns artigos sobre estrategias de jogos e várias histórias de players reais. Keep calm e seja a lenda"
   gaming_better: "Jogue melhor"
   improve_community: "Melhore a comunidade de seu jogo favorito"
   your_name: "Escolha um nome de usuário"

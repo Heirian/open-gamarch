@@ -3,6 +3,126 @@
   height: 36px;
 }
 
+.home-show-position {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.home-cover-ratio {
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-header-home {
+  background-image: asset-url('home-cover.jpg');
+  background-position: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.blog-icon-show-home {
+  height: 150px;
+  width: auto;
+}
+
+.blog-icon-home-proprety {
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+.blog-name-home {
+  a {
+    color: white;
+    font-family: 'Concert One', cursive;
+    text-transform: uppercase;
+    font-size: 80px;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.blog-description-home {
+  color: white;
+}
+
+.text-gray {
+  letter-spacing: .15em;
+  font-size: 15px;
+  color: gray;
+}
+
+.text-black {
+  font-size: 3rem;
+}
+
+.title-black {
+  font-size: 4rem;
+  margin-top: -8px;
+  font-family: "IM Fell Great Primer script=all rev=1";
+}
+
+.text-icons {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.exp-show-home {
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.icons-show-home {
+  height: 200px;
+  width: auto;
+}
+
+.home-title {
+  font-family: "IM Fell Great Primer script=all rev=1";
+  margin-top: -10px;
+}
+
+.home-title-black {
+  font-size: 3.4rem;
+  letter-spacing: .04em;
+  font-weight: bolder;
+  margin-top: -8px;
+  font-family: "IM Fell Great Primer script=all rev=1";
+}
+
+.line-title {
+  margin-top: -20px;
+}
+
+.pre-home-title {
+  margin-top: 15px;
+  letter-spacing: .12em;
+  font-family: "IM Fell Great Primer script=all rev=1";
+  font-weight: bold;
+}
+
+.pos-title {
+  font-family: "IM Fell Great Primer script=all rev=1";
+  margin-top: -10px;
+  margin-bottom: 60px;
+  letter-spacing: .05em;
+}
+
+.blog-home-bg {
+  background: #390046;
+}
+
+.logo-show-home {
+  max-height: 150px;;
+  width: auto;
+}
+
 .center {
   text-align: center;
 }
