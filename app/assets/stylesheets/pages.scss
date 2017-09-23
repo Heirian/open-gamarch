@@ -3,6 +3,169 @@
   height: 36px;
 }
 
+.home-show-position {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.home-cover-ratio {
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-header-home {
+  background-color: #fff;
+  background-image: asset-url('home-cover.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  color: #000;
+  font-weight: bold;
+  .language {
+    a {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18.2px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing:-0.364px;
+      color: gray;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.game-icon-show-home {
+  height: 150px;
+  width: auto;
+}
+
+.blog-icon-show-home {
+  height: 100px;
+  width: auto;
+}
+
+.blog-icon-home-proprety {
+  margin-top: 20px;
+}
+
+.blog-name-home {
+  a {
+    color: #fff;
+    font-family: 'Concert One', cursive;
+    text-transform: uppercase;
+    font-size: 80px;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.blog-description-home {
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18.2px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing:-0.364px;
+  line-height: 23.66px;
+  text-align: justify;
+}
+
+.text-gray {
+  letter-spacing: .15em;
+  font-size: 15px;
+  color: gray;
+}
+
+.text-black {
+  font-size: 3rem;
+}
+
+.title-black {
+  font-size: 4rem;
+  margin-top: -8px;
+  font-family: "IM Fell Great Primer", sans-serif;
+}
+
+.text-icons {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.purple-bg {
+  background-color: rgb(38, 47, 54);
+  color: #fff;
+  p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18.2px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing:-0.364px;
+    line-height: 23.66px;
+    a {
+      color: gray;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.exp-show-home {
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.icons-show-home {
+  height: 200px;
+  width: auto;
+}
+
+.home-title {
+  font-family: "IM Fell Great Primer", sans-serif;
+  margin-top: -10px;
+}
+
+.home-title-black {
+  font-size: 3.4rem;
+  letter-spacing: .04em;
+  font-weight: bolder;
+  margin-top: -8px;
+  font-family: "IM Fell Great Primer script=all rev=1";
+}
+
+.line-title {
+  margin-top: -20px;
+}
+
+.pre-home-title {
+  margin-top: 15px;
+  letter-spacing: .12em;
+  font-family: "IM Fell Great Primer script=all rev=1";
+  font-weight: bold;
+}
+
+.pos-title {
+  font-family: "IM Fell Great Primer script=all rev=1";
+  margin-top: -10px;
+  margin-bottom: 60px;
+  letter-spacing: .05em;
+}
+
+.blog-home-bg {
+  background: #390046;
+}
+
+.logo-show-home {
+  max-height: 130px;;
+  width: auto;
+  margin-top: 120px;
+}
+
 .center {
   text-align: center;
 }

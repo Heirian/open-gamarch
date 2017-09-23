@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application_ujs_jquery', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
@@ -28,14 +28,15 @@
     <% end %>
     <%= render 'layouts/messages' %>
 
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
+
+
     <% if logged_in? %>
       <%= render 'layouts/footer' %>
     <% else %>
       <%= render 'layouts/blog_footer' %>
     <% end %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 
 </html>

@@ -20,7 +20,15 @@ class Post < ApplicationRecord
   end
 
   def timestamp
-    created_at.strftime('%d %B %Y at %H:%M')
+    month = created_at.strftime("%B")
+    tmonth = I18n.t "#{month}"
+    created_at.strftime("#{tmonth} %d, %Y #{I18n.t 'at'} %H:%M")
+  end
+
+  def timestamp_dmy
+    month = created_at.strftime("%B")
+    tmonth = I18n.t "#{month}"
+    created_at.strftime("%d #{tmonth} %Y #{I18n.t 'at'} %H:%M")
   end
 
   def make_safe(size)

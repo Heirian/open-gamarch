@@ -1,0 +1,121 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+pt:
+  hello: "Ola Mundo"
+  #home_page
+  article: "artigo"
+  communities: "Comunidades"
+  following: "Seguindo"
+  followers: "Seguidores"
+  featured: "Destaque"
+  sponsored: "Patrocinado"
+  welcome_to: "Bem-vindo ao Gamarch!"
+  get_stared_message: "Começe seguindo jogadores profissionais. Você verá aqui seus artigos, diário e comunidades"
+  lets_go: "Vamos lá"
+  and_now: "E agora"
+  #loggout_home_page
+  pre_title: "Aqui estamos, viajante"
+  home_title: "Bem-vindo ao Gamarch"
+  sub_title: "Sua revolução do eSport"
+  pre_home_gamarch: "Desde jovem você esperou por esse dia."
+  home_gamarch: "Mas o que diabos é Gamarch?"
+  home_gamarch_desc: "Gamarch será um lugar exclusivo para encontrar outros aventureiros que, como você, buscam crescimento interior.
+  Aqui será possível trocar experiencias pessoais sobre umas das coisas mais cativantes na sociedade contemporânea:"
+  home_gamarch_desc_part: "Sinta-se à vontade para criar comunidades, debater em fórums, escrever artigos, organizar competições e encontrar amizades para muito além do mundo digital."
+  home_gamarch_desc_2: "Este espaço será seu. Criado por gamers para gamers.
+  Gamarch é um refúgio dentro do espaço sideral onde estratégias e discussões a nível profissional serão estabelecidas.
+  Chegou o tempo de se levantar, lenda."
+  home_gamarch_blog: "Acompanhe nosso blog para ficar por dentro do lançamento da plataforma."
+  view_blog: "Um blog com uma visão"
+  about_us: "Sobre nós"
+  insise_community: "POR DENTRO DA COMUNIDADE"
+  icons_home_title: "Não é difícil ver como nós faremos sua vida mais fácil a cada dia."
+  home_community: "Troque experiências sobre seu eSport favorito"
+  home_community_desc: "As comunidades deixarão os jogadores mais próximos uns dos outros fazendo a emoção vibrande das partidas raqueados ou de torneio serem cada vez mais intensas.
+  Tópicos para se ajudarem e a cada vez mais subirem o nível do multiplayer de seu jogo favorito."
+  home_experience: "Tenha um crescimento interior no cenário competitivo"
+  home_experience_desc: "Leia e crie os mais váriados assuntos sobre o eSport que você pratica. Se torne cada vez mais poderoso no assunto e veja refletido o seu conhecimento em todo o seu gameplay. Exércitos cairão de joelhos a suas estratégias"
+  home_players: "Se torne o devorador de partidas ranqueadas"
+  home_players_desc: "Doe uma gota de conhecimento e receba um caminho de aprendizado. Os seus oponentes cairão perante as suas jogadas mais insanas. Ensine, aprenda e seja um conquistador de vitórias."
+  home_funny: "Nada é totalmente lendário sem os seus amigos"
+  home_funny_desc: "Traga seus amigos para a comunidade, faça novos amigos e compartilhe toda a experiência em suas mais variadas partidas.
+  Ajude ao seu time a chegar a uma nova compreensão das jogadas."
+  home_blog_desc: "Veja aqui o nosso blog. Nós vamos te manter informado sobre o progresso da plataforma e aumentar o hype de toda a comunidade. Você também vai encontrar aqui artigos sobre estratégias de jogos e várias histórias de players reais. Evolua e seja a lenda"
+  gaming_better: "Jogue melhor"
+  improve_community: "Melhore a comunidade de seu jogo favorito"
+  your_name: "Escolha um nome de usuário"
+  your_email: "Coloque seu email"
+  your_password: "Escolha uma senha"
+  your_birthday: "Seu aniversário"
+  girl: "Garota"
+  boy: "Garoto"
+  warning_terms: "Clicando em 'Criar minha conta', você aceita os"
+  gamarch_user_terms: "Termos de Usuário"
+  privacy_police: "Política de Privacidade"
+  cookie_police: "Política de Cookies"
+  and: "e"
+  create_account: "Criar minha conta"
+  update_account: "Atualizar minha conta"
+  return_home: "Retornar ao início"
+  rights_reserved: "Todos os direitos reservados"
+  #footer
+  starting: "Começando"
+  help: "Ajuda"
+  about: "Sobre"
+  contact: "Contato"
+  terms: "Termos"
+  privacy: "Privacidade"
+  blog: "Blog"
+  cookies: "Cookie"
+  #blog
+  email_address: "Seu endereço de email"
+  language: "Lingua"
+  subscribe_btn: "Inscreva-se"
+  subscribe_text: "Entre para a lista do Gamarch"
+  ago: "atrás"
+  read: ""
+  seek_posts: "Procure novos posts"
+  see_more: "Ver mais"
+  share: "Compartilhar"
+  at: "às"
+  January: "de Janeiro de"
+  February: "de Fevereiro de"
+  March: "de Março de"
+  April: "de Abril de"
+  May: "de Maio de"
+  June: "de Junho de"
+  July: "de Julho de"
+  August: "de Agosto de"
+  September: "de Setembro de"
+  October: "de Outubro de"
+  November: "de Novembro de"
+  December: "de Dezembro de"

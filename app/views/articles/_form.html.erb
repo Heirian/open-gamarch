@@ -1,5 +1,4 @@
-<%= javascript_include_tag  Ckeditor.cdn_url %>
-
+<%= render 'shared/ckeditor'%>
 <div class="row">
   <div class="col-md-12">
     <%= form_for(object, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>

@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function( config )
   // config.uiColor = '#AADC6E';
   //config.assets_languages = 'en', 'pt-BR', 'pt-PT';
   config.removePlugins = 'image,sourcearea';
-  config.extraPlugins = 'widgetselection,lineutils,image2,widget,';
+  config.extraPlugins = 'image2,widget,';
   config.height = '60vh';
   config.skin = 'moono-dark';
 
