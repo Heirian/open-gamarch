@@ -36,6 +36,14 @@
   .paragrafy-inblock {
     margin-top: 50px;
   }
+  .new-visions-border {
+    border: 10px solid #f5f8fa;
+    border-left: none;
+    padding: 30px;
+    .title-black {
+      font-size: 39px;
+    }
+  }
   p {
     font-family: 'Work Sans', sans-serif;
     font-size: 18.2px;
@@ -73,6 +81,49 @@
   }
 }
 
+.end-label {
+  height: 900px;
+  padding-top: 150px;
+  h3 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-top: -8px;
+    font-family: 'Concert One', cursive;
+  }
+  h4 {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing:-0.364px;
+  }
+  h5 {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing:-0.364px;
+  }
+  a {
+    font-size: 2rem;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    letter-spacing:-0.364px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.pre-footer-about {
+  background-color: #fff;
+  height: 150px;
+  padding-top: 20px;
+}
+
+
 .outer-space-property {
   margin-top: 75px;
   height: 200px;
@@ -80,11 +131,24 @@
   border-radius: 50%;
 }
 
+.game-on-property {
+  height: 300px;
+  width: auto;
+  border-radius: 50%;
+  -webkit-mask-origin: #390046;
+}
+
 .play-games-property {
   margin-bottom: 50px;
   height: 200px;
   width: auto;
   border-radius: 50%;
+}
+
+.game-over-property {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
 }
 
 .down-chevron-gif {

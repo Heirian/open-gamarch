@@ -776,7 +776,15 @@
     margin-bottom: -50px;
     background: #390046;
     padding: 50px;
-
+  }
+  .read-label {
+    height:1200px;
+  }
+  .misson-label {
+    height:1350px;
+  }
+  .play-games-property {
+    margin-top: 20px;
   }
 }
 
@@ -818,7 +826,12 @@
     min-width: 280px;
     max-width: 100%;
   }
-
+  .read-label {
+    height:1600px;
+  }
+  .misson-label {
+    height:1600px;
+  }
 }
 
 @media only screen and (min-width: 1001px) {
