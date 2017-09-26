@@ -1,1 +1,132 @@
-<%= render 'shared/page_title', page_title: 'About' %>
+<head>
+  <title><%= t(:gamarch_about) %></title>
+  <%= favicon_link_tag 'logo.png' %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application_ujs_jquery', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <h2 id="logo-about" class="center col-md-12">Gamarch</h2>
+
+  <%= render 'shared/static_page_title', page_title: 'Gamarch te conecta a um espaço sideral de conhecimento e habilidade.' %>
+
+  <div class="read-label">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-4">
+            <h5 class="text-gray">Não é só sobre jogar, você precisa aprender</h5>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-5">
+            <h2 class="title-black">Cultive o Gamarch, destrua no multiplayer</h2>
+          </div>
+          <div class="col-md-6">
+            <p class="">
+              Longa jornada? Sente-se, viajante. Deixe-me apresentar o estabelecimento. Esté e o Gamarch, um lugar onde jogadores se encontram para trocar experiências sobre seu eSport favorito.
+            </p>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-12 paragrafy-inblock justify">
+          <div class="col-md-6">
+            <p>
+               Todos os dias milhões de jogadores praticam seus jogos
+               e muitas vezes ficam irritados por perderem muito ou ficam presos por muito tempo em um nível. Isso frustra muitas pessoas com potencial latente.
+               Por vezes desistem de praticar aquele eSport por estress ou acabam sendo desanimados por jogadores tóxicos.
+               Vários saem em uma jornada de aprendizado por toda a web buscando informações em diferentes lugares e assim
+               obtendo resultados diversos. Você garimpa informações, táticas e estratégias depois as põem em prática.
+               E repete sempre este processo cada vez mais melhorando seu nível no multiplayer. Mas as vezes você não consegue encontrar boas informações ou perde muito tempo para isto.
+               Muitas vezes você não sabe o nível de quem publicou aquilo ou se depara novamente com jogadores tóxicos em diversos fóruns. E é então que o Gamarch se levanta.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              O Gamarch conecta jogadores que, como você, estão dispostos a aprender e a contribuir com a comunidade de eSports fazendo-a cada vez mais intensa e competitiva.
+              Seja lá pelo o que você compete - dinheiro, fama, glória, reconhecimento ou, apenas, diversão - o Gamarch te leva ao santuário dos pro players. Todas as comunidades de todos os eSports em uma única plataforma.
+              Nossa política é cortar as coisas inuteis e tóxicas da comunidade de eSport e fazê-la maior e com cada vez mais jogadores lendários.
+            </p>
+            <hr />
+            <div class="center">
+              <%= image_tag("play-games.jpg", class:"play-games-property")%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="misson-label">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="col-md-6 right mission-titles-label">
+            <h5>Nossa missão</h5>
+            <h2>Trazer uma revolução para a comunidade de eSports</h2>
+          </div>
+          <div class="col-md-12">
+            <hr />
+            <br>
+          </div>
+          <div class="col-md-12 center">
+            <div class="col-md-4">
+              <%= image_tag("traveler.jpg", class:"play-games-property")%>
+              <p>
+                Cada jogador terá seu perfil exclusivo e será livre para postar todo o conteúdo sobre jogos que preferir. Convide seus amigos para te seguir e os siga também.
+              </p>
+            </div>
+
+          <div class="col-md-4">
+            <%= image_tag("articles-write.jpg", class:"play-games-property")%>
+            <p>
+              Aqui você poderá ler e escrever artigos comentando sobre o novo meta, novas builds ou estratégias, seja lá o que for de útil para crescer a sua habilidade e de seus companheiros.
+              Com ferramentas especiais de classificão para cada artigo, seleção de assunto e marcações para ler depois.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <%= image_tag("controllers-community.jpg", class:"play-games-property")%>
+            <p>
+              Existirão comunidades criadas, controladas e moderadas pelo próprios jogadores. Designadas a jogos específicos escolhidas no momento da sua criação.
+              Assim facilitanto e cultivando a harmonia na comunidade e focando apenas no conteúdo gerado nos tópicos e debates. Leia, vá jogar, coloque em prática seu aprendizado e depois volte pra ensinar.
+            </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="read-label">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-4">
+            <h4>Suas estratégias</h4>
+            <h2>Crie e compartilhe novas visões</h2>
+
+          </div>
+          <div class="col-md-6">
+            <p>
+              Fez aquela jogada monstra? Levou todo o time inimigo? Fez o maior death rate da história? Existirá uma sessão exclusiva em seu perfil para postar as fotos e videos do seu feito
+               e também um diário para você comentar sobre os seus feitos gloriosos.
+            </p>
+            <p>
+              Na sua página inicial você verá um feed com as comunidades das quais participa, os artigos publicados pelas pessoas que você segue, os highlights e os diários de cada um. Voce escolherá o que quer ver e terá também artigos em alta de seus jogos escolhidos. Tudo escolhido por você.
+            </p>
+            <p>
+              Gamarch é uma plataforma de aprendizado online totalmente voltada a eSports. Única e exclusiva para jogadores de eSports que desejam aumentar suas habilidades
+               e terem um desempenho monstro no multiplayer. Fique à vontade com o conteúdo exclusivo e esteja ao lados de pessoas como você.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</footer>

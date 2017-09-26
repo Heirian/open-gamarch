@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    render :layout => false
   end
 
   def help

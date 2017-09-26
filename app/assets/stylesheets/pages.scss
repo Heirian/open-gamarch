@@ -3,6 +3,95 @@
   height: 36px;
 }
 
+#logo-about {
+  background-color: #fff;
+  color: #390046;
+  height: 60px;
+  margin-top: 0;
+  padding-top: 10px;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: 'Black Ops One', cursive;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.general-page-title {
+  height:900px;
+  padding-top: 100px;
+  h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing:-0.364px;
+  }
+}
+
+.read-label {
+  height: 900px;
+  padding-top: 100px;
+  background-color: #fff;
+  .paragrafy-inblock {
+    margin-top: 50px;
+  }
+  p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18.2px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing:-0.364px;
+    line-height: 23.66px;
+    a {
+      color: gray;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.misson-label {
+  height: 900px;
+  padding-top: 100px;
+  background-color: #390046;
+  color: #fff;
+  .mission-titles-label {
+    text-align: right;
+    h2 {
+      font-size: 3.3rem;
+      margin-top: -8px;
+      font-family: "IM Fell Great Primer", sans-serif;
+    }
+    h5 {
+      letter-spacing: .15em;
+      font-size: 18px;
+      color: grey;
+    }
+  }
+}
+
+.outer-space-property {
+  margin-top: 75px;
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.play-games-property {
+  margin-bottom: 50px;
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.down-chevron-gif {
+  height: 200px;
+  width: auto;
+}
+
 .home-show-position {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -136,7 +225,7 @@
   letter-spacing: .04em;
   font-weight: bolder;
   margin-top: -8px;
-  font-family: "IM Fell Great Primer script=all rev=1";
+  font-family: "IM Fell Great Primer", sans-serif;
 }
 
 .line-title {
@@ -146,12 +235,12 @@
 .pre-home-title {
   margin-top: 15px;
   letter-spacing: .12em;
-  font-family: "IM Fell Great Primer script=all rev=1";
+  font-family: "IM Fell Great Primer", sans-serif;
   font-weight: bold;
 }
 
 .pos-title {
-  font-family: "IM Fell Great Primer script=all rev=1";
+  font-family: "IM Fell Great Primer", sans-serif;
   margin-top: -10px;
   margin-bottom: 60px;
   letter-spacing: .05em;

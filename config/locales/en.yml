@@ -56,7 +56,7 @@ en:
   home_experience_desc: "Read and create the most varied subjects about eSport that you practice. Become increasingly powerful on the subject and see reflected your knowledge in your gameplay"
   home_players_desc: "Give a drop of knowledge and receive a learning path. Your opponents will fall in front of your most insane moves. Teach, learn and be a conqueror of victories."
   home_funny_desc: "Bring your friends to the community, make new friends and share the whole experience in your most varied games. Help your team reach a new understanding of the moves."
-  pre_home_gamarch: "Since you were young you waited for this day."
+  pre_home_gamarch: "Ordinary people can’t understand the hype, the excitement"
   home_gamarch: "But what the hell is Gamarch?"
   home_gamarch_desc: "Gamarch will be an exclusive place to meet other adventurers who, like you, are looking for inner growth. Here it will be possible to exchange personal experiences on one of the most captivating things in contemporary society:"
   home_gamarch_desc_part: "Feel free to create communities, discuss forums, write articles, organize competitions, and find friendships far beyond the digital world."
@@ -64,7 +64,7 @@ en:
   home_gamarch_blog: "Follow our blog to stay inside the launch of the platform."
   view_blog: "A blog with a view"
   about_us: "About us"
-  home_blog_desc: "See our blog here. We'll keep you updated on the progress of the platform and we'll increase the hype of the whole community. You will also find here articles on game strategies and various stories of real players. Evolve and be the legend."
+  home_blog_desc: "See our blog here. We'll keep you updated on the progress of the platform and we'll increase the hype of the whole community. You will also find here articles on game strategies and various stories of pro players. Evolve and be the legend."
   gaming_better: "Gaming better"
   improve_community: "Improve your favorite game community"
   your_name: "Choose a username"
@@ -114,3 +114,5 @@ en:
   October: "October"
   November: "November"
   December: "December"
+  #about-page
+  gamarch_about: "What is Gamarch?"

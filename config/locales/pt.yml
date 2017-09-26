@@ -46,10 +46,10 @@ pt:
   pre_title: "Aqui estamos, viajante"
   home_title: "Bem-vindo ao Gamarch"
   sub_title: "Sua revolução do eSport"
-  pre_home_gamarch: "Desde jovem você esperou por esse dia."
+  pre_home_gamarch: "As pessoas não conseguem entender o hype, a emoção"
   home_gamarch: "Mas o que diabos é Gamarch?"
   home_gamarch_desc: "Gamarch será um lugar exclusivo para encontrar outros aventureiros que, como você, buscam crescimento interior.
-  Aqui será possível trocar experiencias pessoais sobre umas das coisas mais cativantes na sociedade contemporânea:"
+  Aqui será possível trocar experiências pessoais sobre umas das coisas mais cativantes na sociedade contemporânea:"
   home_gamarch_desc_part: "Sinta-se à vontade para criar comunidades, debater em fórums, escrever artigos, organizar competições e encontrar amizades para muito além do mundo digital."
   home_gamarch_desc_2: "Este espaço será seu. Criado por gamers para gamers.
   Gamarch é um refúgio dentro do espaço sideral onde estratégias e discussões a nível profissional serão estabelecidas.
@@ -69,7 +69,7 @@ pt:
   home_funny: "Nada é totalmente lendário sem os seus amigos"
   home_funny_desc: "Traga seus amigos para a comunidade, faça novos amigos e compartilhe toda a experiência em suas mais variadas partidas.
   Ajude ao seu time a chegar a uma nova compreensão das jogadas."
-  home_blog_desc: "Veja aqui o nosso blog. Nós vamos te manter informado sobre o progresso da plataforma e aumentar o hype de toda a comunidade. Você também vai encontrar aqui artigos sobre estratégias de jogos e várias histórias de players reais. Evolua e seja a lenda"
+  home_blog_desc: "Veja aqui o nosso blog. Nós vamos te manter informado sobre o progresso da plataforma e aumentar o hype de toda a comunidade. Você também vai encontrar artigos sobre estratégias de jogos e várias histórias de torneios e pro players. Evolua e seja a lenda"
   gaming_better: "Jogue melhor"
   improve_community: "Melhore a comunidade de seu jogo favorito"
   your_name: "Escolha um nome de usuário"
@@ -119,3 +119,5 @@ pt:
   October: "de Outubro de"
   November: "de Novembro de"
   December: "de Dezembro de"
+  #about-page
+  gamarch_about: "O que é Gamarch?"
