@@ -24,15 +24,6 @@
     padding-top: 45px;
     padding-bottom: 20px;
   }
-  #logo {
-    float: left;
-    font-size: 80px;
-    color: #fff;
-    text-transform: uppercase;
-    font-family: 'Black Ops One', cursive;
-    padding-top: 50px;
-    padding-bottom: 20px;
-  }
   #img-logo {
     margin-left: -30px;
   }
@@ -187,10 +178,6 @@
   .form-login-proprety {
     padding-top: 30px;
     margin-left: 70px;
-    padding-bottom: 10px;
-  }
-  #logo {
-    margin-left: -170px;
     padding-bottom: 10px;
   }
   .forgot-account {
@@ -749,10 +736,6 @@
   .forgot-account {
     display: none;
   }
-  #logo {
-    margin-left: -15px;
-    font-size: 80px;
-  }
   .home-topics {
     h4 {
       margin-left: -10px;
@@ -774,7 +757,6 @@
     margin-left: -100px;
     margin-right: -100px;
     margin-bottom: -50px;
-    background: #390046;
     padding: 50px;
   }
   .read-label {
@@ -782,6 +764,9 @@
   }
   .misson-label {
     height:1350px;
+  }
+  .black-bg {
+    height:1050px;
   }
   .play-games-property {
     margin-top: 20px;
@@ -795,10 +780,6 @@
       font-size: 15px;
       margin-top: 5px;
     }
-  }
-  #logo {
-    margin-left: -28px;
-    font-size: 60px;
   }
   .btn-nav-responsive {
     padding-left: 5px;
@@ -827,10 +808,13 @@
     max-width: 100%;
   }
   .read-label {
-    height:1600px;
+    height:1700px;
   }
   .misson-label {
     height:1600px;
+  }
+  .black-bg {
+    height:1275px;
   }
 }
 
@@ -852,9 +836,6 @@
   }
   .login-button {
     display: none;
-  }
-  #logo {
-    font-size: 80px;
   }
   .home-topics {
     margin-top: 20px;

@@ -39,7 +39,7 @@
   .new-visions-border {
     border: 10px solid #f5f8fa;
     border-left: none;
-    padding: 30px;
+    padding: 25px;
     .title-black {
       font-size: 39px;
     }
@@ -71,7 +71,7 @@
     h2 {
       font-size: 3.3rem;
       margin-top: -8px;
-      font-family: "IM Fell Great Primer", sans-serif;
+      font-family: "Ubuntu", sans-serif;
     }
     h5 {
       letter-spacing: .15em;
@@ -167,12 +167,13 @@
 }
 
 .bg-header-home {
+  background-image: asset-url('control-names.jpg');
+  background-position: center;
   background-color: #fff;
-  background-image: asset-url('home-cover.jpg');
-  background-repeat: no-repeat;
-  background-position: center top;
-  color: #000;
+  color: #fff;
   font-weight: bold;
+  height: 825px;
+  padding-top: 50px;
   .language {
     a {
       font-family: 'Work Sans', sans-serif;
@@ -180,9 +181,10 @@
       font-weight: 300;
       font-style: normal;
       letter-spacing:-0.364px;
-      color: gray;
+      color: #fff;
       &:hover {
         text-decoration: none;
+        color: gray;
       }
     }
   }
@@ -191,6 +193,12 @@
 .game-icon-show-home {
   height: 150px;
   width: auto;
+}
+
+.controller-icon-show-home {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
 
 .blog-icon-show-home {
@@ -223,12 +231,12 @@
   font-style: normal;
   letter-spacing:-0.364px;
   line-height: 23.66px;
-  text-align: justify;
+  text-align: center;
 }
 
 .text-gray {
   letter-spacing: .15em;
-  font-size: 15px;
+  font-size: 17px;
   color: gray;
 }
 
@@ -237,9 +245,9 @@
 }
 
 .title-black {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin-top: -8px;
-  font-family: "IM Fell Great Primer", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .text-icons {
@@ -247,25 +255,23 @@
   font-weight: bold;
 }
 
-.purple-bg {
+.black-bg {
   background-color: rgb(38, 47, 54);
   color: #fff;
-  padding-bottom: 35px;
+  padding-top: 90px;
+  height: 845px;
   p {
     font-family: 'Work Sans', sans-serif;
-    font-size: 18.2px;
+    font-size: 19px;
     font-weight: 300;
     font-style: normal;
     letter-spacing:-0.364px;
     line-height: 23.66px;
     a {
-      color: gray;
-      &:hover {
-        color: #fff;
-        text-decoration: none;
+      font-size: 19px;
+      margin-top: 15px;
       }
     }
-  }
 }
 
 .exp-show-home {
@@ -285,11 +291,10 @@
 }
 
 .home-title-black {
-  font-size: 3.4rem;
+  font-size: 5.5rem;
   letter-spacing: .04em;
-  font-weight: bolder;
   margin-top: -8px;
-  font-family: "IM Fell Great Primer", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .line-title {
@@ -298,20 +303,28 @@
 
 .pre-home-title {
   margin-top: 15px;
+  font-size: 1.8rem;
+  font-family: 'Work Sans', sans-serif;
   letter-spacing: .12em;
-  font-family: "IM Fell Great Primer", sans-serif;
-  font-weight: bold;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .pos-title {
-  font-family: "IM Fell Great Primer", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin-top: -10px;
   margin-bottom: 60px;
-  letter-spacing: .05em;
+  letter-spacing: .06em;
 }
 
 .blog-home-bg {
-  background: #390046;
+  padding-top: 75px;
+  background-color: #1a1a1a;
+  height: 500px;
+}
+
+.image-home-label {
+  height: 300px;
 }
 
 .logo-show-home {
