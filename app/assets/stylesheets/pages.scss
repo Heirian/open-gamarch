@@ -15,15 +15,17 @@
 
 #logo-about {
   background-color: #fff;
-  color: #390046;
   height: 60px;
   margin-top: 0;
   padding-top: 10px;
   font-size: 40px;
-  text-transform: uppercase;
-  font-family: 'Black Ops One', cursive;
-  &:hover {
-    text-decoration: none;
+  a {
+    color: #390046;
+    text-transform: uppercase;
+    font-family: 'Black Ops One', cursive;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 

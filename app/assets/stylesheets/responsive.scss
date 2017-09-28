@@ -759,13 +759,30 @@
     height:1350px;
   }
   .end-label {
-    height:1200px;
+    height:1000px;
   }
   .black-bg {
     height:1250px;
   }
   .play-games-property {
     margin-top: 20px;
+  }
+  .blog-icon-show-home {
+    height: 75px;
+    width: auto;
+  }
+  .black-bg {
+    p {
+      a {
+        font-size: 15px;
+        margin-top: 15px;
+        }
+      }
+  }
+  .blog-name-home {
+    a {
+      font-size: 60px;
+    }
   }
 }
 
@@ -810,7 +827,7 @@
     height:1725px;
   }
   .end-label {
-    height:1300px;
+    height:1050px;
   }
   .black-bg {
     height:1600px;
