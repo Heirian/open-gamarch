@@ -103,14 +103,17 @@
                                                                 data: { confirm: "#{current_user.name}, are you sure you want to delete this post?" },
                                                                 class: "btn btn-purple" %>
       <% end %>
+
+    </div>
+    <div class="pull-right fb-button">
+      <div class="fb-share-button" data-href="http://www.gamarch.com/<%= params[:locale] %>/posts/<%= params[:id] %>/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.gamarch.com%2F%3Alocale%2Fposts%2F%3Aid%2F&amp;src=sdkpreparse"><%= t(:share) %></a></div>
+    </div>
+    <div class="right">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </article>
 </div>
-<div class="col-md-11">
-  <div class="col-md-2 right fb-button">
-    <div class="fb-share-button" data-href="http://www.gamarch.com/<%= params[:locale] %>/posts/<%= params[:id] %>/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.gamarch.com%2F%3Alocale%2Fposts%2F%3Aid%2F&amp;src=sdkpreparse"><%= t(:share) %></a></div>
-  </div>
-</div>
+
 
 <hr />
 <% if @user.posts.count > 1 %>
