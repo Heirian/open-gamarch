@@ -140,3 +140,9 @@ pt:
   gamarch_release_call: "Em meados de outubro será lançado o beta da plataforma e os cadastros estarão liberados"
   gamarch_enter_hype: "ENTÃO ENTRE PARA O HYPE CONOSCO!"
   gamarch_your_opinion: "Sua opinião é muito importante para a gente, então entre em contato para qualquer sugestão, participe através do nosso blog e redes sociais"
+  #contact-page
+  submit: "Enviar"
+  name: "Nome"
+  subject: "Assunto"
+  message: "Mensagem"
+  gamarch_contact: "Conecte-se ao Gamarch. Nos envie sugestões, opiniões e reporte qualquer problema. Nós estamos abertos e somos gratos pelo seu tempo"

@@ -10,7 +10,19 @@
 <body>
   <h2 id="logo-about" class="center col-md-12 col-sm-12 col-xs-12"><%= link_to "Gamarch", root_path %></h2>
 
-  <%= render 'shared/static_page_title', page_title: t(:gamarch_conect) %>
+  <header class="general-page-title">
+    <div class="container">
+      <%= render 'shared/static_page_title', page_title: t(:gamarch_conect) %>
+    </div>
+      <div class="col-md-12 col-sm-12  col-xs-12 center">
+        <%= image_tag("outer-space.jpg", class:"outer-space-property")%>
+      </div>
+      <div class="center ">
+        <%= image_tag("down-chevron.gif", class:"down-chevron-gif")%>
+      </div>
+
+  </header>
+
 
   <div class="read-label">
     <div class="container">

@@ -135,3 +135,9 @@ en:
   gamarch_release_call: "The beta of the platform will be released in mid-October and the registrations will be open"
   gamarch_enter_hype: "THEN ENTER FOR HYPE WITH US!"
   gamarch_your_opinion: "Your opinion is very important to us, so please contact us for any suggestions, participate through our blog and social networks"
+  #contact-page
+  submit: "Submit"
+  name: "Name"
+  subject: "Subject"
+  message: "Message"
+  gamarch_contact: "gamarch_contact"
