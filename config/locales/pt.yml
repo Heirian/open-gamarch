@@ -119,6 +119,9 @@ pt:
   October: "de Outubro de"
   November: "de Novembro de"
   December: "de Dezembro de"
+  will_paginate:
+    next_label: "Próxima"
+    previous_label: "Anterior"
   #about-page
   gamarch_about: "O que é Gamarch?"
   gamarch_conect: "Gamarch te conecta a um espaço sideral de conhecimento e habilidade."
