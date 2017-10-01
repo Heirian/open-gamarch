@@ -1,24 +1,25 @@
 
-<script type="text/javascript">
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '152331878690730',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-    FB.AppEvents.logPageView();
-  };
+  <script type="text/javascript">
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '152331878690730',
+        xfbml      : true,
+        version    : 'v2.10'
+      });
+      FB.AppEvents.logPageView();
+    };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
 
-<div id="fb-root"></div>
+  <div id="fb-root"></div>
+
   <script type="text/javascript">(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -26,40 +27,42 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=152331878690730";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
-
   </script>
-<div class="container">
-<div class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <h1 class="blog-name pull-right">
-      <%= link_to "/Blog", blog_path, data: { turbolinks: false } %>
-    </h1>
-  </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <aside class="col-md-4 col-sm-12 col-xs-12 fix-position fix-position-blog pull-right">
-        <section class="article-content home-cover">
-          <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
-          <div class="home-content">
-            <%= link_to gravatar_for(@user, size: 100, class: 'gravatar'), about_path %>
-            <div class="home-user-name">
-              <%= link_to @user.name, about_path %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="blog-name pull-right">
+          <%= link_to "/Blog", blog_path, data: { turbolinks: false } %>
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <aside class="col-md-4 col-sm-12 col-xs-12 fix-position fix-position-blog pull-right">
+          <section class="article-content home-cover">
+            <%= image_tag('boy-cover.jpg', class: "cover-home-ratio") %>
+            <div class="home-content">
+              <%= link_to gravatar_for(@user, size: 100, class: 'gravatar'), about_path %>
+              <div class="home-user-name">
+                <%= link_to 'Gamarch', about_path %>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <%= @user.bio %>
+              </div>
+              <div class="count-articles-home">
+                <%= pluralize(@user.posts.count, "post") if @user.posts %>
+              </div>
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <%= @user.bio %>
-            </div>
-            <div class="count-articles-home">
-              <%= pluralize(@user.posts.count, "post") if @user.posts %>
-            </div>
-          </div>
-        </section>
-        <% if @user.posts.count > 6 %>
-          <section >
+          </section>
+
+          <% if @user.posts.count > 6 %>
+            <section >
               <div class="center home-user-name">
-              <h3>  <%= t(:featured) %> </h3>
+                <h3>
+                  <%= t(:featured) %>
+                </h3>
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <% @random_posts.each do |random_post| %>
@@ -71,75 +74,79 @@
                       </div>
                     <% end %>
                   </div>
-
                 </div>
               </div>
-          </section>
-        <% end %>
-        <section class="article-content home-cover">
-          <div class="center home-user-name">
-            <h3><%=  t(:subscribe_text) %></h3>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+            </section>
+          <% end %>
+
+          <section class="article-content home-cover">
+            <div class="center home-user-name">
+              <h3>
+                <%=  t(:subscribe_text) %>
+              </h3>
+              <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <% if params[:locale] == 'pt' %>
-                    <%= render 'mailchimp_pt' %>
-                  <% else %>
-                    <%= render 'mailchimp' %>
-                  <% end %>
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <% if params[:locale] == 'pt' %>
+                      <%= render 'mailchimp_pt' %>
+                    <% else %>
+                      <%= render 'mailchimp' %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="article-content home-cover">
-          <div class="center">
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div id="blog-fb-page">
-                  <div class='fb-page' data-href='https://www.facebook.com/gamarch.official/' data-tabs='timeline' data-height='70' data-small-header='true' data-adapt-container-width='true' data-hide-cover='false' data-show-facepile='true'><blockquote cite='https://www.facebook.com/gamarch.official/' class='fb-xfbml-parse-ignore'><a href='https://www.facebook.com/gamarch.official/'>Gamarch</a></blockquote></div>
+          </section>
+
+          <section class="article-content home-cover">
+            <div class="center">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div id="blog-fb-page">
+                    <div class='fb-page' data-href='https://www.facebook.com/gamarch.official/' data-tabs='timeline' data-height='70' data-small-header='true' data-adapt-container-width='true' data-hide-cover='false' data-show-facepile='true'><blockquote cite='https://www.facebook.com/gamarch.official/' class='fb-xfbml-parse-ignore'><a href='https://www.facebook.com/gamarch.official/'>Gamarch</a></blockquote></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </aside>
-      <div class="col-md-8 col-sm-12 col-xs-12">
-      <% @posts.each do |post| %>
-        <div class="col-md-12 col-sm-12 col-xs-12 justify post-index">
-          <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
-          <p>
-            <span class="quiet right">
-              <small class="data-read-timing-feed">
-                <% if params[:locale] == 'pt' %>
-                  <%= post.timestamp_dmy %>
-                <% else %>
-                  <%= post.timestamp %>
+          </section>
+
+        </aside>
+
+        <div class="col-md-8 col-sm-12 col-xs-12">
+          <% @posts.each do |post| %>
+            <div class="col-md-12 col-sm-12 col-xs-12 justify post-index">
+              <%= image_tag(post.image.url, class: "img-blog-cover-ratio") if post.image? %>
+              <p>
+                <span class="quiet right">
+                  <small class="data-read-timing-feed">
+                    <% if params[:locale] == 'pt' %>
+                      <%= post.timestamp_dmy %>
+                    <% else %>
+                      <%= post.timestamp %>
+                    <% end %>
+                    | <%= post.reading_time %> min <%= t(:read) %>
+                  </small>
+                </span>
+              </p>
+              <br>
+              <h4 class="article-index-title">
+                <%= link_to truncate(post.name, length: 60, class:"justify"), post_path(post), :"data-turbolinks" => false %>
+              </h4>
+              <p class="article-index-title">
+                <%= post.make_safe(1000) %>
+                <script id="dsq-count-scr" src="//gamarch.disqus.com/count.js" async></script>
+                <% if post.description.size > 255 %>
+                  <%= link_to(t(:see_more), post_path(post), :"data-turbolinks" => false,  class:'right') %>
                 <% end %>
-                | <%= post.reading_time %> min <%= t(:read) %>
-              </small>
-            </span>
-          </p>
-          <br>
-          <h4 class="article-index-title">
-
-            <%= link_to truncate(post.name, length: 60, class:"justify"), post_path(post), :"data-turbolinks" => false %>
-
-          </h4>
-          <p class="article-index-title">
-            <%= post.make_safe(1000) %>
-            <script id="dsq-count-scr" src="//gamarch.disqus.com/count.js" async></script>
-            <% if post.description.size > 255 %>
-               <%= link_to(t(:see_more), post_path(post), :"data-turbolinks" => false,  class:'right') %>
-            <% end %>
-          </p>
+              </p>
+            </div>
+          <% end %>
         </div>
-      <% end %>
       </div>
-
     </div>
-</div>
-<div align="center">
-  <%= will_paginate %>
-</div>
-</div>
+
+    <div align="center">
+      <%= will_paginate %>
+    </div>
+
+  </div>

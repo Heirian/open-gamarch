@@ -144,5 +144,5 @@ pt:
   submit: "Enviar"
   name: "Nome"
   subject: "Assunto"
-  message: "Mensagem"
+  message: "Escreva sua mensagem..."
   gamarch_contact: "Conecte-se ao Gamarch. Nos envie sugestões, opiniões e reporte qualquer problema. Nós estamos abertos e somos gratos pelo seu tempo"

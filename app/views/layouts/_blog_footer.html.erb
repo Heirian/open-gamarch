@@ -2,6 +2,12 @@
   <div class="container">
     <p class="language"><%= link_to "English", {locale: :en}, :"data-turbolinks" => false %> •
     <%= link_to "Português", {locale: :pt}, data: { turbolinks: false } %></p>
+    <p>
+      <%= link_to t(:home), root_path %> •
+      <%= link_to t(:about), about_path %> •
+      <%= link_to t(:blog), blog_path, data: { turbolinks: false } %> •
+      <%= link_to t(:contact), contact_path %>
+    </p>
     <p class="text-muted">Gamarch • 2017 • <%= t(:rights_reserved) %></p>
   </div>
 </footer>

@@ -286,6 +286,25 @@
     }
 }
 
+.black-bg-mobile-minor {
+  background-color: rgb(38, 47, 54);
+  color: #fff;
+  padding-top: 90px;
+  height: 845px;
+  p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing:-0.364px;
+    line-height: 23.66px;
+    a {
+      font-size: 19px;
+      margin-top: 15px;
+      }
+    }
+}
+
 .exp-show-home {
   height: 200px;
   width: auto;
