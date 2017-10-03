@@ -11,19 +11,23 @@
       <div class="inline">
         <% if logged_in? %>
           <% if current_user == @article.user %>
-            <%= link_to 'Edit Profile', edit_user_path(@article.user), class: 'btn btn-purple' %>
+            <%= link_to t(:Edit_Profile), edit_user_path(@article.user), class: 'btn btn-purple' %>
           <% else %>
             <%= render 'users/follow_form' if logged_in? %>
           <% end %>
         <% else %>
-          <%= link_to 'Log in or Sign up', root_path, class: 'btn btn-purple' %>
+          <%= link_to t(:log_in_or_signup), root_path, class: 'btn btn-purple' %>
         <% end %>
       </div>
       <div>
         <div class="biografy-show"><%= @article.user.bio %></div>
         <small>
-          <%= @article.timestamp %>
-          | <%= @article.reading_time %> min read
+          <% if params[:locale] == 'pt' %>
+            <%= @article.timestamp_dmy %>
+          <% else %>
+            <%= @article.timestamp %>
+          <% end %>
+          | <%= @article.reading_time %> min <%= t(:read) %>
         </small>
       </div>
     </div>
@@ -50,13 +54,13 @@
       <hr />
       <div class="btn-group btn-article-show-adjust">
         <% if logged_in? %>
-          <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" %>
+          <%= link_to t(:create_new_article), new_article_path, class: "btn btn-purple" %>
         <% end %>
-        <%= link_to "Seek new articles", articles_path, class: "btn btn-purple" %>
+        <%= link_to t(:seek_new_article), articles_path, class: "btn btn-purple" %>
         <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
-          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-purple" %>
-          <%= link_to "Delete", article_path(@article), method: :delete,
-                                                                  data: { confirm: "#{current_user.name}, are you sure you want to delete this article?" },
+          <%= link_to t(:Edit), edit_article_path(@article), class: "btn btn-purple" %>
+          <%= link_to t(:Delete), article_path(@article), method: :delete,
+                                                                  data: { confirm: "#{current_user.name}, #{t(:want_to_delete_article)}" },
                                                                   class: "btn btn-purple" %>
         <% end %>
       </div>
@@ -72,24 +76,24 @@
           <div>
             <div class="input-group input-group-lg col-md-10 col-md-offset-1">
               <%= link_to gravatar_for(current_user, size: 50, class: 'gravatar-comment'), user_path(current_user), class:"input-group-addon input-group-addon-article" %>
-              <%= f.text_field :description, class: "form-control comment-form", placeholder: "Write a comment..." %>
+              <%= f.text_field :description, class: "form-control comment-form", placeholder: t(:write_a_comment) %>
             </div>
           </div>
         <% end %>
       </div>
     </div>
   <% else %>
-    <h4 class="center">Have a account? <%= link_to "Log in to comment", login_path %></h4>
-    <h4 class="center">Are you new here? <%= link_to "Sign up", signup_path %></h4>
+    <h4 class="center"><%= t(:have_account?) %> <%= link_to t(:log_in_to_comment), login_path %></h4>
+    <h4 class="center"><%= t(:new_here?) %> <%= link_to t(:signup), signup_path %></h4>
   <% end %>
   <br>
 
   <% if @article.comments.any? %>
-    <div class="real-time-messages">
+    <div id="real-time-messages">
       <%= render partial: 'comments/comments', object: @comments %>
     </div>
   <% else %>
-    <div class="real-time-messages">
+    <div id="real-time-messages">
     </div>
   <% end %>
 
