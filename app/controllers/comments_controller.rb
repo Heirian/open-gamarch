@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    flash[:danger] = "Comment removed"
+    flash[:danger] = I18n.t(:comment_removed)
     redirect_back(fallback_location: article_path(@article))
   end
 

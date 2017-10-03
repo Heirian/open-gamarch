@@ -55,10 +55,17 @@ pt:
   article_updated_success: "Artigo atualizado com sucesso!"
   article_deleted_success: "Artigo deletado com sucesso!"
   welcome: "bem-vindo"
+  Welcome_back: "Bem-vindo de volta"
   welcome_f: "bem-vinda"
+  Welcome_back_f: "Bem-vinda de volta"
   to: "ao"
   your_account_updated: "Sua conta foi atualizada!"
   user_deleted: "O usuário e todas as suas informações foram excluídas"
+  comment_removed: "Comentário removido"
+  log_out_success: "Você se desconectou com sucesso!"
+  log_out_to_login: "Vocẽ precisa se desconectar para entrar com outro usuário!"
+  invalid_login: "Combinação inválida de Usuário/Senha"
+  log_in_success: "Você se conectou com sucesso!"
   datetime:
     distance_in_words:
       about_x_hours:
