@@ -32,7 +32,9 @@
 en:
   hello: "Hello world"
 #home_page
-  article: "article"
+  article:
+    one: "One article"
+    other: "%{count} articles"
   articles: "articles"
   Articles: "Articles"
   communities: "Communities"
@@ -46,6 +48,7 @@ en:
   lets_go: "Let's go"
   and_now: "And now"
   Edit_Profile: "Edit profile"
+  view_all_comments: "View all comments"
 #loggout_home_page
   pre_title: "Here we are, traveler"
   home_title: "Welcome to Gamarch"

@@ -32,7 +32,9 @@
 pt:
   hello: "Ola Mundo"
   #home_page
-  article: "artigo"
+  article:
+    one: "Um artigo"
+    other: "%{count} artigos"
   articles: "artigos"
   Articles: "Artigos"
   communities: "Comunidades"
@@ -46,6 +48,7 @@ pt:
   lets_go: "Vamos lá"
   and_now: "E agora"
   Edit_Profile: "Editar perfil"
+  view_all_comments: "Ver todos os comentários"
   datetime:
     distance_in_words:
       about_x_hours:

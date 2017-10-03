@@ -26,7 +26,7 @@
                 <%= render 'shared/stats' %>
               </div>
               <div class="count-articles-home">
-                <%= pluralize(current_user.articles.count, t(:article)) if current_user.articles %>
+                <%= t('article', count: current_user.articles.count) if current_user.articles %>
               </div>
             </div>
         </section>
