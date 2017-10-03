@@ -41,8 +41,8 @@ class Article < ApplicationRecord
 
   # Validates the size of an uploaded image.
   def image_size
-    if image.size > 2.megabytes
-      errors.add(:image, "Cover size after resize process should be less than 2MB")
+    if image.size > 100.kilobytes
+      errors.add(I18n.t(:image), "#{I18n.t(:size_cover)} #{I18n.t(:cover_size_after_resize)} 100KB")
     end
   end
 

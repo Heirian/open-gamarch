@@ -47,7 +47,13 @@ pt:
   get_stared_message: "Começe seguindo jogadores profissionais. Você verá aqui seus artigos, diário e comunidades"
   lets_go: "Vamos lá"
   and_now: "E agora"
+  create_article: "Criar artigo"
+  update_article: "Atualizar meu artigo"
   Edit_Profile: "Editar perfil"
+  edit_article: "Editar artigo"
+  create_new_article: "Criar um novo artigo"
+  seek_new_article: "Procurar novos artigos"
+  delete_article: "Excluir artigo"
   view_all_comments: "Ver todos os comentários"
   Delete: "Deletar"
   comments: "comentários"
@@ -66,6 +72,14 @@ pt:
   log_out_to_login: "Vocẽ precisa se desconectar para entrar com outro usuário!"
   invalid_login: "Combinação inválida de Usuário/Senha"
   log_in_success: "Você se conectou com sucesso!"
+  log_in_to_do: "Você precisa logar ou se inscrever"
+  avatar_size_after_resize: "do avatar após o redimensionamento deve ser menor que"
+  cover_size_after_resize: "da capa após o redimensionamento deve ser menor que"
+  size_cover: "tamanho"
+  size_avatar: "tamanho"
+  image: "O"
+  page_not_found: "A página que você está procurando não existe"
+  mystiped_address: "Você pode ter digitado o endereço errado ou a página foi movida"
   datetime:
     distance_in_words:
       about_x_hours:

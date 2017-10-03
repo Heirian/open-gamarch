@@ -23,8 +23,8 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if !logged_in?
-      flash[:danger] = 'You must logged in to perform that action'
-      redirect_to root_path
+      flash[:danger] = I18n.t(:log_in_to_do)
+      redirect_back(fallback_location: root_path)
     end
   end
 
