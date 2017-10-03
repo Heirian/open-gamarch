@@ -40,9 +40,10 @@
   <div class="row">
 
     <div class="justify col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 article-show">
-      <div class="col-md-12">
-        <%= render 'shared/page_title', page_title: @article.name, class: 'article-show' %>
-      </div>
+
+      <h1 class="center">
+        <%= @article.name %>
+      </h1>
 
       <div align="center">
         <%= image_tag(@article.image.url, class: "img-ratio") if @article.image? %>

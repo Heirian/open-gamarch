@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   def require_user
     if !logged_in?
       flash[:danger] = I18n.t(:log_in_to_do)
-      redirect_back(fallback_location: root_path)
+      redirect_to login_path
     end
   end
 

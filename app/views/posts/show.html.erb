@@ -80,9 +80,9 @@
 <div class="row">
 
   <article class="justify col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 article-show">
-    <div class="col-md-12 col-xs-12 col-sm-12">
-      <%= render 'shared/page_title', page_title: @post.name, class: 'article-show' %>
-    </div>
+    <h1 class="center">
+      <%= @post.name %>
+    </h1>
 
     <div align="center">
       <%= image_tag(@post.image.url, class: "img-ratio") if @post.image? %>

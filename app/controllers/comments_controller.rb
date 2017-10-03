@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.build(comments_params)
     @comment.user = current_user
-    @actual_params = @article.id
     if @comment.save
       ActionCable.server.broadcast "comments",
       render(partial: 'comments/comment', object: @comment)

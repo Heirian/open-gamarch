@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @params = @article.id
     @comment = Comment.new
     @comments = @article.comments.paginate(page: params[:page], per_page: 5)
     respond_to do |format|
