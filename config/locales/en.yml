@@ -33,7 +33,10 @@ en:
   hello: "Hello world"
 #home_page
   article: "article"
+  articles: "articles"
+  Articles: "Articles"
   communities: "Communities"
+  Load: "Load"
   following: "Following"
   followers: "Followers"
   featured: "Featured"
@@ -42,6 +45,7 @@ en:
   get_stared_message: "Get started by following Pro Players. You'll see their articles, diary and communities here."
   lets_go: "Let's go"
   and_now: "And now"
+  Edit_Profile: "Edit profile"
 #loggout_home_page
   pre_title: "Here we are, traveler"
   home_title: "Welcome to Gamarch"

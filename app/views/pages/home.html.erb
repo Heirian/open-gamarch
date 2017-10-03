@@ -1,4 +1,5 @@
 <% if logged_in? %>
+<div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <aside class="col-md-3 col-sm-12 col-xs-12 fix-position fix-position-top">
@@ -74,13 +75,12 @@
 
     </div>
   </div>
-
+</div>
 <% else %>
 <header class="bg-header-home">
   <div class="container">
     <div class="col-md-12 col-sm-12 col-xs-12 home-show-position">
       <%= render 'shared/errors', object: @user %>
-
 
           <div class="col-md-12 col-sm-12 col-xs-12 center">
             <%= image_tag("logoback.png", class:"logo-show-home")%>

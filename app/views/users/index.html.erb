@@ -1,6 +1,8 @@
 <%= render 'shared/page_title', page_title: 'Explore' %>
 <hr />
 <br>
+<div class="container">
+
 <div class="row">
   <% @users.each do |user| %>
     <div align="center">
@@ -43,4 +45,6 @@
 
 <div align="center">
   <%= will_paginate %>
+</div>
+
 </div>

@@ -33,7 +33,10 @@ pt:
   hello: "Ola Mundo"
   #home_page
   article: "artigo"
+  articles: "artigos"
+  Articles: "Artigos"
   communities: "Comunidades"
+  Load: "Carregar"
   following: "Seguindo"
   followers: "Seguidores"
   featured: "Destaque"
@@ -42,6 +45,21 @@ pt:
   get_stared_message: "Começe seguindo jogadores profissionais. Você verá aqui seus artigos, diário e comunidades"
   lets_go: "Vamos lá"
   and_now: "E agora"
+  Edit_Profile: "Editar perfil"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: cerca de uma hora
+        other: cerca de %{count} horas
+      about_x_months:
+        one: cerca de um mês
+        other: cerca de %{count} meses
+      about_x_years:
+        one: cerca de um ano
+        other: cerca de %{count} anos
+      almost_x_years:
+        one: quase um ano
+        other: quase %{count} anos
   #loggout_home_page
   pre_title: "Aqui estamos, viajante"
   home_title: "Bem-vindo ao Gamarch"
