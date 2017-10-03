@@ -49,6 +49,16 @@ pt:
   and_now: "E agora"
   Edit_Profile: "Editar perfil"
   view_all_comments: "Ver todos os comentários"
+  Delete: "Deletar"
+  comments: "comentários"
+  article_create_success: "Artigo criado com sucesso!"
+  article_updated_success: "Artigo atualizado com sucesso!"
+  article_deleted_success: "Artigo deletado com sucesso!"
+  welcome: "bem-vindo"
+  welcome_f: "bem-vinda"
+  to: "ao"
+  your_account_updated: "Sua conta foi atualizada!"
+  user_deleted: "O usuário e todas as suas informações foram excluídas"
   datetime:
     distance_in_words:
       about_x_hours:

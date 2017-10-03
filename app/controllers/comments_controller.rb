@@ -27,8 +27,7 @@ class CommentsController < ApplicationController
 
   def require_attributed_user
     unless (current_user.admin? || current_user == @comment.user || current_user == @article.user)
-      flash[:danger] = "You can't do that"
-      redirect_back(fallback_location: article_path(@article))
+      redirect_to page404_path
     end
   end
 

@@ -14,7 +14,7 @@ jQuery ->
               $this = $(this)
               $this.html(icon).addClass('disabled')
               $.getScript more_comments_url, ->
-                $this.text('Load comments').removeClass('disabled') if $this
+                $this.html("<%= I18n.t(:Load) %> <%= I18n.t(:comments) %>").removeClass('disabled') if $this
                 loading_comments = false
           return
 

@@ -34,4 +34,7 @@ class PagesController < ApplicationController
 
   def policy_cookie
   end
+
+  def page404
+  end
 end

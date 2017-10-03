@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit,:update, :destroy]
-  before_action :require_user
+  before_action :require_user, except: [:index, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      flash[:success] = "Article was created successfully!"
+      flash[:success] = I18n.t(:article_create_success)
       redirect_to @article
     else
       @feed_items = []
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:success] = "Article was updated successfully!"
+      flash[:success] = I18n.t(:article_updated_success)
       redirect_to @article
     else
       render 'edit'
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:success] = "Article was deleted successfully!"
+    flash[:success] = I18n.t(:article_deleted_success)
     redirect_to articles_path
   end
 
@@ -63,8 +63,7 @@ class ArticlesController < ApplicationController
 
     def require_same_user
       if current_user != @article.user && !current_user.admin?
-        flash[:danger] = "You can only change your own things"
-        redirect_back(fallback_location: root_path)
+        redirect_to page404_path
       end
     end
 end

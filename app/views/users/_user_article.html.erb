@@ -3,7 +3,7 @@
     <%= image_tag(user_article.image.url, class: "img-cover-ratio") if user_article.image? %>
     <h4><%= link_to truncate(user_article.name, length: 28), article_path(user_article) %></h4>
 
-      <%= simple_format(user_article.make_safe(50)) unless user_article.image? %>
+      <%= simple_format(user_article.make_safe(100)) unless user_article.image? %>
 
     <span class="quiet">
       <small class="article-show-footer"><%= time_ago_in_words(user_article.created_at) %> <%= t(:ago) %>

@@ -10,8 +10,8 @@
             </h4>
             <p>
               <span class="quiet article-index-comms">
-                <small><%= time_ago_in_words(article.created_at) %> ago
-                  | <%= article.reading_time %> min read
+                <small><%= time_ago_in_words(article.created_at) %> <%= t(:ago) %>
+                  | <%= article.reading_time %> min <%= t(:read) %>
                   | <%= link_to(pluralize(article.comments.count, "comm"), article_path(article, anchor: "wall"),  target: '_blank') %>
                 </small>
               </span>
@@ -20,7 +20,7 @@
               <%= link_to gravatar_for(article.user, size: 50, class: 'gravatar'), user_path(article.user) %>
               <div class="avatar-article-index-text">
                 <%= link_to article.user.name.capitalize, user_path(article.user), class: "avatar-article-index-font" %>
-                <%= pluralize(article.user.articles.count, "article") %>
+                <%= t('article', count: article.user.articles.count) %>
               </div>
             </div>
           </div>
