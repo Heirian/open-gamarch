@@ -77,6 +77,85 @@
   </div>
 </div>
 <% else %>
+<!--
+<div class="col-md-4">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2><%= t(:gaming_better)%></h2>
+      <h5><%= t(:improve_community)%></h5>
+
+      <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+        <div class="form-group">
+          <div class="col-md-12">
+            <%= f.text_field :name, class: "form-control form-home-sign", placeholder: "#{t(:your_name)}" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 form-email-fix-position">
+            <%= f.text_field :email, class: "form-control form-home-sign", placeholder: "#{t(:your_email)}" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 form-password-fix-position">
+            <%= f.password_field :password, class: "form-control form-home-sign", placeholder: "#{t(:your_password)}" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 form-cpassword-fix-position">
+            <%= f.password_field :password_confirmation, class: "form-control form-home-sign", placeholder: "Confirm your password" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 form-birthday-fix-position">
+            <h4>
+              <%= t(:your_birthday) %>
+            </h4>
+            <div class="select-date-wrapper">
+              <%= date_select :user, :birthday, { start_year: 1905, end_year: 2017 , order: [:day, :month, :year]}, class: "form-control select-date"  %>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 form-gender-fix-position">
+            <div class="col-md-4 col-md-offset-2 col-sm-4 col-offset-2 col-xs-6">
+              <h4>
+                <%= f.radio_button :gender, 'girl' %>
+                <%= label :gender, t(:girl) %>
+              </h4>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <h4>
+                <%= f.radio_button :gender, 'boy', checked: true %>
+                <%= label :gender, t(:boy) %>
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 form-terms">
+            <%= render 'users/warning_terms' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 btn-group form-create">
+            <%= f.submit(@user.new_record? ? t(:create_account) : t(:update_account),
+                              class: "btn btn-purple btn-lg") %>
+            <%= link_to t(:return_home), pages_home_path, class: "btn btn-purple" unless @user.new_record? %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+-->
 <header class="bg-header-home">
   <div class="container">
     <div class="col-md-12 col-sm-12 col-xs-12 home-show-position">
