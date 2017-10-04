@@ -1,7 +1,7 @@
 <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),
              html: { method: :delete },
              remote: true) do |f| %>
-  <%= button_tag type: 'submit', class: "btn btn-following" do %>
-    <i class="fa fa-check-square-o" aria-hidden="true" title="Following"></i> Wanted
+  <%= button_tag type: 'submit', class: "btn btn-following", title: t(:Wanted_explanation) do %>
+    <i class="fa fa-check-square-o" aria-hidden="true" title="<%= t(:following) %>"></i> <%= t(:Wanted) %>
   <% end %>
 <% end %>
