@@ -1,34 +1,34 @@
 <%= render 'shared/errors', object: @user %>
-<%= render 'shared/forms_title', page_title: 'Change your password', page_subtitle: 'Keep your password safe' %>
+<%= render 'shared/forms_title', page_title: t(:change_your_pass), page_subtitle: t(:keep_pass_safe) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+        <div class="form-group">
+          <div class="control-label col-md-4">
+            <%= f.label :password, t(:new_password) %>
+          </div>
+          <div class="col-md-4">
+            <%= f.password_field :password, class: "form-control form-home-sign", placeholder: t(:choose_new_pass) %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-md-4">
+            <%= f.label :password_confirmation, t(:confirm_new_pass) %>
+          </div>
+          <div class="col-md-4">
+            <%= f.password_field :password_confirmation, class: "form-control form-home-sign", placeholder: t(:repeat_new_pass) %>
+          </div>
+        </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
-      <div class="form-group">
-        <div class="control-label col-md-5">
-          <%= f.label :password, "New" %>
+        <div class="form-group">
+          <div class="center col-md-offset-4 col-md-4">
+            <%= f.submit t(:change_pass),
+                            class: "btn btn-purple btn-lg" %>
+            <%= link_to t(:View_profile), user_path(@user), class: "btn btn-purple btn-lg" unless @user.new_record? %>
+          </div>
         </div>
-        <div class="col-md-4">
-          <%= f.password_field :password, class: "form-control", placeholder: "Choose a new password" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="control-label col-md-5">
-          <%= f.label :password_confirmation, "Confirm new password" %>
-        </div>
-        <div class="col-md-4">
-          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-md-offset-5 col-md-4 btn-group">
-          <%= f.submit "Change Password",
-                          class: "btn btn-purple" %>
-          <%= link_to "Go to Profile", user_path(@user), class: "btn btn-purple" unless @user.new_record? %>
-          <%= link_to "Go to Home", root_path, class: "btn btn-purple" unless @user.new_record? %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

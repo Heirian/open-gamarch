@@ -42,6 +42,9 @@ en:
   follow: "Follow"
   following: "Following"
   followers: "Followers"
+  follower:
+    one: "One follower"
+    other: "%{count} followers"
   Get_after: "Get after"
   get_after_explanation: "Get after is better than 'follow'"
   Wanted: "Wanted"
@@ -57,6 +60,13 @@ en:
   Edit: "Edit"
   Edit_Profile: "Edit profile"
   edit_article: "Edit article"
+  change_your_pass: 'Change your password'
+  keep_pass_safe: 'Keep your password safe'
+  new_password: "New password"
+  choose_new_pass: "Choose a new password"
+  confirm_new_pass: "Confirm new password"
+  repeat_new_pass: "Repeat new password"
+  change_pass: "Change password"
   create_new_article: "Create a new article"
   seek_new_article: "Seek new articles"
   delete_article: "Delete article"

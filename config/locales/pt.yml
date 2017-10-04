@@ -42,6 +42,9 @@ pt:
   follow: "Seguir"
   following: "Seguindo"
   followers: "Seguidores"
+  follower:
+    one: "Um seguidor"
+    other: "%{count} seguidores"
   Get_after: "Acossar"
   get_after_explanation: "Acossar: seguir ao encalço de, perseguir correndo; dar caça a."
   Wanted: "Catado"
@@ -57,6 +60,13 @@ pt:
   Edit: "Editar"
   Edit_Profile: "Editar perfil"
   edit_article: "Editar artigo"
+  change_your_pass: 'Alterar sua senha'
+  keep_pass_safe: "Mantenha sua senha segura"
+  new_password: "Nova senha"
+  choose_new_pass: "Escolha uma nova senha"
+  confirm_new_pass: "Confirme a nova senha"
+  repeat_new_pass: "Repita a nova senha"
+  change_pass: 'Alterar senha'
   create_new_article: "Criar um novo artigo"
   seek_new_article: "Procurar novos artigos"
   delete_article: "Excluir artigo"
