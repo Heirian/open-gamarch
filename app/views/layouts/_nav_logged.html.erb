@@ -10,33 +10,33 @@
   </div>
   <div class="navbar-header navbar-responsive-right pull-right col-md-6 col-xs-10 col-sm-6">
 
-      <div class="mobile-off navbar-btn link-nav-responsive navbar-text">
-        <%= link_to "Back off, Newbie", new_article_path, class: "inline", title: "Write something new" %>
+      <div class="mobile-off navbar-btn link-nav-responsive navbar-text data-turbolinks="false"">
+        <a data-turbolinks-action="replace" class="inline" href="<%= new_article_path %>" title="<%= t(:write_something_new) %>"><%= t(:back_off_new) %></a>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-file font-icon-nav btn-nav" aria-hidden="true" title="Seek new articles"></i>'),
+        <%= link_to simple_format('<i class="fa fa-file font-icon-nav btn-nav" aria-hidden="true"></i>'),
                         articles_path %>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-gamepad font-icon-nav btn-nav" aria-hidden="true" title="Games"></i>'),
+        <%= link_to simple_format('<i class="fa fa-gamepad font-icon-nav btn-nav" aria-hidden="true"></i>'),
                         users_path %>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-object-group font-icon-nav btn-nav" aria-hidden="true" title="Community"></i>'),
+        <%= link_to simple_format('<i class="fa fa-object-group font-icon-nav btn-nav" aria-hidden="true"></i>'),
                         users_path %>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-heartbeat font-icon-nav btn-nav" aria-hidden="true" title="Explore our universe"></i>'),
+        <%= link_to simple_format('<i class="fa fa-heartbeat font-icon-nav btn-nav" aria-hidden="true"></i>'),
                         users_path %>
       </div>
 
       <div class="gravatar-nav navbar-brand">
         <%= link_to (gravatar_for current_user, size: 34, class: 'gravatar'),
-                        user_path(current_user), title: "Profile" %>
+                        user_path(current_user), title: t(:profile) %>
       </div>
 
       <div class="dropdown inline navbar-btn btn-nav-responsive">

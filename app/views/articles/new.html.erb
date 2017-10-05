@@ -1,4 +1,7 @@
+
 <%= render 'shared/ckeditor' %>
+
+
 <% if current_user.articles.empty? %>
   <%= render 'shared/page_title', page_title: "#{t(:welcome_to_mission)}, #{current_user.name.capitalize}. #{t(:spread_your_knowledge)}" %>
 <% elsif current_user.articles.count < 10 %>

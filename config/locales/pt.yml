@@ -67,6 +67,9 @@ pt:
   confirm_new_pass: "Confirme a nova senha"
   repeat_new_pass: "Repita a nova senha"
   change_pass: 'Alterar senha'
+  write_something_new: "Escreva algo novo"
+  back_off_new: "Vai pra lá, noob"
+  profile: "Perfil"
   create_new_article: "Criar um novo artigo"
   seek_new_article: "Procurar novos artigos"
   delete_article: "Excluir artigo"
