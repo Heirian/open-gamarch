@@ -28,6 +28,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_admin
+    redirect_to page404_path unless current_user.admin?
+  end
+
   private
 
   def set_locale

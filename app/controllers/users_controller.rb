@@ -85,7 +85,4 @@ class UsersController < ApplicationController
     redirect_to page404_path if current_user != @user && !current_user.admin?
   end
 
-  def require_admin
-    redirect_to page404_path unless current_user.admin?
-  end
 end

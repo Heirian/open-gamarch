@@ -52,7 +52,4 @@ class DevelopersController < ApplicationController
     @developer = Developer.find(params[:id])
   end
 
-  def require_admin
-    redirect_to page404_path unless current_user.admin?
-  end
 end
