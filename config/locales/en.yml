@@ -223,9 +223,23 @@ en:
   gamarch_release_call: "The beta of the platform will be released in mid-October and the registrations will be open"
   gamarch_enter_hype: "THEN ENTER FOR HYPE WITH US!"
   gamarch_your_opinion: "Your opinion is very important to us, so please contact us for any suggestions, participate through our blog and social networks"
-  #contact-page
+  #contact_page
   submit: "Submit"
   name: "Name"
   subject: "Subject"
   message: "Write your message..."
   gamarch_contact: "Get in touch with Gamarch. Send us suggestions, opinions and report any problems. We are open and grateful for your time."
+  #developer_pages
+  create_developer_page: "Create developer's page"
+  update_developer_page: "Update developer's page"
+  year_founded: "Foundation year"
+  developer_website: "Developer's website"
+  developer_headquarters: "Headquarters"
+  developer_description: "Write the developer's description here..."
+  developer_name: "Developer's name"
+  new_developer: "Add a new developer"
+  edit_developer: "Edit developer's page"
+  developer_company: "Create a developer's page"
+  video_game_company: "exclusive to assign their games"
+  developer_updated: "Developer's page has been updated successfully!"
+  #games_page

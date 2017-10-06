@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get '/blog', to: 'posts#index'
 
     resources :posts
+    resources :developers
 
     get '/signup', to: 'users#new'
 

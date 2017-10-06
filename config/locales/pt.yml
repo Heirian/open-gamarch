@@ -245,9 +245,23 @@ pt:
   gamarch_release_call: "Em meados de outubro será lançado o beta da plataforma e os cadastros estarão liberados"
   gamarch_enter_hype: "ENTÃO ENTRE PARA O HYPE CONOSCO!"
   gamarch_your_opinion: "Sua opinião é muito importante para a gente, então entre em contato para qualquer sugestão, participe através do nosso blog e redes sociais"
-  #contact-page
+  #contact_page
   submit: "Enviar"
   name: "Nome"
   subject: "Assunto"
   message: "Escreva sua mensagem..."
   gamarch_contact: "Conecte-se ao Gamarch. Nos envie sugestões, opiniões e reporte qualquer problema. Nós estamos abertos e somos gratos pelo seu tempo"
+  #developer_pages
+  create_developer_page: "Criar página para uma desenvolvedora"
+  update_developer_page: "Atualizar página da desenvolvedora"
+  year_founded: "Ano de fundação"
+  developer_website: "Site da desenvolvedora"
+  developer_headquarters: "Sede"
+  developer_description: "Escreva a descrição da desenvolvedora aqui..."
+  developer_name: "Nome da desenvolvedora"
+  new_developer: "Adicionar uma nova desenvolvedora"
+  edit_developer: "Editar a página da desenvolvedora"
+  developer_company: "Crie uma página de desenvolvedora"
+  video_game_company: "exclusivamente para atribuir seus jogos"
+  developer_updated: "A página da desenvolvedora foi atualizada com sucesso!"
+  #games_page
