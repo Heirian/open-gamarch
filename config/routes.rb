@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :developers
     resources :games
+    resources :communities
 
     get '/signup', to: 'users#new'
 

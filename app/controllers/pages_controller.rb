@@ -4,17 +4,13 @@ class PagesController < ApplicationController
       @article = Article.new
       @comment = Comment.new
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 8)
-      respond_to do |format|
-        format.html
-        format.js
-      end
     else
       @user = User.new
     end
   end
 
   def about
-    render :layout => false
+    render layout: false
   end
 
   def help

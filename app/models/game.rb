@@ -3,4 +3,5 @@ class Game < ApplicationRecord
   validates :release, presence: true
   has_many :game_developers
   has_many :developers, through: :game_developers
+  has_many :communities
 end

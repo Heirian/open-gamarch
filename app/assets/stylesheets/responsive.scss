@@ -878,4 +878,9 @@
     position: absolute;
     display:block;
   }
+  .custom-nav {
+    .mobile-on {
+      display: none;
+    }
+  }
 }

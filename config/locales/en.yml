@@ -243,3 +243,12 @@ en:
   video_game_company: "exclusive to assign their games"
   developer_updated: "Developer's page has been updated successfully!"
   #games_page
+  #community_page
+  new_community: "New community"
+  community_company: "Create a new community"
+  video_game_community: "A community exclusive to your favorite game"
+  community_website: "Community's website"
+  community_name: "Community name"
+  community_description: "Write the community's description here..."
+  create_community_page: "Create community"
+  update_community_page: "Update community"

@@ -18,7 +18,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      flash[:success] = "#{@game .name}, #{t(:welcome)} #{I18n.t(:to)} Gamarch!"
+      flash[:success] = "#{@game.name}, #{t(:welcome)} #{I18n.t(:to)} Gamarch!"
       redirect_to game_path(@game)
     else
       render 'new'
