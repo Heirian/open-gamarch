@@ -3,7 +3,7 @@
     <div class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
       <div class="center">
         <h1><%= @developer.name %></h1>
-        <p class="justify"><%= @developer.description %></p>
+        <p><%= t(:"#{@developer.description}") %></p>
         <p><%= @developer.headquarters %></p>
         <p><%= @developer.founded %></p>
         <a href="<%= @developer.website %>" target="_blank">Website</a>

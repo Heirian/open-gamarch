@@ -242,7 +242,13 @@ en:
   developer_company: "Create a developer's page"
   video_game_company: "exclusive to assign their games"
   developer_updated: "Developer's page has been updated successfully!"
+  #developer_description
+  activision_blizzard_description: "Activision Blizzard, Inc. (originally incorporated as Activision, Inc) is an American video game developer. Activision Blizzard currently includes five business units: Activision, Blizzard Entertainment, Major League Gaming, Activision Blizzard Studios, and King Digital Entertainment."
+  blizzard_entertainment_description: "Blizzard Entertainment, Inc. is an American video game developer and publisher based in Irvine, California, and is a subsidiary of the American company Activision Blizzard. The company was founded on February 8, 1991, under the name Silicon & Synapse by three graduates of the University of California, Los Angeles: Michael Morhaime, Frank Pearce, and Allen Adham. The company originally concentrated on the creation of game ports for other studios before beginning development of their own software in 1993 with games like Rock n' Roll Racing and The Lost Vikings. In 1994 the company became Chaos Studios, Inc., then Blizzard Entertainment, Inc. after being acquired by distributor Davidson & Associates."
+  riot_games_description: "Riot Games is an American video game developer, publisher, and eSports tournament organizer established in 2006."
   #games_page
+  hearthstone_description: "Hearthstone, originally known as Hearthstone: Heroes of Warcraft, is a free-to-play online collectible card video game"
+  lol_description: "League of Legends (abbreviated LoL) is a multiplayer online battle arena video game developed and published by Riot Games for Microsoft Windows and macOS. The game follows a freemium model and is supported by microtransactions, and was inspired by the Warcraft III: The Frozen Throne mod, Defense of the Ancients."
   #community_page
   new_community: "New community"
   community_company: "Create a new community"
