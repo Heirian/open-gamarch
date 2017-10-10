@@ -11,7 +11,7 @@
                 <%= link_to game.name, game_path(game) %>
               </li>
               <li>
-                <%= truncate(t(:"#{game.description}"), length: 50) %>
+                <%= truncate(t(:"#{game.description}"), length: 150) %>
               </li>
               <% if logged_in? && current_user.admin? %>
                 <li>
