@@ -33,14 +33,14 @@ class User < ApplicationRecord
   validate :image_size
 
   # Returns the hash digest of the given string.
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
+  def self.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ?
+      BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
   # Returns a random token.
-  def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -81,23 +81,22 @@ class User < ApplicationRecord
 
   private
 
-    # Converts email to all lower-case.
-    def downcase_email
-      self.email = email.downcase
-    end
+  # Converts email to all lower-case.
+  def downcase_email
+    self.email = email.downcase
+  end
 
-    # Validates the size of an uploaded avatar.
-    def avatar_size
-      if avatar.size > 100.kilobytes
-        errors.add(I18n.t(:image), "#{I18n.t(:size_avatar)} #{I18n.t(:avatar_size_after_resize)} 100KB")
-      end
-    end
+  # Validates the size of an uploaded avatar.
+  def avatar_size
+    return unless avatar.size > 100.kilobytes
+    errors.add(I18n.t(:image), "#{I18n.t(:size_avatar)}
+     #{I18n.t(:avatar_size_after_resize)} 100KB")
+  end
 
-    # Validates the size of an uploaded image.
-    def image_size
-      if image.size > 100.kilobytes
-        errors.add(I18n.t(:image), "#{I18n.t(:size_cover)} #{I18n.t(:cover_size_after_resize)} 100KB")
-      end
-    end
-
+  # Validates the size of an uploaded image.
+  def image_size
+    return unless image.size > 100.kilobytes
+    errors.add(I18n.t(:image), "#{I18n.t(:size_cover)}
+      #{I18n.t(:cover_size_after_resize)} 100KB")
+  end
 end

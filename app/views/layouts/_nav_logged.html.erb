@@ -39,7 +39,7 @@
           <%= link_to (gravatar_for current_user, size: 34, class: 'gravatar'),
                           user_path(current_user), title: t(:profile) %>
         </a>
-        <ul class="dropdown-menu dropdown-menu-right">
+        <ul class="dropdown-menu">
           <li>
             <%= link_to simple_format('<i class="fa fa-pencil-square-o font-icon-dropdown" aria-hidden="true" title="Edit your Profile"></i> Edit Profile'),
                         edit_user_path(current_user) %>
@@ -57,10 +57,10 @@
       </div>
 
       <div class="dropdown gravatar-nav navbar-brand mobile-on">
-        <a href="#" class="dropdown-toggle btn-nav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <a href="#" class="dropdown-toggle btn-nav" data-toggle="dropdown" role="button" aria-expanded="false">
           <%= gravatar_for current_user, size: 34, class: 'gravatar' %>
         </a>
-        <ul class="dropdown-menu dropdown-menu-right">
+        <ul class="dropdown-menu">
           <li>
             <%= link_to simple_format("<i class='fa fa-address-book-o font-icon-dropdown' aria-hidden='true' title='#{t(:profile)}'></i>  #{t(:View_profile)}"),
                                       user_path(current_user) %>

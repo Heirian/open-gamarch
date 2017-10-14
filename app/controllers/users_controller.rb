@@ -1,7 +1,8 @@
+# UsersController class
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :pass]
-  before_action :require_user, except: [:new, :create, :show]
-  before_action :require_same_user, only: [:edit, :update, :destroy, :pass]
+  before_action :set_user, only: %I[show edit update destroy pass]
+  before_action :require_user, except: %I[new create show]
+  before_action :require_same_user, only: %I[edit update destroy pass]
   before_action :require_admin, only: [:destroy]
 
   def index
@@ -20,22 +21,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      if @user.gender == 'girl'
-        u_welcome = I18n.t(:welcome_f)
-      else
-        u_welcome = I18n.t(:welcome)
-      end
       session[:user_id] = @user.id
-      cookies.signed[:user_id] = @user.id
-      flash[:success] = "#{@user.name}, #{u_welcome} #{I18n.t(:to)} Gamarch!"
+      flash[:success] = "#{@user.name},
+        #{welcome(@user)} #{I18n.t(:to)} Gamarch!"
       redirect_to user_path(@user)
     else
       render 'new'
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
@@ -47,11 +42,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if !@user.admin?
-      @user.destroy
-      flash[:danger] = I18n.t(:user_deleted)
-      redirect_to users_path
-    end
+    return redirect_to page404_path if @user.admin?
+    @user.destroy
+    flash[:danger] = I18n.t(:user_deleted)
+    redirect_to users_path
   end
 
   def following
@@ -68,13 +62,16 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
-  def pass
-  end
+  def pass; end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :gender, :birthday, :avatar, :remove_avatar, :image, :remove_image)
+    params.require(:user).permit(
+      :name, :email, :password, :password_confirmation,
+      :bio, :gender, :birthday, :avatar,
+      :remove_avatar, :image, :remove_image
+    )
   end
 
   def set_user
@@ -85,4 +82,8 @@ class UsersController < ApplicationController
     redirect_to page404_path if current_user != @user && !current_user.admin?
   end
 
+  def welcome(user)
+    return I18n.t(:welcome_f) if user.gender == 'girl'
+    I18n.t(:welcome)
+  end
 end
