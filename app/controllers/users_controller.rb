@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :pass]
-  before_action :require_user, except: [:new, :create]
+  before_action :require_user, except: [:new, :create, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy, :pass]
   before_action :require_admin, only: [:destroy]
 
@@ -20,9 +20,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      if @user.gender == 'girl'
+        u_welcome = I18n.t(:welcome_f)
+      else
+        u_welcome = I18n.t(:welcome)
+      end
       session[:user_id] = @user.id
       cookies.signed[:user_id] = @user.id
-      flash[:success] = "Welcome #{@user.name} to Gamarch!"
+      flash[:success] = "#{@user.name}, #{u_welcome} #{I18n.t(:to)} Gamarch!"
       redirect_to user_path(@user)
     else
       render 'new'
@@ -34,7 +39,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Your account was updated successfully!"
+      flash[:success] = I18n.t(:your_account_updated)
       redirect_to @user
     else
       render 'edit'
@@ -44,20 +49,20 @@ class UsersController < ApplicationController
   def destroy
     if !@user.admin?
       @user.destroy
-      flash[:danger] = "User and all associated articles have been deleted"
+      flash[:danger] = I18n.t(:user_deleted)
       redirect_to users_path
     end
   end
 
   def following
-    @title = "Following"
+    @title = I18n.t(:following)
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = I18n.t(:followers)
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
@@ -77,10 +82,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    redirect_to(root_url) if current_user != @user && !current_user.admin?
+    redirect_to page404_path if current_user != @user && !current_user.admin?
   end
 
-  def require_admin
-    redirect_to(root_url) unless current_user.admin?
-  end
 end

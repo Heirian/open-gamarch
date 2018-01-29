@@ -1,66 +1,75 @@
-<div class="row">
-  <div class="col-md-12">
-    <%= form_for(object, :html => { class: "form-horizontal", role: "form" }) do |f| %>
-      <div class="form-group">
-        <div class="control-label col-md-5">
-          <%= f.label :name, "Choose a name" %>
-        </div>
-        <div class="col-md-4">
-          <%= f.text_field :name, class: "form-control", placeholder: "Enter your name" %>
-        </div>
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+          <div class="form-group">
+            <div class="col-md-12">
+              <%= f.text_field :name, class: "form-control form-home-sign", placeholder: "#{t(:your_name)}" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 form-email-fix-position">
+              <%= f.text_field :email, class: "form-control form-home-sign", placeholder: "#{t(:your_email)}" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 form-password-fix-position">
+              <%= f.password_field :password, class: "form-control form-home-sign", placeholder: "#{t(:your_password)}" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 form-cpassword-fix-position">
+              <%= f.password_field :password_confirmation, class: "form-control form-home-sign", placeholder: "Confirm your password" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 form-birthday-fix-position">
+              <h4>
+                <%= t(:your_birthday) %>
+              </h4>
+              <div class="select-date-wrapper">
+                <%= date_select :user, :birthday, { start_year: 2002, end_year: 1905, order: [:day, :month, :year]}, class: "form-control select-date"  %>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 form-gender-fix-position">
+              <div class="col-md-4 col-md-offset-2 col-sm-4 col-offset-2 col-xs-6">
+                <h4>
+                  <%= f.radio_button :gender, 'girl' %>
+                  <%= label :gender, t(:girl) %>
+                </h4>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-6">
+                <h4>
+                  <%= f.radio_button :gender, 'boy', checked: true %>
+                  <%= label :gender, t(:boy) %>
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 form-terms">
+              <%= render 'users/warning_terms' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="center col-md-12 col-sm-12 col-xs-12 form-create">
+              <%= f.submit(@user.new_record? ? t(:create_account) : t(:update_account),
+                                class: "btn btn-purple btn-lg") %>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="form-group">
-        <div class="control-label col-md-5">
-          <%= f.label :email %>
-        </div>
-        <div class="col-md-4">
-          <%= f.text_field :email, class: "form-control", placeholder: "Enter your email" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="control-label col-md-5">
-          <%= f.label :password %>
-        </div>
-        <div class="col-md-4">
-          <%= f.password_field :password, class: "form-control", placeholder: "Choose a password" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="control-label col-md-5">
-          <%= f.label :password_confirmation, "Confirm password" %>
-        </div>
-        <div class="col-md-4">
-          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="control-label col-md-5">
-          <%= f.label :birthday %>
-        </div>
-        <div class="col-md-4">
-          <%= date_select :user, :birthday, start_year: 1905, end_year: 2017 , order: [:day, :month, :year] %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-4 col-md-offset-5">
-          <%= f.radio_button :gender, 'girl' %>
-          <%= label :gender, 'Girl' %>
-          <%= f.radio_button :gender, 'boy', checked: true %>
-          <%= label :gender, 'Boy' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-offset-5 col-md-4">
-          <%= render 'warning_terms' if @user.new_record? %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-offset-5 col-md-4 btn-group">
-          <%= f.submit(@user.new_record? ? "Create my account" : "Update my account",
-                            class: "btn btn-purple") %>
-          <%= link_to "Return to home", pages_home_path, class: "btn btn-purple" unless @user.new_record? %>
-        </div>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>

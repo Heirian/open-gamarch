@@ -14,7 +14,7 @@ jQuery ->
               $this = $(this)
               $this.html(icon).addClass('disabled')
               $.getScript more_articles_url, ->
-                $this.text('Load articles').removeClass('disabled')
+                $this.html("<%= I18n.t 'Load' %> <%= I18n.t 'articles' %>").removeClass('disabled')
                 loading_articles = false
           return
 

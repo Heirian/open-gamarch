@@ -1,13 +1,13 @@
 #logo {
-  float: left;
   color: #fff;
   text-transform: uppercase;
   font-family: 'Black Ops One', cursive;
-  padding-bottom: 20px;
+  font-size: 40px;
   &:hover {
     text-decoration: none;
   }
 }
+
 
 #img-logo-login {
   height: 60px;
@@ -67,7 +67,7 @@
   margin-top: -5px;
 }
 .home-topics {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 select.select-date {

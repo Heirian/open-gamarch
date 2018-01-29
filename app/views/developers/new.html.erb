@@ -1,0 +1,7 @@
+<% provide(:title, t(:new_developer)) %>
+
+<%= render 'shared/forms_title', page_title: t(:developer_company), page_subtitle: t(:video_game_company) %>
+
+<%= render 'shared/errors', object: @developer %>
+
+<%= render 'form' %>

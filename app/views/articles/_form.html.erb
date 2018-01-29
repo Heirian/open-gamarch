@@ -1,39 +1,43 @@
-<%= javascript_include_tag  Ckeditor.cdn_url %>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= form_for(object, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for(object, :html => { class: "form-horizontal", multipart: true, role: "form" }) do |f| %>
 
-      <div class="form-group">
-        <div class="col-md-8 col-md-offset-2">
-          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'inputfile' %>
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-2">
+            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'inputfile' %>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <div class="col-md-8 col-md-offset-2">
-          <%= f.text_field :name, class: "form-control", placeholder: "Title", autofocus: true %>
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-2">
+            <%= f.text_field :name, class: "form-control", placeholder: t(:Title), autofocus: true %>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <div class="col-md-8 col-md-offset-2">
-          <%= f.cktext_area(:description, cols: 40, class: "form-control", placeholder: "Show us your ability, #{current_user.name}, we trusting you") %>
+        <div id="ck-reload">
+          <div class="form-group">
+            <div class="col-md-8 col-md-offset-2">
+              <%= f.cktext_area(:description, cols: 40, class: "form-control") %>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <div class="col-md-10 col-md-offset-2 btn-group">
-          <%= f.submit class: "btn btn-purple" %>
-          <%= link_to "Create a new article", new_article_path, class: "btn btn-purple" unless @article.new_record?%>
-          <%= link_to "Seek new articles", articles_path, class: "btn btn-purple" %>
-          <%= link_to "Delete this article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple" unless @article.new_record? %>
+
+        <div class="form-group">
+          <div class="col-md-10 col-md-offset-2 btn-group">
+            <%= f.submit(@article.new_record? ? t(:create_article) : t(:update_article),
+                              class: "btn btn-purple") %>
+            <%= link_to t(:create_new_article), new_article_path, class: "btn btn-purple" unless @article.new_record?%>
+            <%= link_to t(:seek_new_article), articles_path, class: "btn btn-purple" %>
+            <%= link_to t(:delete_article), article_path(@article), method: :delete, data: { confirm: "#{current_user.name}, #{t(:want_to_delete_article)}" }, class: "btn btn-purple" unless @article.new_record? %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
 <script type="text/javascript">
-  $(".inputfile").filestyle({buttonBefore: true, placeholder: "Select article's cover - Max height is 250 pixels"});
+  $(".inputfile").filestyle({buttonBefore: true, placeholder: "<%= t(:select_articles_cover) %>"});
 </script>

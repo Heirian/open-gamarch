@@ -10,45 +10,65 @@
   </div>
   <div class="navbar-header navbar-responsive-right pull-right col-md-6 col-xs-10 col-sm-6">
 
-      <div class="mobile-off navbar-btn link-nav-responsive navbar-text">
-        <%= link_to "Back off, Newbie", new_article_path, class: "inline", title: "Write something new" %>
+      <div class="mobile-off navbar-btn link-nav-responsive navbar-text data-turbolinks="false"">
+        <a data-turbolinks-action="replace" class="inline" href="<%= new_article_path %>" title="<%= t(:write_something_new) %>"><%= t(:back_off_new) %></a>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-file font-icon-nav btn-nav" aria-hidden="true" title="Seek new articles"></i>'),
+        <%= link_to simple_format('<i class="fa fa-file font-icon-nav btn-nav" aria-hidden="true"></i>'),
                         articles_path %>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-gamepad font-icon-nav btn-nav" aria-hidden="true" title="Games"></i>'),
-                        users_path %>
+        <%= link_to simple_format('<i class="fa fa-gamepad font-icon-nav btn-nav" aria-hidden="true"></i>'),
+                        games_path %>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-object-group font-icon-nav btn-nav" aria-hidden="true" title="Community"></i>'),
-                        users_path %>
+        <%= link_to simple_format('<i class="fa fa-object-group font-icon-nav btn-nav" aria-hidden="true"></i>'),
+                        communities_path %>
       </div>
 
       <div class="navbar-btn btn-nav-responsive">
-        <%= link_to simple_format('<i class="fa fa-heartbeat font-icon-nav btn-nav" aria-hidden="true" title="Explore our universe"></i>'),
+        <%= link_to simple_format('<i class="fa fa-heartbeat font-icon-nav btn-nav" aria-hidden="true"></i>'),
                         users_path %>
       </div>
 
-      <div class="gravatar-nav navbar-brand">
-        <%= link_to (gravatar_for current_user, size: 34, class: 'gravatar'),
-                        user_path(current_user), title: "Profile" %>
-      </div>
-
-      <div class="dropdown inline navbar-btn btn-nav-responsive">
+      <div class="dropdown gravatar-nav navbar-brand mobile-off">
         <a href="#" class="dropdown-toggle btn-nav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-cogs font-icon-nav" aria-hidden="true" title="Settings"></i>
+          <%= link_to (gravatar_for current_user, size: 34, class: 'gravatar'),
+                          user_path(current_user), title: t(:profile) %>
         </a>
         <ul class="dropdown-menu dropdown-menu-right">
           <li>
             <%= link_to simple_format('<i class="fa fa-pencil-square-o font-icon-dropdown" aria-hidden="true" title="Edit your Profile"></i> Edit Profile'),
                         edit_user_path(current_user) %>
           </li>
+          <li>
+            <%= link_to simple_format('<i class="fa fa-key font-icon-dropdown" aria-hidden="true" title="Change Password"></i> New Pass'),
+                        edit_user_pass_path(current_user) %>
+          </li>
           <li role="separator" class="divider"></li>
+          <li>
+            <%= link_to simple_format('<i class="fa fa-sign-out font-icon-dropdown" aria-hidden="true" title="Log out"></i> Log out'),
+                        logout_path, method: :delete %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dropdown gravatar-nav navbar-brand mobile-on">
+        <a href="#" class="dropdown-toggle btn-nav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= gravatar_for current_user, size: 34, class: 'gravatar' %>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li>
+            <%= link_to simple_format("<i class='fa fa-address-book-o font-icon-dropdown' aria-hidden='true' title='#{t(:profile)}'></i>  #{t(:View_profile)}"),
+                                      user_path(current_user) %>
+          </li>
+          <li>
+            <%= link_to simple_format('<i class="fa fa-pencil-square-o font-icon-dropdown" aria-hidden="true" title="Edit your Profile"></i> Edit Profile'),
+                        edit_user_path(current_user) %>
+          </li>
           <li>
             <%= link_to simple_format('<i class="fa fa-key font-icon-dropdown" aria-hidden="true" title="Change Password"></i> New Pass'),
                         edit_user_pass_path(current_user) %>

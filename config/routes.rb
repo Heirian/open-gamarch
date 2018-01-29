@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/about', to: 'pages#about'
     get '/starting', to: 'pages#starting'
     get '/cookie', to: 'pages#cookie'
+    get '/page404', to: 'pages#page404'
 
     get '/comments_with_button', to: 'article#comments_with_button', as: 'comments_with_button'
 
@@ -20,6 +21,9 @@ Rails.application.routes.draw do
       get '/blog', to: 'posts#index'
 
     resources :posts
+    resources :developers
+    resources :games
+    resources :communities
 
     get '/signup', to: 'users#new'
 

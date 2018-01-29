@@ -1,3 +1,4 @@
+
 <li id="article-<%= article.id %>" class="justify col-sm-12 col-md-12 col-xs-12 articler-container article-content">
   <div class="col-sm-1 col-md-1 col-xs-1 article-home-proprety">
     <%= link_to gravatar_for(article.user, size: 50, class: 'gravatar-feed'), article.user %>
@@ -7,8 +8,12 @@
       <%= link_to article.user.name, article.user %>
     </span>
     <small class="right inline data-read-timing-feed">
-      <%= article.timestamp %>
-      | <%= article.reading_time %> min read
+      <% if params[:locale] == 'pt' %>
+        <%= article.timestamp_dmy %>
+      <% else %>
+        <%= article.timestamp %>
+      <% end %>
+      | <%= article.reading_time %> min <%= t(:read) %>
     </small>
     <div class="article-home-ajust users-home-name title-name-feed">
       <%= link_to truncate(article.name, length: 80), article_path(article) %>
@@ -21,13 +26,13 @@
     <div class="article-home-description-proprety">
       <%= simple_format(article.make_safe(255)) %>
       <% if article.description.size > 255 %>
-         <%= link_to('See more', article_path(article), class:'right') %>
+         <%= link_to(t(:see_more), article_path(article), class:'right') %>
       <% end %>
     </div>
 
     <% if article.comments.count > 2 %>
       <div >
-        <%= link_to "View all comments", article_path(article, anchor: "wall"), class: 'btn btn-purple btn-view-all-comments', target: '_blank' %>
+        <%= link_to t(:view_all_comments), article_path(article, anchor: "wall"), class: 'btn btn-purple btn-view-all-comments', target: '_blank' %>
       </div>
     <% end %>
   </div>

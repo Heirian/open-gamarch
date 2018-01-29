@@ -1,0 +1,27 @@
+<%= render 'shared/page_title', page_title: 'Games' %>
+<hr />
+
+  <div class="container">
+    <div class="row">
+      <% @games.each do |game| %>
+        <div align="center">
+          <ul class="listing">
+            <div class="col-md-3 user-index">
+              <li class="user-name">
+                <%= link_to game.name, game_path(game) %>
+              </li>
+              <li>
+                <%= truncate(t(:"#{game.description}"), length: 150) %>
+              </li>
+              <% if logged_in? && current_user.admin? %>
+                <li>
+                  <%= link_to "Delete this game", game_path(game), method: :delete,
+                  data: {confirm: "Are you sure you want to delete the game?"}, class: 'btn btn-purple' %>
+                </li>
+              <% end %>
+            </div>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+</div>

@@ -2,7 +2,7 @@
   <div class="container">
     <p>
       <%= link_to t(:starting), starting_path %> •
-      <%= link_to t(:blog), blog_path %> •
+      <%= link_to t(:blog), blog_path, data: { turbolinks: false } %> •
       <%= link_to t(:help), help_path %> •
       <%= link_to t(:about), about_path %> •
       <%= link_to t(:contact), contact_path %> •

@@ -1,1 +1,36 @@
-<%= render 'shared/page_title', page_title: 'Contact' %>
+<header class="black-bg-mobile-minor">
+  <div class="container">
+    <%= render 'shared/static_page_title', page_title: t(:gamarch_contact) %>
+  </div>
+  <div class="col-md-12">
+    <div class="container">
+      <div class="row">
+        <form action="https://getsimpleform.com/messages?form_api_token=1ab0460e281b98553b2c7dc96c335857" method="post">
+          <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+          <input type='hidden' name='redirect_to' value='http://www.gamarch.com/<%= params[:locale] %>/contact' />
+          <!-- all your input fields here.... -->
+          <div class="col-md-12">
+            <div class="col-md-6 col-md-offset-3 contact-form-prop">
+              <input type='text' class="form-control form-control-lg" name='your name' placeholder="<%= t(:name) %>" />
+            </div>
+            <div class="col-md-6 col-md-offset-3 contact-form-prop">
+              <input type='email' class="form-control form-control-lg" name='your email' placeholder="<%= t(:your_email) %>" />
+            </div>
+            <div class="col-md-6 col-md-offset-3 contact-form-prop">
+              <input type='text' class="form-control" name='your subject' placeholder="<%= t(:subject) %>" />
+            </div>
+            <div class="col-md-6 col-md-offset-3 contact-form-prop">
+              <textarea type='text' cols="45" rows="8" class="form-control form-control-lg" name='your message' placeholder="<%= t(:message) %>" /></textarea>
+            </div>
+            <div class="col-md-12 center">
+              <input type='submit' class="btn btn-purple btn-lg" value='<%= t(:submit) %>' />
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</header>

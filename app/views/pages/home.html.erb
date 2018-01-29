@@ -1,4 +1,5 @@
 <% if logged_in? %>
+<div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <aside class="col-md-3 col-sm-12 col-xs-12 fix-position fix-position-top">
@@ -25,7 +26,7 @@
                 <%= render 'shared/stats' %>
               </div>
               <div class="count-articles-home">
-                <%= pluralize(current_user.articles.count, t(:article)) if current_user.articles %>
+                <%= t('article', count: current_user.articles.count) if current_user.articles %>
               </div>
             </div>
         </section>
@@ -74,163 +75,230 @@
 
     </div>
   </div>
-
+</div>
 <% else %>
-
-<div class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <%= render 'shared/errors', object: @user %>
-
-    <div class="col-md-8 col-sm-12 col-xs-12">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h1><%= t(:home_title) %></h1>
-          <div class="col-md-12 col-sm-12 col-xs-12 home-topics">
-            <div class="col-md-2 col-sm-2 col-xs-4">
-              <i class="fa fa-battery-three-quarters font-awesome-icon-sign" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-8">
-              <h4><%= t(:home_community) %></h4>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 home-topics">
-            <div class="col-md-2 col-sm-2 col-xs-4">
-              <i class="fa fa-thermometer-full font-awesome-icon-sign" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-8">
-              <h4><%= t(:home_experience) %></h4>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 home-topics">
-            <div class="col-md-2 col-sm-2 col-xs-4">
-              <i class="fa fa-check-square-o font-awesome-icon-sign" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-8">
-              <h4><%= t(:home_players) %></h4>
-            </div>
-          </div>
-          <div class="col-md-12col-sm-12 col-xs-12 home-topics">
-            <div class="col-md-2 col-sm-2 col-xs-4">
-              <i class="fa fa-hand-spock-o font-awesome-icon-sign" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-8">
-              <h4><%= t(:home_funny) %></h4>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
 <!--
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h2><%= t(:gaming_better)%></h2>
-          <h5><%= t(:improve_community)%></h5>
+<div class="col-md-4">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2><%= t(:gaming_better)%></h2>
+      <h5><%= t(:improve_community)%></h5>
 
-          <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
-            <div class="form-group">
-              <div class="col-md-12">
-                <%= f.text_field :name, class: "form-control form-home-sign", placeholder: "#{t(:your_name)}" %>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 form-email-fix-position">
-                <%= f.text_field :email, class: "form-control form-home-sign", placeholder: "#{t(:your_email)}" %>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 form-password-fix-position">
-                <%= f.password_field :password, class: "form-control form-home-sign", placeholder: "#{t(:your_password)}" %>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 form-cpassword-fix-position">
-                <%= f.password_field :password_confirmation, class: "form-control form-home-sign", placeholder: "Confirm your password" %>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 col-sm-12 col-xs-12 form-birthday-fix-position">
-                <h4>
-                  <%= t(:your_birthday) %>
-                </h4>
-                <div class="select-date-wrapper">
-                  <%= date_select :user, :birthday, { start_year: 1905, end_year: 2017 , order: [:day, :month, :year]}, class: "form-control select-date"  %>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 col-sm-12 col-xs-12 form-gender-fix-position">
-                <div class="col-md-4 col-md-offset-2 col-sm-4 col-offset-2 col-xs-6">
-                  <h4>
-                    <%= f.radio_button :gender, 'girl' %>
-                    <%= label :gender, t(:girl) %>
-                  </h4>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                  <h4>
-                    <%= f.radio_button :gender, 'boy', checked: true %>
-                    <%= label :gender, t(:boy) %>
-                  </h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 col-sm-12 col-xs-12 form-terms">
-                <%= render 'users/warning_terms' %>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 col-sm-12 col-xs-12 btn-group form-create">
-                <%= f.submit(@user.new_record? ? t(:create_account) : t(:update_account),
-                                  class: "btn btn-purple btn-lg") %>
-                <%= link_to t(:return_home), pages_home_path, class: "btn btn-purple" unless @user.new_record? %>
-              </div>
-            </div>
-          <% end %>
+      <%= form_for(@user, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+        <div class="form-group">
+          <div class="col-md-12">
+            <%= f.text_field :name, class: "form-control form-home-sign", placeholder: "#{t(:your_name)}" %>
+          </div>
         </div>
-      </div>
-    </div>
 
+        <div class="form-group">
+          <div class="col-md-12 form-email-fix-position">
+            <%= f.text_field :email, class: "form-control form-home-sign", placeholder: "#{t(:your_email)}" %>
+          </div>
+        </div>
 
-      </div>
+        <div class="form-group">
+          <div class="col-md-12 form-password-fix-position">
+            <%= f.password_field :password, class: "form-control form-home-sign", placeholder: "#{t(:your_password)}" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 form-cpassword-fix-position">
+            <%= f.password_field :password_confirmation, class: "form-control form-home-sign", placeholder: "Confirm your password" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 form-birthday-fix-position">
+            <h4>
+              <%= t(:your_birthday) %>
+            </h4>
+            <div class="select-date-wrapper">
+              <%= date_select :user, :birthday, { start_year: 1905, end_year: 2017 , order: [:day, :month, :year]}, class: "form-control select-date"  %>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 form-gender-fix-position">
+            <div class="col-md-4 col-md-offset-2 col-sm-4 col-offset-2 col-xs-6">
+              <h4>
+                <%= f.radio_button :gender, 'girl' %>
+                <%= label :gender, t(:girl) %>
+              </h4>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <h4>
+                <%= f.radio_button :gender, 'boy', checked: true %>
+                <%= label :gender, t(:boy) %>
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 form-terms">
+            <%= render 'users/warning_terms' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12 col-sm-12 col-xs-12 btn-group form-create">
+            <%= f.submit(@user.new_record? ? t(:create_account) : t(:update_account),
+                              class: "btn btn-purple btn-lg") %>
+            <%= link_to t(:return_home), pages_home_path, class: "btn btn-purple" unless @user.new_record? %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 -->
-    <div class="col-md-4 col-sm-12 col-xs-12">
-      <div class="row">
+<header class="bg-header-home">
+  <div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12 home-show-position">
+      <%= render 'shared/errors', object: @user %>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 center">
+            <%= image_tag("logoback.png", class:"logo-show-home")%>
+            <h3 class="pre-home-title">
+              <%= t(:pre_title) %>
+            </h3>
+            <div class="col-md-4 col-md-offset-4 line-title">
+              <br>
+              <hr />
+            </div>
+
+            <h1 class="home-title-black col-md-12">
+              <%= t(:home_title) %>
+            </h1>
+            <h3 class="pos-title col-md-12">
+              <%= t(:sub_title) %>
+            </h3>
+            <p class="language col-md-12"><%= link_to "English", {locale: :en} %> ·
+            <%= link_to "Português", {locale: :pt} %></p>
+          </div>
+
+
+    </div>
+  </div>
+</header>
+
+
+  <div class="col-md-12 col-sm-12 col-xs-12 black-bg">
+      <div class="home-show-position">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <h2 class="blog-name">
-            <%= link_to "/Blog", blog_path %>
-          </h2>
+          <div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-12 center">
+            <h5 class="text-gray">
+              <%= t(:pre_home_gamarch) %>
+            </h5>
+            <h3 class="title-black">
+              <%= t(:home_gamarch) %>
+            </h3>
+            <p>
+              <%= t(:home_gamarch_desc) %> <b>eSports</b>. <%= t(:home_gamarch_desc_part) %>
+            </p>
+            <p>
+              <%= t(:home_gamarch_desc_2) %>
+            </p>
+            <p>
+              <%= t(:home_gamarch_blog) %>
+            </p>
+            <p class="col-md-12"><%= link_to t(:view_blog), blog_path, class:"btn btn-purple", :"data-turbolinks" => false %>
+            <%= link_to t(:about_us), about_path, class:"btn btn-purple" %></p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <br>
+            <div class="center">
+              <%= image_tag("game-control.png", class:"controller-icon-show-home")%>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+
+<div class="col-md-12 col-sm-12 col-xs-12 home-show-position">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 center">
+      <div class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
+        <h4 class="text-gray"><%= t(:insise_community) %></h4>
+        <h2 class="text-black"><%= t(:icons_home_title) %></h2>
+      </div>
+
+      <br>
+      <div class="col-md-4 col-md-offset-2 col-sm-12 col-xs-12 home-topics exp-icon-square">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <br>
+          <%= image_tag("exp.jpg", class:"exp-show-home")%>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="text-icons">
+            <%= t(:home_players) %>
+          </h6>
           <p>
-            <%= t(:home_blog_desc) %>
+            <%= t(:home_players_desc) %>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 home-topics">
+        <div class="col-md-12 col-sm-12 col-xs-12 center">
+          <br>
+          <%= image_tag("knight.png", class:"icons-show-home")%>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="text-icons">
+            <%= t(:home_experience) %>
+          </h6>
+          <p>
+            <%= t(:home_experience_desc) %>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 center">
+          <br>
+          <%= image_tag("friends.png", class:"icons-show-home")%>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="text-icons"><%= t(:home_funny) %></h6>
+          <p>
+            <%= t(:home_funny_desc) %>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 home-topics">
+        <div class="col-md-12 col-sm-12 col-xs-12 center">
+          <br>
+          <%= image_tag("mystic-island.jpg", class:"exp-show-home")%>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="text-icons"><%= t(:home_community) %></h6>
+          <p>
+            <%= t(:home_community_desc) %>
           </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="row blog-home-bg">
+    <div class="col-md-4 col-md-offset-4 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+      <%= image_tag("blog.png", class:"blog-icon-show-home blog-icon-home-proprety")%>
+      <h2 class="blog-name-home right">
+        <%= link_to "/Blog", blog_path, :"data-turbolinks" => false %>
+      </h2>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <hr />
-        <div class="col-md-8 col-sm-12 col-xs-12">
-          <h2>
-          <%= t(:home_gamarch) %>
-          </h2>
-          <p>
-            <%= t(:home_gamarch_desc) %>
-          </p>
-        </div>
-      </div>
+    </div>
+    <div class="col-md-4 col-md-offset-4 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+      <hr />
+      <p class="blog-description-home">
+        <%= t(:home_blog_desc) %>
+      </p>
     </div>
   </div>
 </div>

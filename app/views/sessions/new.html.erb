@@ -1,24 +1,29 @@
-<% provide(:title, "Log in or Sign up") %>
-<%= render 'shared/page_title', page_title: 'Log in' %>
-
-<div class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <%= form_for(:session, :html => { class: "form-horizontal", role: "form" }, url: login_path) do |f| %>
-      <div class="form-group">
-        <div class="col-md-offset-4 col-md-4 col-sm-12 col-xs-12">
-          <%= f.text_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
+<% provide(:title, t(:log_in_or_signup)) %>
+<%= render 'shared/static_page_title', page_title: t(:log_in_to_gamarch) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <%= form_for(:session, :html => { class: "form-horizontal", role: "form" }, url: login_path) do |f| %>
+        <div class="form-group">
+          <div class="col-md-offset-4 col-md-4 col-sm-12 col-xs-12">
+            <%= f.text_field :email, class: "form-control", placeholder: t(:your_email), autofocus: true %>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-offset-4 col-md-4 col-sm-12 col-xs-12">
-          <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+        <div class="form-group">
+          <div class="col-md-offset-4 col-md-4 col-sm-12 col-xs-12">
+            <%= f.password_field :password, class: "form-control", placeholder: t(:enter_pass) %>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-offset-4 col-md-4 col-sm-6 col-xs-6">
-          <%= f.submit "Log in", class: "btn btn-purple btn-lg" %>
+        <div class="form-group">
+          <div class="center col-md-offset-4 col-md-4 col-sm-6 col-xs-6">
+            <%= f.submit t(:login), class: "btn btn-purple btn-lg" %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+<h4 class="center">
+    <%= link_to t(:forgot_pass), root_path %>
+</h4>
+<h4 class="center"><%= t(:new_here?) %> <%= link_to t(:signup), signup_path %></h4>

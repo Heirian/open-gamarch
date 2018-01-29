@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function( config )
   // config.uiColor = '#AADC6E';
   //config.assets_languages = 'en', 'pt-BR', 'pt-PT';
   config.removePlugins = 'image,sourcearea';
-  config.extraPlugins = 'widgetselection,lineutils,image2,widget,';
+  config.extraPlugins = 'image2,widget,';
   config.height = '60vh';
   config.skin = 'moono-dark';
 
@@ -46,7 +46,6 @@ CKEDITOR.editorConfig = function( config )
     { name: 'links', items: [ 'Link', 'Unlink' ] },
     { name: 'insert', items: [ 'Image' ] },
     { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Blockquote' ] },
-    { name: 'styles', items: [ 'Format' ] },
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] }
   ];
 

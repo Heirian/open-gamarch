@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :communities
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :bio, length: { maximum: 140 }
@@ -87,15 +88,15 @@ class User < ApplicationRecord
 
     # Validates the size of an uploaded avatar.
     def avatar_size
-      if avatar.size > 2.megabytes
-        errors.add(:avatar, "size after resize process should be less than 2MB")
+      if avatar.size > 100.kilobytes
+        errors.add(I18n.t(:image), "#{I18n.t(:size_avatar)} #{I18n.t(:avatar_size_after_resize)} 100KB")
       end
     end
 
     # Validates the size of an uploaded image.
     def image_size
-      if image.size > 2.megabytes
-        errors.add(:image, "Cover size after resize process should be less than 2MB")
+      if image.size > 100.kilobytes
+        errors.add(I18n.t(:image), "#{I18n.t(:size_cover)} #{I18n.t(:cover_size_after_resize)} 100KB")
       end
     end
 
